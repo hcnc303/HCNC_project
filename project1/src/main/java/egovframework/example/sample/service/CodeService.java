@@ -1,0 +1,18 @@
+package egovframework.example.sample.service;
+
+import java.util.List;
+
+public interface CodeService {
+
+	public String insertMsCode(MasterCodeVO mvo) throws Exception; 
+	
+	public String insertDtCode(DetailCodeVO dvo) throws Exception;
+	
+	List<?> selectCodesList(MasterCodeVO mvo) throws Exception;
+	
+	List<?> selectMsCodeList(MasterCodeVO mvo) throws Exception;
+	
+	List<?> selectDtCodeList(DetailCodeVO dvo) throws Exception;	
+	
+	public int selectCodesCount(MasterCodeVO mvo) throws Exception;
+}
