@@ -5,4 +5,5 @@
 	<settings useStatementNamespaces="true"/>
 	<sqlMap resource="egovframework/sqlmap/example/sample/EgovSample_Sample_SQL.xml"/>
 	<sqlMap resource="egovframework/sqlmap/Code_SQL.xml"/>
+	<sqlMap resource="egovframework/sqlmap/Project_SQL.xml"/>
 </sqlMapConfig>
