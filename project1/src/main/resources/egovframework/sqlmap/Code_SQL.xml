@@ -53,7 +53,12 @@
 	</select>
 	
 	<select id="codeDAO.selectCodesDetail" resultClass="DetailCodeVO">
-		SELECT masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
+		SELECT codeNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
 	</select>
+	
+	<update id = "codeDAO.updateCodes">
+		update hc_dtcode set codeNo = #codeNo#, masterCd = #masterCd#, detailCd = #detailCd#, detailNm = #detailNm#
+		WHERE codeNo = #codeNo#
+	</update>
 	
 </sqlMap>

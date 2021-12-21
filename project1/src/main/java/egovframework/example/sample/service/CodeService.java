@@ -18,4 +18,6 @@ public interface CodeService {
 	
 	public DetailCodeVO selectCodesDetail(String detailNm) throws Exception;
 	
+	public int updateCodes(DetailCodeVO vo) throws Exception;
+	
 }

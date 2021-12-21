@@ -9,7 +9,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Gentelella Alela! | </title>
-
+	<style>
+		.hidden {display:none;}
+	</style>
 		<!-- Bootstrap -->
 		<link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<!-- Font Awesome -->
@@ -244,7 +246,7 @@
 					<div class="">
 						<div class="page-title">
 							<div class="title_left">
-								<h3>코드 작성</h3>
+								<h3>코드 수정</h3>
 							</div>
 	
 							<div class="title_right">
@@ -263,7 +265,7 @@
 							<div class="col-md-12 col-sm-12 ">
 								<div class="x_panel">
 									<div class="x_title">
-										<h2>소분류 코드 작성 <small></small></h2>
+										<h2>코드 수정 <small></small></h2>
 										<ul class="nav navbar-right panel_toolbox">
 											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 											</li>
@@ -276,11 +278,18 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="codeModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
+											<div class="item form-group hidden">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="codeNo" >codeNo <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="codeNo" required="required" class="form-control "name="codeNo" value="${vo.codeNo }" readonly> 
+												</div>
+											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd" value="${vo.masterCd }"> 
+													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd" value="${vo.masterCd }" readonly> 
 												</div>
 											</div>
 											<div class="item form-group">
