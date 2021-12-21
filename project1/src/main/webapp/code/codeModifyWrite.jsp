@@ -3,40 +3,36 @@
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
-<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>    
+<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>      
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="UTF-8">
-		<title>Insert title here</title>
-    <!-- Bootstrap -->
-    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- Datatables -->
-    
-    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Gentelella Alela! | </title>
 
-    <!-- Custom Theme Style -->
-    <link href="/build/css/custom.min.css" rel="stylesheet">
-    
-    <script>
-    	function fn_update(detailNm) {
-    		location = "codeModifyWrite.do?detaNm="+detailNm;
-    	}
-    </script>
-  </head>
-
-  <body class="nav-md">
+		<!-- Bootstrap -->
+		<link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- NProgress -->
+		<link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+		<!-- iCheck -->
+		<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+		<!-- bootstrap-wysiwyg -->
+		<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<!-- Select2 -->
+		<link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+		<!-- Switchery -->
+		<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+		<!-- starrr -->
+		<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
+		<!-- bootstrap-daterangepicker -->
+		<link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+	
+		<!-- Custom Theme Style -->
+		<link href="/build/css/custom.min.css" rel="stylesheet">
+	</head>
+	<body class="nav-md">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -242,225 +238,129 @@
             </div>
           </div>
         <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>코드 관리<small></small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>대코드 리스트 <small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	대분류 코드 리스트 입니다. <code></code>
-                    </p>
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>대분류 코드</th>
-                          <th>대분류 코드명</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-	                      <c:forEach var="m" items="${resultMsList}" varStatus="status">
-	                        <tr>
-	                          <td>${m.masterCd }</td>
-	                          <td>${m.masterNm }</td>
-	                        </tr>
-	                      </c:forEach>   
-                      </tbody>
-                    </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
-                </div>
-              </div>
-
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>소분류 코드 리스트</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	소분류 코드 리스트 입니다. <code></code>
-                    </p>
-                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>
-							 <th><input type="checkbox" id="check-all" ></th>
-						  </th>
-                          <th>대분류 코드</th>
-                          <th>소분류 코드</th>
-                          <th>소분류명</th>
-                          <th>구분</th>
-                        </tr>
-                      </thead>
-
-
-                      <tbody>
-	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
-	                        <tr>
-	                          <td>
-								 <th><input type="checkbox" id="check-all" ></th>
-							  </td>
-	                          <td>${d.masterCd }</td>
-	                          <td>${d.detailCd }</td>
-	                          <td>${d.detailNm }</td>
-	                          <td><button type="button" class="btn btn-round btn-secondary" onclick="fn_update('${d.detailNm}')">Default</button></td>
-	                        </tr>
-	                    </c:forEach>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
-                </div>
-              </div>
-
-
-
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>코드 리스트 <small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	전체 코드 리스트 입니다.
-                    </p>
-                    <table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-							<th>대분류 코드</th>
-							<th>대분류 코드명</th>
-							<th>소분류 코드</th>
-							<th>소분류 코드명</th>
-                        </tr>
-                      </thead>
-
-
-                      <tbody>
-						<c:forEach var="a" items="${resultList}" varStatus="status">
-							<tr>
-								<td>${a.masterCd}</td>
-								<td>${a.masterNm}</td>
-								<td>${a.detailCd}</td>
-								<td>${a.detailNm}</td>
-							</tr>
-						</c:forEach>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-   <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="/vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="/vendors/iCheck/icheck.min.js"></script>
-    <!-- Datatables -->
-    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="/vendors/jszip/dist/jszip.min.js"></script>
-    <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="/build/js/custom.min.js"></script>
-
-  </body>
+	
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="page-title">
+							<div class="title_left">
+								<h3>코드 작성</h3>
+							</div>
+	
+							<div class="title_right">
+								<div class="col-md-5 col-sm-5  form-group pull-right top_search">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Search for...">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">Go!</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 ">
+								<div class="x_panel">
+									<div class="x_title">
+										<h2>소분류 코드 작성 <small></small></h2>
+										<ul class="nav navbar-right panel_toolbox">
+											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+											</li>
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+									<div class="x_content">
+										<br />
+										<form id="demo-form2" name="frm" method="post" action="codeModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd" value="${vo.masterCd }"> 
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailCd">소분류 코드 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd" value="${vo.detailCd }">
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailNm">소분류 명 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="detailNm" required="required" class="form-control" name="detailNm" value="${vo.detailNm }">
+												</div>
+											</div>
+											<div class="ln_solid"></div>
+											<div class="item form-group">
+												<div class="col-md-6 col-sm-6 offset-md-3">
+													<button class="btn btn-primary" type="button">취소</button>
+													<button class="btn btn-primary" type="reset">초기화</button>
+													<button type="submit" class="btn btn-success">저장</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+				<!-- /page content -->
+	
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
+			</div>
+		</div>
+	
+		<!-- jQuery -->
+		<script src="/vendors/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- FastClick -->
+		<script src="/vendors/fastclick/lib/fastclick.js"></script>
+		<!-- NProgress -->
+		<script src="/vendors/nprogress/nprogress.js"></script>
+		<!-- bootstrap-progressbar -->
+		<script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+		<!-- iCheck -->
+		<script src="/vendors/iCheck/icheck.min.js"></script>
+		<!-- bootstrap-daterangepicker -->
+		<script src="/vendors/moment/min/moment.min.js"></script>
+		<script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<!-- bootstrap-wysiwyg -->
+		<script src="/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+		<script src="/vendors/google-code-prettify/src/prettify.js"></script>
+		<!-- jQuery Tags Input -->
+		<script src="/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+		<!-- Switchery -->
+		<script src="/vendors/switchery/dist/switchery.min.js"></script>
+		<!-- Select2 -->
+		<script src="/vendors/select2/dist/js/select2.full.min.js"></script>
+		<!-- Parsley -->
+		<script src="/vendors/parsleyjs/dist/parsley.min.js"></script>
+		<!-- Autosize -->
+		<script src="/vendors/autosize/dist/autosize.min.js"></script>
+		<!-- jQuery autocomplete -->
+		<script src="/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+		<!-- starrr -->
+		<script src="/vendors/starrr/dist/starrr.js"></script>
+		<!-- Custom Theme Scripts -->
+		<script src="/build/js/custom.min.js"></script>
+	
+	</body>
 </html>

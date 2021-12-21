@@ -44,8 +44,10 @@ public class CodeDAO extends EgovAbstractDAO {
 		
 	}
 
+	public DetailCodeVO selectCodesDetail(String detailNm) {
 
-
+		return (DetailCodeVO) select("codeDAO.selectCodesDetail",detailNm);
+	}
 
 
 }

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>1</groupId>
-	<artifactId>project</artifactId>
+	<artifactId>project1</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>project</name>
@@ -113,7 +113,13 @@
 			<artifactId>hsqldb</artifactId>
 			<version>2.3.2</version>
 		</dependency>
-        
+		
+        		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.12.1</version>
+		</dependency>
         <!-- mysql이나 oracle DB 사용시 아래 설정 추가  
         <dependency>
             <groupId>com.googlecode.log4jdbc</groupId>

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import egovframework.example.sample.service.CodeService;
 import egovframework.example.sample.service.DetailCodeVO;
 import egovframework.example.sample.service.MasterCodeVO;
@@ -22,15 +24,12 @@ public class CodeController {
 	@Resource(name="codeService")
 	private CodeService codeService;
 	
-	@RequestMapping(value="/MsCodeWrite.do")
+	@RequestMapping(value="/codeWrite.do")
 	public String MscodeWrite() {
-		return "code/MsCodeWrite";
+		
+		return "code/CodeWrite";
 	}
 	
-	@RequestMapping(value="/DtCodeWrite.do")
-	public String DtcodeWrite() {
-		return "code/DtCodeWrite";
-	}
 	
 	@RequestMapping(value="/MsCodeWriteSave.do")
 	public String insertCode(MasterCodeVO mvo) throws Exception{
@@ -42,7 +41,7 @@ public class CodeController {
 		}
 		
 		
-		return "redirect:DtCodeWrite.do";
+		return "redirect:CodeWrite";
 		
 	}
 	
@@ -56,29 +55,20 @@ public class CodeController {
 			System.out.println("저장완료");
 		}
 		
-		return "redirect:DtCodeWrite.do";
+		return "redirect:CodeWrite";
 	}
 	
 	@RequestMapping(value="/codeList.do",method = {RequestMethod.GET, RequestMethod.POST})
 	public String selectCodesList(Model model, MasterCodeVO mvo, DetailCodeVO dvo) throws Exception {
 		
-		// 총 데이터 개수
-		int total = codeService.selectCodesCount(mvo);
-		// 총 페이지 수
-		int totalPage = (int) Math.ceil((double)total/10);
-		
-		int viewPage = mvo.getViewPage();
-		int startIndex = (viewPage-1) * 10 + 1;
-		int endIndex = startIndex + (10 - 1);
-		
-		mvo.setStartIndex(startIndex);
-		mvo.setEndIndex(endIndex);
 		
 		List<?> list = codeService.selectCodesList(mvo);
 		List<?> msList = codeService.selectMsCodeList(mvo);
 		List<?> dtList = codeService.selectDtCodeList(dvo);
-		model.addAttribute("resultTotal", total);
-		model.addAttribute("totalPage",totalPage);
+		
+
+		
+		
 		model.addAttribute("resultList",list);
 		model.addAttribute("resultMsList",msList);
 		model.addAttribute("resultDtList",dtList);
@@ -86,7 +76,18 @@ public class CodeController {
 		//System.out.println("list =====> " + list);
 
 
-		return "code/NewFile"; 
+		return "code/CodeList"; 
 		
 	}
+	
+	@RequestMapping(value="/codeModifyWrite.do")
+	public String selectCodesDetail(String detailNm, Model model) throws Exception {
+		DetailCodeVO vo = codeService.selectCodesDetail(detailNm);
+		System.out.println(vo);
+		model.addAttribute("vo",vo);
+		
+		return "code/codeModifyWrite";
+		
+	}
+	
 }

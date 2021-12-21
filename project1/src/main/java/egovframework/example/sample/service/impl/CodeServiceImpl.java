@@ -52,7 +52,10 @@ public class CodeServiceImpl extends EgovAbstractServiceImpl implements CodeServ
 		return codeDAO.selectCodesCount(mvo);
 	}
 
+	@Override
+	public DetailCodeVO selectCodesDetail(String detailNm) throws Exception {
 
-
+		return codeDAO.selectCodesDetail(detailNm);
+	}
 
 }

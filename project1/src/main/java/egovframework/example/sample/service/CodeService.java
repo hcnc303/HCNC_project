@@ -15,4 +15,7 @@ public interface CodeService {
 	List<?> selectDtCodeList(DetailCodeVO dvo) throws Exception;	
 	
 	public int selectCodesCount(MasterCodeVO mvo) throws Exception;
+	
+	public DetailCodeVO selectCodesDetail(String detailNm) throws Exception;
+	
 }
