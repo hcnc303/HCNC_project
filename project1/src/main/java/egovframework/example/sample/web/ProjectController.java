@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import egovframework.example.sample.service.ProjectService;
 import egovframework.example.sample.service.ProjectVO;
@@ -24,18 +25,15 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/projectWriteSave.do")
-	public String InsertProject(ProjectVO vo) throws Exception {
-		
-		/*System.out.println(vo.getP_id());*/
+	@ResponseBody
+	public String insertProject(ProjectVO vo) throws Exception {
 		
 		String result = projectService.insertProject(vo);
-		if(result == null) { //ok
-			System.out.println("저장완료");
-		} else {
-			System.out.println("저장실패");
-		}
+		String msg = "";
+		if(result == null) msg ="ok";
+		else msg = "fail";
 		
-		return "redirect:/projectList.do";
+		return msg;
 	}
 	
 	@RequestMapping(value="/projectList.do")

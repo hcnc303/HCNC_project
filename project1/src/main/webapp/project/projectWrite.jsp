@@ -2,58 +2,76 @@
     pageEncoding="UTF-8"%>
 <%@include file="../includes/admin/header.jsp" %>
 
-<style>
-	body {
-		font-size: 15px;
-	}
-	
-	button {
-		font-size: 9px
-	}
+<script src="/project/script/jquery-1.12.4.js"></script>
+<script src="/project/script/jquery-ui.js"></script>
 
+<style>
+	body {font-size: 15px;}
+	button {font-size: 9px}
 	table {
 		width:600px;
 		border-collapse:collapse; /* cell 간격 없앰*/
 	}
-	
 	th,td {
 		border:1px solid #cccccc;
 		padding:5px;
 	}
-	
 	.input1{
 		width: 98%;
 	}
-	
 	.textarea{
 		width: 98%;
 		height: 70px;
 	}
 </style>
+
+
 	
 <script>
+
+$(function() {
+	
+	$("#p_name").val("이름 입력");
+	
+});
+
 	function fn_submit(){
 		
-		if(document.frm.title.value == ""){
-			alert("제목을 입력해주세요!");
-			document.frm.title.focus();
+		if($("#p_name").val() == "") {
+			alert("프로젝트 이름을 입력해주세요!");
+			$("p_name").focus();
 			return false;
 		}
-		if(document.frm.pass.value == ""){
-			alert("제목을 입력해주세요!");
-			document.frm.title.focus();
-			return false;
-		}
-		
-		/* document.frm.submit(); */ // 동기 전송 방식
-	}
 	
+	var formData = $("#frm").serialize();
+	
+	// ajax : 비동기 전송방식의 기능을 가지고 있는 jquery의 함수
+	$.ajax({ 
+		
+		 type : "POST", // 타입 
+		 data : formData,
+		 url : "projectWriteSave.do",
+		 dataType : "text",	// 리턴타입
+		 success :function(data) { // controller -> "ok","fail"
+			if(data == "ok"){
+				alert("저장완료");
+				location="projectList.do";
+			} else {
+				alert("저장실패");
+			}
+		 },
+		 error :function() { // 장애발생
+			 alert("오류발생");
+		 } 
+		
+	});
+}
 	
 </script>
 
 
 
-<form name="frm" id="frm" method="post" action="projectWriteSave.do">
+<form name="frm" id="frm">
 	<table>
 		<caption>프로젝트 등록</caption>
 		<tr>
