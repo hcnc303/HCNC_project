@@ -337,8 +337,8 @@
 									<td>${result.dJobgrade}</td>
 									<td>${result.dType}</td>
 									<td>
-										<button type="button" onclick="location='devModifyWrite.do?dId=${result.dId}'">수정</button>
-										<button type="button" onclick="location='devDelete.do?dId=${result.dId}'">삭제</button>
+										<button type="button" onclick="location='devModifyWrite.do?dId=${result.dId }'">수정</button>
+										<button type="button" onclick="location='devDelete.do?dId=${result.dId }'">삭제</button>
 									</td>
 		                        </tr>	                          
                           	</c:forEach>
