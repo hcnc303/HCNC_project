@@ -3,123 +3,464 @@
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
-<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>
-
-
+<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>    
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>코드 리스트</title>
-		<link rel="stylesheet" type="text/css" href="/css/admin/all.css">
-		<link rel="stylesheet" type="text/css" href="/css/admin/reset.css">
-		<link rel="stylesheet" type="text/css" href="/css/admin/member_list.css">
-		<script type="text/javascript" src="/js/admin/jquery.js"></script>
-		<script type="text/javascript" src="/js/admin/all.js"></script>
-	</head>
-	<body>
-		<header id="header">
-	        <div class="topbar" style="position: absolute; top:0;">
-	            <!-- 왼쪽 메뉴 -->
-	            <div class="left side-menu">
-	                <div class="sidebar-inner">
-	                    <div id="sidebar-menu">
-	                        <ul>
-	                            <li class="has_sub"><a href="javascript:void(0);" class="waves-effect">
-	                                <i class="fas fa-bars"></i>
-	                            </a></li>
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
-	            <!-- 왼쪽 서브 메뉴 -->
-	            <div class="left_sub_menu">
-	                <div class="sub_menu">
-	                    <input type="search" name="SEARCH" placeholder="SEARCH">
-	                    <h2>분류</h2>
-	                    <ul class="big_menu">
-	                        <li>코드 관리 <i class="arrow fas fa-angle-right"></i></li>
-	                        <ul class="small_menu">
-	                          	<a href="codeList.do"><li>코드목록</li></a>
-	                            <a href="MsCodeWrite.do"><li>대분류 코드 작성</li></a>
-	                            <a href="DtCodeWrite.do"><li>소분류 코드 작성</li></a>
-	                        </ul>
-	                    </ul>
-	                    <ul class="big_menu">
-	                        <li>개발자 관리 <i class="arrow fas fa-angle-right"></i></li>
-	                        <ul class="small_menu">
-	                            <a href=""><li>소메뉴2-1</li></a>
-	                            <a href=""><li>소메뉴2-2</li></a>
-	                        </ul>
-	                    </ul>
-	                    <ul class="big_menu">
-	                        <li>프로젝트 관리 <i class="arrow fas fa-angle-right"></i></li>
-	                        <ul class="small_menu">
-	                            <a href=""><li>소메뉴2-1</li></a>
-	                            <a href=""><li>소메뉴2-2</li></a>
-	                        </ul>
-	                    </ul>
-	                    <ul class="big_menu">
-	                        <li><a href="#">메인</a></li>
-	                    </ul>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="headerIn">
-	            <h1 class="title"><a href="#">관리자</a></h1> 
-	            <ul>
-	                <li><a href="#">내정보</a></li>
-	                <li><a href="#">로그아웃</a></li>
-	            </ul>     
-	        </div>
-	    </header>
-	    
-	    <div id="container">
-	    	<div class="codeListArea">
-		        <h2>코드목록</h2>
-		        <div class="resultTotal" style="width:100%; text-align:center;">Total : ${resultTotal} 개</div>
-		        <table border="1" width="1000px">
-					<tr>
-						<th>대분류 코드</th>
-						<th>대분류 코드명</th>
-						<th>소분류 코드</th>
-						<th>소분류 코드명</th>
-						<th>구분</th>
-					</tr>
-					
-					<c:forEach var="a" items="${resultList}" varStatus="status">
-						<tr>
-							<td>${a.masterCd}</td>
-							<td>${a.masterNm}</td>
-							<td>${a.detailCd}</td>
-							<td>${a.detailNm}</td>
-							<td>
-								<button type="button">수정</button>
-								<button type="button">삭제</button>
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-	    	</div><!-- .codeListArea -->
-			<div class="totalPage">
-				<c:forEach var="i" begin="1" end="${totalPage }">					
-					<a href="codeList.do?viewPage=${i }">${i }</a>
-				</c:forEach>
-			</div><!-- .totalPage -->
-			<div class="searchArea">
-				<form name="searchFrm" method="post" action="codeList.do">
-					<select name="searchCate" id="searchCate">
-						<option value="m.masterCd">대분류 코드</option>
-						<option value="masterNm">대분류 코드명</option>
-						<option value="detailCd">소분류 코드</option>
-						<option value="detailNm">소분류 코드명</option>
-					</select>
-					<input type="text" name="searchText" id="searchText">
-					<button type="submit">검색</button>
-				</form>
-			</div><!-- .searchArea -->
-		</div> <!-- #container -->
+	<meta charset="UTF-8">
+		<title>Insert title here</title>
 		
-	<script type="text/javascript" src="/js/admin/member_list.js"></script>
-	</body>
+	<style>
+		.hidden {display:none;}
+	</style>
+    <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.min.css" rel="stylesheet">
+    
+    <script>
+    	function fn_update(detailNm) {
+    		location = "codeModifyWrite.do?detailNm="+detailNm;
+    	}
+    </script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index2.html">Dashboard2</a></li>
+                      <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                      <li><a href="chartjs2.html">Chart JS2</a></li>
+                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><a href="echarts.html">ECharts</a></li>
+                      <li><a href="other_charts.html">Other Charts</a></li>
+                    </ul>
+                  </li>
+              </div>
+              <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="e_commerce.html">E-commerce</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="project_detail.html">Project Detail</a></li>
+                      <li><a href="contacts.html">Contacts</a></li>
+                      <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i>코드 관리 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/codeList.do">코드 리스트</a>
+                        <li><a href="/codeWrite.do">코드 작성</a>
+                    </ul>
+                  </li>  
+                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1">Level One</a>
+                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
+                        </li>
+                    </ul>
+                  </li>        
+                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                  <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                      <img src="images/img.jpg" alt="">John Doe
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                        <a class="dropdown-item"  href="javascript:;">
+                          <span class="badge bg-red pull-right">50%</span>
+                          <span>Settings</span>
+                        </a>
+                    <a class="dropdown-item"  href="javascript:;">Help</a>
+                      <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                  </li>
+  
+                  <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-envelope-o"></i>
+                      <span class="badge bg-green">6</span>
+                    </a>
+                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item">
+                          <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                          <span>
+                            <span>John Smith</span>
+                            <span class="time">3 mins ago</span>
+                          </span>
+                          <span class="message">
+                            Film festivals used to be do-or-die moments for movie makers. They were where...
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <div class="text-center">
+                          <a class="dropdown-item">
+                            <strong>See All Alerts</strong>
+                            <i class="fa fa-angle-right"></i>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>코드 관리<small></small></h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>대코드 리스트 <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+                            <div class="card-box table-responsive">
+                    <p class="text-muted font-13 m-b-30">
+                      	대분류 코드 리스트 입니다. <code></code>
+                    </p>
+                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>대분류 코드</th>
+                          <th>대분류 코드명</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+	                      <c:forEach var="m" items="${resultMsList}" varStatus="status">
+	                        <tr>
+	                          <td>${m.masterCd }</td>
+	                          <td>${m.masterNm }</td>
+	                        </tr>
+	                      </c:forEach>   
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+              </div>
+            </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>소분류 코드 리스트</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+                            <div class="card-box table-responsive">
+                    <p class="text-muted font-13 m-b-30">
+                      	소분류 코드 리스트 입니다. <code></code>
+                    </p>
+                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
+                      <thead>
+                        <tr>
+						  <th class="hidden">codeNo</th>
+                          <th>대분류 코드</th>
+                          <th>소분류 코드</th>
+                          <th>소분류명</th>
+                          <th>구분</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
+	                        <tr>
+							  <td class="hidden">${d.codeNo }</td>
+	                          <td>${d.masterCd }</td>
+	                          <td>${d.detailCd }</td>
+	                          <td>${d.detailNm }</td>
+	                          <td><button type="button" class="btn btn-round btn-secondary" onclick="fn_update('${d.detailNm}')">수정</button></td>
+	                        </tr>
+	                    </c:forEach>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+              </div>
+            </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>코드 리스트 <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+                            <div class="card-box table-responsive">
+                    <p class="text-muted font-13 m-b-30">
+                      	전체 코드 리스트 입니다.
+                    </p>
+                    <table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+							<th>대분류 코드</th>
+							<th>대분류 코드명</th>
+							<th>소분류 코드</th>
+							<th>소분류 코드명</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+						<c:forEach var="a" items="${resultList}" varStatus="status">
+							<tr>
+								<td>${a.masterCd}</td>
+								<td>${a.masterNm}</td>
+								<td>${a.detailCd}</td>
+								<td>${a.detailNm}</td>
+							</tr>
+						</c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="/build/js/custom.min.js"></script>
+
+  </body>
 </html>

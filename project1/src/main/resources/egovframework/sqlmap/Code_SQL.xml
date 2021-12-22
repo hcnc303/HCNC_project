@@ -22,7 +22,7 @@
 	<!-- 코드 리스트 출력 SQL -->
 	<select id="codeDAO.selectCodesList" resultClass="egovMap">
 		
-			SELECT * 
+			SELECT *
 			FROM(
 				SELECT ROW_NUMBER() OVER (ORDER BY m.masterCd ASC) as rownum
 							,m.masterCd 
@@ -31,35 +31,34 @@
 							,d.detailNm	 from hc_mscode AS m
 					INNER JOIN hc_dtcode AS d
 					ON m.masterCd = d.masterCd
-					<isNotNull property="searchCate">
-						<isNotNull property="searchText">
-							WHERE $searchCate$ like '%$searchText$%'
-						</isNotNull> 
-					</isNotNull>
 			)hc_mscode
-			<![CDATA[WHERE rownum >= #startIndex# and rownum <= #endIndex#]]>
 	</select>
 	
 	<select id="codeDAO.selectMsCodeList" resultClass="egovMap">
-		select * from hc_mscode
+		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
+		* from hc_mscode;
 	</select>
 	
 	<select id="codeDAO.selectDtCodeList" resultClass="egovMap">
-		select * from hc_dtcode
+		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
+		* from hc_dtcode;
 	</select>
 	
-	<!-- 코드 개수 출력 SQL -->
+	<!-- 전체코드 개수 출력 SQL -->
 	<select id="codeDAO.selectCodesCount" resultClass="int">
-	
 		SELECT COUNT(*) 
 		FROM hc_mscode as m
 		INNER JOIN hc_dtcode as d
 		ON m.masterCd = d.masterCd
-		<isNotNull property="searchCate">
-			<isNotNull property="searchText">
-				WHERE $searchCate$ like '%$searchText$%'
-			</isNotNull> 
-		</isNotNull>
-		
 	</select>
+	
+	<select id="codeDAO.selectCodesDetail" resultClass="DetailCodeVO">
+		SELECT codeNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
+	</select>
+	
+	<update id = "codeDAO.updateCodes">
+		update hc_dtcode set codeNo = #codeNo#, masterCd = #masterCd#, detailCd = #detailCd#, detailNm = #detailNm#
+		WHERE codeNo = #codeNo#
+	</update>
+	
 </sqlMap>

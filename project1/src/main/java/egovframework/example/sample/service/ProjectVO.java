@@ -13,10 +13,10 @@ public class ProjectVO {
 	private String p_name;
 	
 	/* 프로젝트 시작일 */
-	private int p_startdate;
+	private String p_startdate;
 	
 	/* 프로젝트 종료일 */
-	private int p_enddate;
+	private String p_enddate;
 	
 	/* 사업장소 */
 	private String p_place;
