@@ -1,7 +1,5 @@
 package egovframework.example.sample.service;
 
-import java.util.Date;
-
 import lombok.Data;
 
 @Data
