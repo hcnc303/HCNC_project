@@ -24,7 +24,6 @@
             		dId, dName, dTier, dJobgrade, dType
             FROM hc_developer
          )hc_developer 
-         WHERE rownum >= #startIndex# AND rownum <= #endIndex#
     	]]>
 	</select>
 	

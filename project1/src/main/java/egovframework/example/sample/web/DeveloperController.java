@@ -58,27 +58,10 @@ public class DeveloperController {
 	@RequestMapping(value="/devList.do")
 	public String selectDevList(DeveloperVO vo, ModelMap model) throws Exception{
 		
-		//	총 데이터 개수
-		int total = devService.selectDevTotal(vo);
-		
-		//	(double)12/10 -> ceil(1.2) -> Integer(2.0) -> 2
-		int totalPage = (int) Math.ceil((double)total/10);
-		
-		int viewPage = vo.getViewPage();
-		// 1 -> 1,10 , // 2-> 11,20 // 3-> 21,30
-		// (1-1)*10+1 -> 1
-		// (2-1)*10+1 -> 11
-		int startIndex = (viewPage-1) * 10 + 1;
-		int endIndex = startIndex + (10 - 1);
-		
-		vo.setStartIndex(startIndex);
-		vo.setEndIndex(endIndex);
 		
 		List<?> list = devService.selectDevList(vo);
 		System.out.println(list);
 		
-		model.addAttribute("total",total);
-		model.addAttribute("totalPage",totalPage);
 		model.addAttribute("resultList",list);
 		
 		return "dev/devList";
