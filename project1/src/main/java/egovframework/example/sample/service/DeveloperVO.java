@@ -19,8 +19,4 @@ public class DeveloperVO {
 	private String dType;
 	//직원구분여부
 	
-	private int viewPage = 1;
-	private int startIndex = 1;
-	private int endIndex = 10;
-	
 }
