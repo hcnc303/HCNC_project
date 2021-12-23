@@ -11,7 +11,7 @@
 		<title>Insert title here</title>
 		
 	<style>
-		.hidden {display:none;}
+		.hidden {}
 	</style>
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -273,7 +273,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>대코드 리스트 <small></small></h2>
+                    <h2>대분류 리스트 <small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -337,7 +337,8 @@
                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
                       <thead>
                         <tr>
-						  <th class="hidden">codeNo</th>
+                          <th class="hidden"></th>
+						  <th>codeNo</th>
                           <th>대분류 코드</th>
                           <th>소분류 코드</th>
                           <th>소분류명</th>
@@ -349,7 +350,8 @@
                       <tbody>
 	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
 	                        <tr>
-							  <td class="hidden">${d.codeNo }</td>
+	                          <td class="hidden"></td>
+							  <td>${d.codeNo }</td>
 	                          <td>${d.masterCd }</td>
 	                          <td>${d.detailCd }</td>
 	                          <td>${d.detailNm }</td>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import egovframework.example.sample.service.CodeService;
 import egovframework.example.sample.service.DetailCodeVO;
 import egovframework.example.sample.service.MasterCodeVO;
+import egovframework.example.sample.service.MsCateVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 @Service("codeService")
@@ -62,6 +63,12 @@ public class CodeServiceImpl extends EgovAbstractServiceImpl implements CodeServ
 	public int updateCodes(DetailCodeVO vo) throws Exception {
 
 		return codeDAO.updateCodes(vo);
+	}
+
+	@Override
+	public List<?> selectMsCateList(MsCateVO vo) throws Exception {
+
+		return codeDAO.selectMsCateList(vo);
 	}
 
 }

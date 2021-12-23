@@ -6,17 +6,18 @@
 	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
 	<typeAlias alias="MasterCodeVO" type="egovframework.example.sample.service.MasterCodeVO"/>
 	<typeAlias alias="DetailCodeVO" type="egovframework.example.sample.service.DetailCodeVO"/>
+	<typeAlias alias="MsCateVO" type="egovframework.example.sample.service.MsCateVO"/>
 	
 	<!-- 대분류 코드 입력 SQL -->
 	<insert id="codeDAO.insertMsCode">
-		INSERT INTO hc_mscode(masterCd, masterNm)
-			VALUES(#masterCd#, #masterNm#)
+		INSERT INTO hc_mscode(tier, masterCd, masterNm)
+			VALUES(#tier#, #masterCd#, #masterNm#)
 	</insert>
 	
 	<!-- 소분류 코드 입력 SQL -->
 	<insert id="codeDAO.insertDtCode">
-		INSERT INTO hc_dtcode(masterCd, detailCd, detailNm)
-			VALUES(#masterCd#,#detailCd#, #detailNm#)
+		INSERT INTO hc_dtcode(codeNo, masterCd, detailCd, detailNm)
+			VALUES(#codeNo#,#masterCd#,#detailCd#, #detailNm#)
 	</insert>
 	
 	<!-- 코드 리스트 출력 SQL -->
@@ -42,6 +43,10 @@
 	<select id="codeDAO.selectDtCodeList" resultClass="egovMap">
 		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
 		* from hc_dtcode;
+	</select>
+	
+	<select id="codeDAO.selectMsCateList" resultClass="egovMap">
+		select * from hc_mscode;
 	</select>
 	
 	<!-- 전체코드 개수 출력 SQL -->

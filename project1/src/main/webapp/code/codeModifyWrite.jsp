@@ -296,7 +296,7 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailCd">소분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd" value="${vo.detailCd }">
+													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd" value="${vo.detailCd }" readonly>
 												</div>
 											</div>
 											<div class="item form-group">

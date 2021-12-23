@@ -8,6 +8,8 @@ public interface CodeService {
 	
 	public String insertDtCode(DetailCodeVO dvo) throws Exception;
 	
+	List<?> selectMsCateList(MsCateVO vo) throws Exception;
+	
 	List<?> selectCodesList(MasterCodeVO mvo) throws Exception;
 	
 	List<?> selectMsCodeList(MasterCodeVO mvo) throws Exception;

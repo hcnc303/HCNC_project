@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import egovframework.example.sample.service.CodeService;
 import egovframework.example.sample.service.DetailCodeVO;
 import egovframework.example.sample.service.MasterCodeVO;
+import egovframework.example.sample.service.MsCateVO;
 
 @Controller
 public class CodeController {
@@ -25,7 +26,14 @@ public class CodeController {
 	private CodeService codeService;
 	
 	@RequestMapping(value="/codeWrite.do")
-	public String MscodeWrite() {
+	public String MscodeWrite(MsCateVO vo, Model model) throws Exception {
+		ObjectMapper objm = new ObjectMapper();
+		
+		List MsList = codeService.selectMsCateList(vo);
+		
+		String MsCateList = objm.writeValueAsString(MsList);
+		
+		model.addAttribute("MsCateList",MsCateList);
 		
 		return "code/CodeWrite";
 	}
@@ -35,6 +43,8 @@ public class CodeController {
 	public String insertCode(MasterCodeVO mvo) throws Exception{
 		
 		String result = codeService.insertMsCode(mvo);
+		
+
 		
 		if( result == null) {
 			System.out.println("저장완료");

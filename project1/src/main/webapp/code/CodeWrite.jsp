@@ -272,7 +272,13 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="MsCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
-	
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="tier" >티어 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="tier" required="required" class="form-control "name="tier" value=1 readonly>
+												</div>
+											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
 												</label>
@@ -281,7 +287,7 @@
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterNm">대분류 명 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterNm">대분류명 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<input type="text" id="masterNm" required="required" class="form-control" name="masterNm">
@@ -317,23 +323,19 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="DtCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
-											<div class="form-group row">
-												<label class="col-form-label col-md-3 col-sm-3 label-align">대분류 코드 <span class="required">*</span></label>
-												<div class="col-md-6 col-sm-6 ">
-													<select class="form-control">
-														<option>대분류 코드를 선택하세요.</option>
-														<option>Option one</option>
-														<option>Option two</option>
-														<option>Option three</option>
-														<option>Option four</option>
-													</select>
-												</div>
-											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="codeNo" >codeNo <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd">
+													<input type="text" id="codeNo" required="required" class="form-control " name="codeNo">
+												</div>
+											</div>
+											<div class="form-group row">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd">대분류 코드 <span class="required">*</span></label>
+												<div class="col-md-6 col-sm-6 ">
+													<select class="form-control cate1" id="masterCd"  name="masterCd">
+														<option selected value="none">대분류를 선택해주세요.</option>
+													</select>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -344,7 +346,7 @@
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailNm">소분류 명 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailNm">소분류명 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<input type="text" id="detailNm" required="required" class="form-control" name="detailNm">
@@ -415,5 +417,45 @@
 		<!-- Custom Theme Scripts -->
 		<script src="/build/js/custom.min.js"></script>
 	
+		<script>
+			var MsCateList = JSON.parse('${MsCateList}');
+			
+			var cate1Array = new Array();
+			var cate1Obj = new Object();
+			
+			var cateSelect1 = $(".cate1");
+			
+			/* 카테고리 배열 초기화 메서드 */
+			function makeCateArray(obj,array,MsCateList, tier){
+				
+				for(var i = 0; i < MsCateList.length; i++){
+					if(MsCateList[i].tier === tier){
+						obj = new Object();
+						
+						obj.masterCd = MsCateList[i].masterCd;
+						obj.masterNm = MsCateList[i].masterNm;
+						
+						array.push(obj);				
+						
+					}
+				}
+			}	
+
+			$(document).ready(function(){
+				console.log(cate1Array);
+			});
+			
+			/* 배열 초기화 */
+			makeCateArray(cate1Obj,cate1Array,MsCateList,1);
+
+			/*
+			$(document).ready(function(){
+				console.log(cate1Array);
+			});
+			*/
+			for(let i = 0; i < cate1Array.length; i++){
+				cateSelect1.append("<option value='"+cate1Array[i].masterCd+"'>" + cate1Array[i].masterNm + "</option>");
+			}
+		</script>
 	</body>
 </html>

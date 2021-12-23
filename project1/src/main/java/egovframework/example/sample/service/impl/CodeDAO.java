@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import egovframework.example.sample.service.DetailCodeVO;
 import egovframework.example.sample.service.MasterCodeVO;
+import egovframework.example.sample.service.MsCateVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("codeDAO")
@@ -52,6 +53,11 @@ public class CodeDAO extends EgovAbstractDAO {
 	public int updateCodes(DetailCodeVO vo) {
 
 		return(int) update("codeDAO.updateCodes",vo);
+	}
+
+	public List<?> selectMsCateList(MsCateVO vo) {
+
+		return list ("codeDAO.selectMsCateList",vo);
 	}
 
 
