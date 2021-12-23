@@ -81,7 +81,7 @@
                     </ul>
                   </li>
               </div>
-              <div class="menu_section">
+              <div class="menu_section"> 
                 <h3>Live On</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
