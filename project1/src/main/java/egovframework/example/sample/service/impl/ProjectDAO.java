@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.ProjectVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
@@ -38,6 +39,11 @@ public class ProjectDAO extends EgovAbstractDAO {
 	public int selectProjectTotal(ProjectVO vo) {
 		
 		return (int) select("projectDAO.selectProjectTotal", vo);
+	}
+
+	public List<?> selectDtCateList(DtCateVO vo) {
+		
+		return list("projectDAO.selectDtCateList", vo);
 	}
 	
 }

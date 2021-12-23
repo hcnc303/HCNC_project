@@ -304,14 +304,18 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_place">사업 장소 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_place" required="required" class="form-control" name="p_place">
+													<select class="form-control cate1" id="p_place"  name="p_place">
+			                                          <option selected value="none">사업장소를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_buyer">발주처 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_buyer" required="required" class="form-control" name="p_buyer">
+													<select class="form-control cate2" id="p_buyer"  name="p_buyer">
+			                                          <option selected value="none">발주처를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -332,7 +336,9 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_progress">진행상태 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_progress" required="required" class="form-control" name="p_progress">
+													<select class="form-control cate3" id="p_progress"  name="p_progress">
+			                                          <option selected value="none">진행상태를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -405,7 +411,63 @@
 		<!-- starrr -->
 		<script src="/vendors/starrr/dist/starrr.js"></script>
 		<!-- Custom Theme Scripts -->
-		<script src="/build/js/custom.min.js"></script>		
+		<script src="/build/js/custom.min.js"></script>
+		
+		<script>
+			/* 카테고리 */
+			let cateList = JSON.parse('${cateList}');
+			
+			let cate1Array = new Array();
+			let cate2Array = new Array();
+			let cate3Array = new Array();
+			let cate1Obj = new Object();
+			let cate2Obj = new Object();
+			let cate3Obj = new Object();
+			
+			let cateSelect1 = $(".cate1");		
+			let cateSelect2 = $(".cate2");
+			let cateSelect3 = $(".cate3");
+			
+			/* 카테고리 배열 초기화 메서드 */
+			function makeCateArray(obj,array,cateList, tier){
+				for(let i = 0; i < cateList.length; i++){
+					if(cateList[i].tier === tier){
+						obj = new Object();
+						
+						obj.masterCd = cateList[i].masterCd;
+						obj.detailCd = cateList[i].detailCd;
+						obj.detailNm = cateList[i].detailNm;
+						
+						array.push(obj);				
+						
+					}
+				}
+			}	
+			
+			/* 배열 초기화 */
+			makeCateArray(cate1Obj,cate1Array,cateList,1);
+			makeCateArray(cate2Obj,cate2Array,cateList,2);
+			makeCateArray(cate3Obj,cate3Array,cateList,3);
+			
+			$(document).ready(function(){
+				console.log(cate1Array);
+				console.log(cate2Array);
+				console.log(cate3Array);
+			});
+			
+			for(let i = 0; i < cate1Array.length; i++){
+				cateSelect1.append("<option value='"+cate1Array[i].detailNm+"'>" + cate1Array[i].detailNm + "</option>");
+				
+			}
+			for(let i = 0; i < cate2Array.length; i++){
+				cateSelect2.append("<option value='"+cate2Array[i].detailNm+"'>" + cate2Array[i].detailNm + "</option>");
+				
+			}
+			for(let i = 0; i < cate3Array.length; i++){
+				cateSelect3.append("<option value='"+cate3Array[i].detailNm+"'>" + cate3Array[i].detailNm + "</option>");
+				
+			}
+		</script>
 		
 	</body>
 </html>

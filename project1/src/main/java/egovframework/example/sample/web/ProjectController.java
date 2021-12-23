@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.ProjectService;
 import egovframework.example.sample.service.ProjectVO;
 @Controller
@@ -17,7 +20,12 @@ public class ProjectController {
 	private ProjectService projectService;
 	
 	@RequestMapping(value="/projectWrite.do")
-	public String projectWrite() {
+	public String projectWrite(DtCateVO vo, ModelMap model) throws Exception{
+		ObjectMapper objm = new ObjectMapper();
+		List<?> list = projectService.selectDtCateList(vo);
+		String cateList = objm.writeValueAsString(list);
+		
+		model.addAttribute("cateList", cateList);
 		
 		return "project/projectWrite";
 		

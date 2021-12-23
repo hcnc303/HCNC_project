@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.ProjectService;
 import egovframework.example.sample.service.ProjectVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
@@ -50,6 +51,12 @@ public class ProjectServiceImpl extends EgovAbstractServiceImpl implements Proje
 	public int selectProjectTotal(ProjectVO vo) throws Exception {
 		
 		return projectDAO.selectProjectTotal(vo);
+	}
+
+	@Override
+	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
+		
+		return projectDAO.selectDtCateList(vo);
 	}
 
 	

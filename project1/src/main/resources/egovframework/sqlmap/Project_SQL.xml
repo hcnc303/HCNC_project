@@ -5,11 +5,16 @@
 
 	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 	<typeAlias  alias="projectVO" type="egovframework.example.sample.service.ProjectVO"/>
+	<typeAlias  alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 	
 	<insert id="projectDAO.insertProject">
 		insert into hc_project(p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note)  
         values (#p_id#, #p_name#, #p_startdate#, #p_enddate#, #p_place#, #p_buyer#, #p_salesman#, #p_tell#, #p_progress#, #p_note#)
 	</insert>
+	
+	<select id="projectDAO.selectDtCateList" resultClass="egovMap">
+		SELECT * FROM hc_dtcode
+	</select>
 
 	<select id="projectDAO.selectProjectList" resultClass="egovMap">
 		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note from hc_project
