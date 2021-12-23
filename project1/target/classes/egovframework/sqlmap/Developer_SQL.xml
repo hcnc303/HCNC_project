@@ -42,7 +42,7 @@
 		
 	<update id="devDAO.updateDev">
 		UPDATE hc_developer SET 
-			did=#did#, dName=#dName#, dTier=#dTier#, dJobgrade=#dJobgrade#, dType=#dType#
+			dId=#dId#, dName=#dName#, dTier=#dTier#, dJobgrade=#dJobgrade#, dType=#dType#
 		WHERE dId = #dId#
 	</update>
 </sqlMap>

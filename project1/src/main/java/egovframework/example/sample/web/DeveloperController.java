@@ -67,15 +67,7 @@ public class DeveloperController {
 		return "dev/devList";
 	}
 	
-	@RequestMapping(value="/devDetail.do")
-	public String selectDevDetail(String dId, ModelMap model) throws Exception{
-		 
-		DeveloperVO vo = devService.selectDevDetail(dId);
-		
-		model.addAttribute("devVO",vo);
-		
-		return "dev/devDetail";
-	}
+
 	
 	@RequestMapping(value="/devDelete.do")
 	public String deleteDev(String dId) throws Exception {
