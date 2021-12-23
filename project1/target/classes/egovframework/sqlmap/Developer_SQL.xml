@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="hc_developer">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="DeveloperVO" type="egovframework.example.sample.service.DeveloperVO"/>
+	<typeAlias  alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
+
+	<insert id="devDAO.insertDev">
+		INSERT INTO hc_developer(dId,dName,dTier,dRole,dJobgrade,dType )
+			VALUES (#dId#,#dName#,#dTier#,#dRole#,#dJobgrade#,#dType#)
+	</insert>
+	
+	<select id="devDAO.selectDtCateList" resultClass="egovMap">
+		SELECT * FROM hc_dtcode
+	</select>
+	
+	<select id="devDAO.selectDevList" resultClass="egovMap">
+		<![CDATA[
+         SELECT * 
+         FROM(
+            SELECT ROW_NUMBER() OVER (ORDER BY dId ASC) as rownum,
+            		dId, dName, dTier, dJobgrade, dType
+            FROM hc_developer
+         )hc_developer 
+         WHERE rownum >= #startIndex# AND rownum <= #endIndex#
+    	]]>
+	</select>
+	
+	<select id="devDAO.selectDevTotal" resultClass="java.lang.Integer">
+		SELECT COUNT(*) total FROM hc_developer
+	</select>
+	
+	<select id="devDAO.selectDevDetail" resultClass="DeveloperVO">
+		SELECT dId, dName, dTier, dJobgrade, dType
+		FROM hc_developer WHERE dId = #dId#
+	</select>
+	
+	<delete id="devDAO.deleteDev">
+		DELETE FROM hc_developer WHERE dId = #dId#
+	</delete>
+		
+	<update id="devDAO.updateDev">
+		UPDATE hc_developer SET 
+			did=#did#, dName=#dName#, dTier=#dTier#, dJobgrade=#dJobgrade#, dType=#dType#
+		WHERE dId = #dId#
+	</update>
+</sqlMap>
+
+
+

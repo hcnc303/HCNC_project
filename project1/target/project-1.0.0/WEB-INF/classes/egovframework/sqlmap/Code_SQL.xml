@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="CodeSpace">
+
+	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="MasterCodeVO" type="egovframework.example.sample.service.MasterCodeVO"/>
+	<typeAlias alias="DetailCodeVO" type="egovframework.example.sample.service.DetailCodeVO"/>
+	
+	<!-- 대분류 코드 입력 SQL -->
+	<insert id="codeDAO.insertMsCode">
+		INSERT INTO hc_mscode(masterCd, masterNm)
+			VALUES(#masterCd#, #masterNm#)
+	</insert>
+	
+	<!-- 소분류 코드 입력 SQL -->
+	<insert id="codeDAO.insertDtCode">
+		INSERT INTO hc_dtcode(masterCd, detailCd, detailNm)
+			VALUES(#masterCd#,#detailCd#, #detailNm#)
+	</insert>
+	
+	<!-- 코드 리스트 출력 SQL -->
+	<select id="codeDAO.selectCodesList" resultClass="egovMap">
+		
+			SELECT * 
+			FROM(
+				SELECT ROW_NUMBER() OVER (ORDER BY m.masterCd ASC) as rownum
+							,m.masterCd 
+							,m.masterNm 
+							,d.detailCd
+							,d.detailNm	 from hc_mscode AS m
+					INNER JOIN hc_dtcode AS d
+					ON m.masterCd = d.masterCd
+					<isNotNull property="searchCate">
+						<isNotNull property="searchText">
+							WHERE $searchCate$ like '%$searchText$%'
+						</isNotNull> 
+					</isNotNull>
+			)hc_mscode
+			<![CDATA[WHERE rownum >= #startIndex# and rownum <= #endIndex#]]>
+	</select>
+	
+	<select id="codeDAO.selectMsCodeList" resultClass="egovMap">
+		select * from hc_mscode
+	</select>
+	
+	<select id="codeDAO.selectDtCodeList" resultClass="egovMap">
+		select * from hc_dtcode
+	</select>
+	
+	<!-- 코드 개수 출력 SQL -->
+	<select id="codeDAO.selectCodesCount" resultClass="int">
+	
+		SELECT COUNT(*) 
+		FROM hc_mscode as m
+		INNER JOIN hc_dtcode as d
+		ON m.masterCd = d.masterCd
+		<isNotNull property="searchCate">
+			<isNotNull property="searchText">
+				WHERE $searchCate$ like '%$searchText$%'
+			</isNotNull> 
+		</isNotNull>
+		
+	</select>
+</sqlMap>

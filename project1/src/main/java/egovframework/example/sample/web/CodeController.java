@@ -51,7 +51,7 @@ public class CodeController {
 		}
 		
 		
-		return "redirect:CodeWrite";
+		return "redirect:codeWrite.do";
 		
 	}
 	
@@ -65,7 +65,7 @@ public class CodeController {
 			System.out.println("저장완료");
 		}
 		
-		return "redirect:CodeWrite";
+		return "redirect:codeWrite.do";
 	}
 	
 	@RequestMapping(value="/codeList.do",method = {RequestMethod.GET, RequestMethod.POST})
