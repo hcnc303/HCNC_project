@@ -36,7 +36,7 @@ public class DeveloperController {
 	}
 	
 	@RequestMapping(value="devWriteSave.do")
-	public String InsertDev(DeveloperVO vo) throws Exception {
+	public String insertDev(DeveloperVO vo) throws Exception {
 		
 		System.out.println(vo.getD_id());
 		System.out.println(vo.getD_name());
@@ -82,11 +82,17 @@ public class DeveloperController {
 	}
 	
 	@RequestMapping(value="/devModifyWrite.do")
-	public String selectDevModify(String d_id, ModelMap model) throws Exception {
+	public String selectDevModify(String d_id, ModelMap model, DtCateVO vo) throws Exception {
 		
-		DeveloperVO vo = devService.selectDevDetail(d_id);
+		ObjectMapper objm = new ObjectMapper();
+		List list = devService.selectDtCateList(vo);
+		String cateList = objm.writeValueAsString(list);
 		
-		model.addAttribute("vo",vo);
+		model.addAttribute("cateList", cateList);
+		
+		DeveloperVO devVO = devService.selectDevDetail(d_id);
+		
+		model.addAttribute("vo",devVO);
 		
 		return "dev/devModifyWrite";
 	}
