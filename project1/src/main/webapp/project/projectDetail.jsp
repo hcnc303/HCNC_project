@@ -124,33 +124,26 @@
                       <li><a href="profile.html">Profile</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-sitemap"></i>코드 관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                        <li><a href="/codeList.do">코드 리스트</a>
+                        <li><a href="/codeWrite.do">코드 작성</a>
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                  </li>  
+                  <li><a><i class="fa fa-sitemap"></i> 개발자 관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
+                        <li><a href="/devList.do">개발자 목록</a>
+                        <li><a href="/developerWrite.do">개발자 등록</a>
                         </li>
                     </ul>
-                  </li>                  
+                  </li>   
+                  <li><a><i class="fa fa-sitemap"></i> 프로젝트 관리 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/projectList.do">프로젝트 목록</a>
+                        <li><a href="/projectWrite.do">프로젝트 등록</a>
+                        </li>
+                    </ul>
+                  </li>      
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>

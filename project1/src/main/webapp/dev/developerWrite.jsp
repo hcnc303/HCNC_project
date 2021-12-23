@@ -105,7 +105,14 @@
                         <li><a href="/developerWrite.do">개발자 등록</a>
                         </li>
                     </ul>
-                  </li>        
+                  </li>   
+                  <li><a><i class="fa fa-sitemap"></i> 프로젝트 관리 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/projectList.do">프로젝트 목록</a>
+                        <li><a href="/projectWrite.do">프로젝트 등록</a>
+                        </li>
+                    </ul>
+                  </li>      
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
