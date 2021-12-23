@@ -13,9 +13,9 @@ public interface DeveloperService {
 	//	상세보기
 	public DeveloperVO selectDevDetail(String d_id) throws Exception;
 	//	삭제처리
-	public int deleteDev(String d_id) throws Exception; 
+	public int deleteDev(String d_id) throws Exception;
 	//	수정처리
-	public int updateDev(DeveloperVO vo) throws Exception;
+	public int updateDev(DeveloperVO vo) throws Exception; 
 	
 	List<?> selectDtCateList(DtCateVO vo) throws Exception;
 }
