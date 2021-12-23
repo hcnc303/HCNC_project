@@ -6,11 +6,15 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import egovframework.example.sample.service.DeveloperService;
 import egovframework.example.sample.service.DeveloperVO;
+import egovframework.example.sample.service.DtCateVO;
 
 
 @Controller
@@ -20,7 +24,13 @@ public class DeveloperController {
 	private DeveloperService devService;
 	
 	@RequestMapping(value="/developerWrite.do")
-	public String developerWrite() {
+	public String developerWrite(DtCateVO vo, Model model) throws Exception {
+		
+		ObjectMapper objm = new ObjectMapper();
+		List list = devService.selectDtCateList(vo);
+		String cateList = objm.writeValueAsString(list);
+		
+		model.addAttribute("cateList", cateList);
 		
 		return "dev/developerWrite";
 	}
@@ -43,7 +53,7 @@ public class DeveloperController {
 			System.out.println("저장실패");
 		}
 		
-		return "";
+		return "redirect:devList.do";
 	}
 
 	@RequestMapping(value="/devList.do")

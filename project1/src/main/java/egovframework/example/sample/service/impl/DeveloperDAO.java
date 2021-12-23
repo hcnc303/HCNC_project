@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import egovframework.example.sample.service.DeveloperVO;
+import egovframework.example.sample.service.DtCateVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("DeveloperDAO")
@@ -33,6 +34,10 @@ public class DeveloperDAO extends EgovAbstractDAO {
 
 	public int updateDev(DeveloperVO vo) {
 		return (int) update("devDAO.updateDev",vo);
+	}
+
+	public List<?> selectDtCateList(DtCateVO vo) {
+		return list("devDAO.selectDtCateList",vo);
 	}
 
 

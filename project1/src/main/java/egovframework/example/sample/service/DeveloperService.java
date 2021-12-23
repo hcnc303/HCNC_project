@@ -16,4 +16,6 @@ public interface DeveloperService {
 	public int deleteDev(String dId) throws Exception;
 	//	수정처리
 	public int updateDev(DeveloperVO vo) throws Exception;
+	
+	List<?> selectDtCateList(DtCateVO vo) throws Exception;
 }

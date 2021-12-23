@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import egovframework.example.sample.service.DeveloperService;
 import egovframework.example.sample.service.DeveloperVO;
+import egovframework.example.sample.service.DtCateVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 
@@ -47,5 +48,10 @@ public class DeveloperServiceImpl extends EgovAbstractServiceImpl
 	@Override
 	public int updateDev(DeveloperVO vo) throws Exception {
 		return devDAO.updateDev(vo);
+	}
+
+	@Override
+	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
+		return devDAO.selectDtCateList(vo);
 	}
 }

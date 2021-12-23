@@ -1,29 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-    <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-   <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8">
+		<title>Gentelella Alela! | </title>
 
-    <!-- Custom Theme Style -->
-    <link href="/build/css/custom.min.css" rel="stylesheet">
-</head>
-<body>
-  <body class="nav-md">
+		<!-- Bootstrap -->
+		<link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<!-- NProgress -->
+		<link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+		<!-- iCheck -->
+		<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+		<!-- bootstrap-wysiwyg -->
+		<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<!-- Select2 -->
+		<link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+		<!-- Switchery -->
+		<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+		<!-- starrr -->
+		<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
+		<!-- bootstrap-daterangepicker -->
+		<link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+	
+		<!-- Custom Theme Style -->
+		<link href="/build/css/custom.min.css" rel="stylesheet">
+	</head>
+	<body class="nav-md">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -60,29 +65,6 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="general_elements.html">General Elements</a></li>
-                      <li><a href="media_gallery.html">Media Gallery</a></li>
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="glyphicons.html">Glyphicons</a></li>
-                      <li><a href="widgets.html">Widgets</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
-                    </ul>
-                  </li>
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">Tables</a></li>
@@ -98,13 +80,6 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                    </ul>
-                  </li>
-                </ul>
               </div>
               <div class="menu_section">
                 <h3>Live On</h3>
@@ -118,16 +93,12 @@
                       <li><a href="profile.html">Profile</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-sitemap"></i>코드 관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                        <li><a href="/codeList.do">코드 리스트</a>
+                        <li><a href="/codeWrite.do">코드 작성</a>
                     </ul>
-                  </li>
+                  </li>  
                   <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="#level1_1">Level One</a>
@@ -144,7 +115,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>                  
+                  </li>        
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -263,123 +234,207 @@
             </div>
           </div>
         <!-- /top navigation -->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="row" style="display: block;">
-              
-
-              <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Table design <small>Custom design</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="x_content">
-
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-                    <form name="frm" method="post" action="devWriteSave.do">
-						<table>
-							<tr>
-								<th>사번</th>
-								<td><input type="text" name="dId"></td>
-							</tr>
-							<tr>
-								<th>개발자이름</th>
-								<td><input type="text" name="dName"></td>
-							</tr>
-							<tr>
-								<th>등급(수준)</th>
-								<td><input type="text" name="dTier"></td>
-							</tr>
-							<tr>
-								<th>역할</th>
-								<td><input type="text" name="dRole"></td>
-							</tr>
-							<tr>
-								<th>직급</th>
-								<td><input type="text" name="dJobgrade"></td>
-							</tr>
-							<tr>
-								<th>직원구분여부</th>
-								<td><input type="text" name="dType"></td>
-							</tr>
-							<tr>
-								<th colspan="2">
-								<button type="submit">저장</button>
-								</th>
-							</tr>
-						</table>
-					</form>
-					
+	
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="">
+						<div class="page-title">
+							<div class="title_left">
+								<h3>코드 작성</h3>
+							</div>
+	
+							<div class="title_right">
+								<div class="col-md-5 col-sm-5  form-group pull-right top_search">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Search for...">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">Go!</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12 ">
+								<div class="x_panel">
+									<div class="x_title">
+										<h2>대분류 코드 작성 <small></small></h2>
+										<ul class="nav navbar-right panel_toolbox">
+											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+											</li>
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+											</li>
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+									<div class="x_content">
+										<br />
+										<form id="demo-form2" name="frm" method="post" action="devWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+	
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="dId" >사번 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="dId" required="required" class="form-control "name="dId">
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="dName">개발자이름 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="dName" required="required" class="form-control" name="dName">
+												</div>
+											</div>
+											<div class="form-group row">
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dJobgrade">직급 <span class="required">*</span></label>
+			                                    <div class="col-md-6 col-sm-6 ">
+			                                       <select class="form-control cate1" id="dJobgrade"  name="dJobgrade">
+			                                          <option selected value="none">대분류를 선택해주세요.</option>
+			                                       </select>
+			                                    </div>
+			                                 </div>
+			                                 <div class="form-group row">
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dTier">등급 <span class="required">*</span></label>
+			                                    <div class="col-md-6 col-sm-6 ">
+			                                       <select class="form-control cate2" id="dTier"  name="dTier">
+			                                          <option selected value="none">대분류를 선택해주세요.</option>
+			                                       </select>
+			                                    </div>
+			                                 </div>
+			                                 <div class="form-group row">
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dType">직원구분여부 <span class="required">*</span></label>
+			                                    <div class="col-md-6 col-sm-6 ">
+			                                       <select class="form-control cate3" id="dType"  name="dType">
+			                                          <option selected value="none">대분류를 선택해주세요.</option>
+			                                       </select>
+			                                    </div>
+			                                 </div>
+												</div>
+											</div>
+											<div class="ln_solid"></div>
+											<div class="item form-group">
+												<div class="col-md-6 col-sm-6 offset-md-3">
+													<button class="btn btn-primary" type="button">취소</button>
+													<button class="btn btn-primary" type="reset">초기화</button>
+													<button type="submit" class="btn btn-success">저장</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+				<!-- /page content -->
+	
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+				<!-- /footer content -->
+			</div>
+		</div>
+	
+		<!-- jQuery -->
+		<script src="/vendors/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- FastClick -->
+		<script src="/vendors/fastclick/lib/fastclick.js"></script>
+		<!-- NProgress -->
+		<script src="/vendors/nprogress/nprogress.js"></script>
+		<!-- bootstrap-progressbar -->
+		<script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+		<!-- iCheck -->
+		<script src="/vendors/iCheck/icheck.min.js"></script>
+		<!-- bootstrap-daterangepicker -->
+		<script src="/vendors/moment/min/moment.min.js"></script>
+		<script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<!-- bootstrap-wysiwyg -->
+		<script src="/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+		<script src="/vendors/google-code-prettify/src/prettify.js"></script>
+		<!-- jQuery Tags Input -->
+		<script src="/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+		<!-- Switchery -->
+		<script src="/vendors/switchery/dist/switchery.min.js"></script>
+		<!-- Select2 -->
+		<script src="/vendors/select2/dist/js/select2.full.min.js"></script>
+		<!-- Parsley -->
+		<script src="/vendors/parsleyjs/dist/parsley.min.js"></script>
+		<!-- Autosize -->
+		<script src="/vendors/autosize/dist/autosize.min.js"></script>
+		<!-- jQuery autocomplete -->
+		<script src="/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+		<!-- starrr -->
+		<script src="/vendors/starrr/dist/starrr.js"></script>
+		<!-- Custom Theme Scripts -->
+		<script src="/build/js/custom.min.js"></script>
+		
+		<script>
+			/* 카테고리 */
+			let cateList = JSON.parse('${cateList}');
+			
+			let cate1Array = new Array();
+			let cate2Array = new Array();
+			let cate3Array = new Array();
+			let cate1Obj = new Object();
+			let cate2Obj = new Object();
+			let cate3Obj = new Object();
+			
+			let cateSelect1 = $(".cate1");		
+			let cateSelect2 = $(".cate2");
+			let cateSelect3 = $(".cate3");
+			
+			/* 카테고리 배열 초기화 메서드 */
+			function makeCateArray(obj,array,cateList, tier){
+				for(let i = 0; i < cateList.length; i++){
+					if(cateList[i].tier === tier){
+						obj = new Object();
 						
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
+						obj.masterCd = cateList[i].masterCd;
+						obj.detailCd = cateList[i].detailCd;
+						obj.detailNm = cateList[i].detailNm;
+						
+						array.push(obj);				
+						
+					}
+				}
+			}	
 
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
-    </div>
 
-    <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-   <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="/vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="/vendors/iCheck/icheck.min.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="/build/js/custom.min.js"></script>
-  
-</body>
+			
+			/* 배열 초기화 */
+			makeCateArray(cate1Obj,cate1Array,cateList,1);
+			makeCateArray(cate2Obj,cate2Array,cateList,2);
+			makeCateArray(cate3Obj,cate3Array,cateList,3);
+			
+			$(document).ready(function(){
+				console.log(cate1Array);
+				console.log(cate2Array);
+				console.log(cate3Array);
+			});
+			
+			for(let i = 0; i < cate1Array.length; i++){
+				cateSelect1.append("<option value='"+cate1Array[i].detailNm+"'>" + cate1Array[i].detailNm + "</option>");
+				
+			}
+			for(let i = 0; i < cate2Array.length; i++){
+				cateSelect2.append("<option value='"+cate2Array[i].detailNm+"'>" + cate2Array[i].detailNm + "</option>");
+				
+			}
+			for(let i = 0; i < cate3Array.length; i++){
+				cateSelect3.append("<option value='"+cate3Array[i].detailNm+"'>" + cate3Array[i].detailNm + "</option>");
+				
+			}
+		</script>
+	
+	</body>
 </html>
