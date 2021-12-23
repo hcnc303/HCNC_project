@@ -317,27 +317,23 @@
 						<table>
 							<tr>
 								<th>사번</th>
-								<td><input type="text" name="dId" value="${vo.dId}"></td>
+								<td><input type="text" name="d_id" value="${vo.d_id}"></td>
 							</tr>
 							<tr>
 								<th>개발자이름</th>
-								<td><input type="text" name="dName" value="${vo.dName}"></td>
+								<td><input type="text" name="d_name" value="${vo.d_name}"></td>
 							</tr>
 							<tr>
 								<th>등급(수준)</th>
-								<td><input type="text" name="dTier" value="${vo.dTier}"></td>
-							</tr>
-							<tr>
-								<th>역할</th>
-								<td><input type="text" name="dRole" value="${vo.dRole}"></td>
+								<td><input type="text" name="d_tier" value="${vo.d_tier}"></td>
 							</tr>
 							<tr>
 								<th>직급</th>
-								<td><input type="text" name="dJobgrade" value="${vo.dJobgrade}"></td>
+								<td><input type="text" name="d_jobgrade" value="${vo.d_jobgrade}"></td>
 							</tr>
 							<tr>
 								<th>직원구분여부</th>
-								<td><input type="text" name="dType" value="${vo.dType}"></td>
+								<td><input type="text" name="d_type" value="${vo.d_type}"></td>
 							</tr>
 							<tr>
 								<th colspan="2">

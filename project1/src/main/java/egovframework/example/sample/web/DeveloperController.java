@@ -38,11 +38,11 @@ public class DeveloperController {
 	@RequestMapping(value="devWriteSave.do")
 	public String InsertDev(DeveloperVO vo) throws Exception {
 		
-		System.out.println(vo.getDId());
-		System.out.println(vo.getDName());
-		System.out.println(vo.getDTier());
-		System.out.println(vo.getDJobgrade());
-		System.out.println(vo.getDType());
+		System.out.println(vo.getD_id());
+		System.out.println(vo.getD_name());
+		System.out.println(vo.getD_tier());
+		System.out.println(vo.getD_jobgrade());
+		System.out.println(vo.getD_type());
 		
 		String result = devService.insertDev(vo);
 		
@@ -70,9 +70,9 @@ public class DeveloperController {
 
 	
 	@RequestMapping(value="/devDelete.do")
-	public String deleteDev(String dId) throws Exception {
+	public String deleteDev(String d_id) throws Exception {
 		
-		int result = devService.deleteDev(dId);
+		int result = devService.deleteDev(d_id);
 		if(result == 1) {
 			System.out.println("삭제완료");
 		} else {
@@ -82,9 +82,9 @@ public class DeveloperController {
 	}
 	
 	@RequestMapping(value="/devModifyWrite.do")
-	public String selectDevModify(String dId, ModelMap model) throws Exception {
+	public String selectDevModify(String d_id, ModelMap model) throws Exception {
 		
-		DeveloperVO vo = devService.selectDevDetail(dId);
+		DeveloperVO vo = devService.selectDevDetail(d_id);
 		
 		model.addAttribute("vo",vo);
 		

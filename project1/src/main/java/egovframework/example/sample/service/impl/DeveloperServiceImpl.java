@@ -36,13 +36,13 @@ public class DeveloperServiceImpl extends EgovAbstractServiceImpl
 	}
 
 	@Override
-	public DeveloperVO selectDevDetail(String dId) throws Exception {
-		return devDAO.selectDevDetail(dId);
+	public DeveloperVO selectDevDetail(String d_id) throws Exception {
+		return devDAO.selectDevDetail(d_id);
 	}
 
 	@Override
-	public int deleteDev(String dId) throws Exception {
-		return devDAO.deleteDev(dId);
+	public int deleteDev(String d_id) throws Exception {
+		return devDAO.deleteDev(d_id);
 	}
 
 	@Override

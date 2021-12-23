@@ -8,8 +8,8 @@
 	<typeAlias  alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 
 	<insert id="devDAO.insertDev">
-		INSERT INTO hc_developer(dId,dName,dTier,dJobgrade,dType )
-			VALUES (#dId#,#dName#,#dTier#,#dJobgrade#,#dType#)
+		INSERT INTO hc_developer(d_id,d_name,d_tier,d_jobgrade,d_type )
+			VALUES (#d_id#,#d_name#,#d_tier#,#d_jobgrade#,#d_type#)
 	</insert>
 	
 	<select id="devDAO.selectDtCateList" resultClass="egovMap">
@@ -20,8 +20,8 @@
 		<![CDATA[
          SELECT * 
          FROM(
-            SELECT ROW_NUMBER() OVER (ORDER BY dId ASC) as rownum,
-            		dId, dName, dTier, dJobgrade, dType
+            SELECT ROW_NUMBER() OVER (ORDER BY d_id ASC) as rownum,
+            		d_id, d_name, d_tier, d_jobgrade, d_type
             FROM hc_developer
          )hc_developer 
     	]]>
@@ -32,18 +32,18 @@
 	</select>
 	
 	<select id="devDAO.selectDevDetail" resultClass="DeveloperVO">
-		SELECT dId, dName, dTier, dJobgrade, dType
-		FROM hc_developer WHERE dId = #dId#
+		SELECT d_id, d_name, d_tier, d_jobgrade, d_type
+		FROM hc_developer WHERE d_id = #d_id#
 	</select>
 	
 	<delete id="devDAO.deleteDev">
-		DELETE FROM hc_developer WHERE dId = #dId#
+		DELETE FROM hc_developer WHERE d_id = #d_id#
 	</delete>
 		
 	<update id="devDAO.updateDev">
 		UPDATE hc_developer SET 
-			dId=#dId#, dName=#dName#, dTier=#dTier#, dJobgrade=#dJobgrade#, dType=#dType#
-		WHERE dId = #dId#
+			d_id=#d_id#, d_name=#d_name#, d_tier=#d_tier#, d_jobgrade=#d_jobgrade#, d_type=#d_type#
+		WHERE d_id = #d_id#
 	</update>
 </sqlMap>
 

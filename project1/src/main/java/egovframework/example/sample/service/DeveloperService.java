@@ -11,9 +11,9 @@ public interface DeveloperService {
 	//	Total 개수 얻기
 	public int selectDevTotal(DeveloperVO vo) throws Exception;
 	//	상세보기
-	public DeveloperVO selectDevDetail(String dId) throws Exception;
+	public DeveloperVO selectDevDetail(String d_id) throws Exception;
 	//	삭제처리
-	public int deleteDev(String dId) throws Exception;
+	public int deleteDev(String d_id) throws Exception;
 	//	수정처리
 	public int updateDev(DeveloperVO vo) throws Exception;
 	

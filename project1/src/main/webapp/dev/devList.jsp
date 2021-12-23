@@ -34,12 +34,12 @@
     <link href="/build/css/custom.min.css" rel="stylesheet">
     
     <script>
-       function fn_update(dId) {
-          location = "devModifyWrite.do?dId="+dId;
+       function fn_update(d_id) {
+          location = "devModifyWrite.do?d_id="+d_id;
        }
-       function fn_delete(dId) {
+       function fn_delete(d_id) {
     	   if( confirm("정말 삭제하시겠습니까?") ) {
-               location = "devDelete.do?dId="+dId;
+               location = "devDelete.do?d_id="+d_id;
     	   }
         }
     </script>

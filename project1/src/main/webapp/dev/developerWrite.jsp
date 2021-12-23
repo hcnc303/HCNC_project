@@ -264,39 +264,39 @@
 										<form id="demo-form2" name="frm" method="post" action="devWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="dId" >사번 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_id" >사번 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="dId" required="required" class="form-control "name="dId">
+													<input type="text" id="d_id" required="required" class="form-control "name="d_id">
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="dName">개발자이름 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_name">개발자이름 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="dName" required="required" class="form-control" name="dName">
+													<input type="text" id="d_name" required="required" class="form-control" name="d_name">
 												</div>
 											</div>
 											<div class="form-group row">
-			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dJobgrade">직급 <span class="required">*</span></label>
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="d_jobgrade">직급 <span class="required">*</span></label>
 			                                    <div class="col-md-6 col-sm-6 ">
-			                                       <select class="form-control cate1" id="dJobgrade"  name="dJobgrade">
+			                                       <select class="form-control cate1" id="d_jobgrade"  name="d_jobgrade">
 			                                          <option selected value="none">대분류를 선택해주세요.</option>
 			                                       </select>
 			                                    </div>
 			                                 </div>
 			                                 <div class="form-group row">
-			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dTier">등급 <span class="required">*</span></label>
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="d_tier">등급 <span class="required">*</span></label>
 			                                    <div class="col-md-6 col-sm-6 ">
-			                                       <select class="form-control cate2" id="dTier"  name="dTier">
+			                                       <select class="form-control cate2" id="d_tier"  name="d_tier">
 			                                          <option selected value="none">대분류를 선택해주세요.</option>
 			                                       </select>
 			                                    </div>
 			                                 </div>
 			                                 <div class="form-group row">
-			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="dType">직원구분여부 <span class="required">*</span></label>
+			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="d_type">직원구분여부 <span class="required">*</span></label>
 			                                    <div class="col-md-6 col-sm-6 ">
-			                                       <select class="form-control cate3" id="dType"  name="dType">
+			                                       <select class="form-control cate3" id="d_type"  name="d_type">
 			                                          <option selected value="none">대분류를 선택해주세요.</option>
 			                                       </select>
 			                                    </div>

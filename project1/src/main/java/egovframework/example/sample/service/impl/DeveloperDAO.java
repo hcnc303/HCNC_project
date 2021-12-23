@@ -24,12 +24,12 @@ public class DeveloperDAO extends EgovAbstractDAO {
 		return (int) select("devDAO.selectDevTotal",vo);
 	}
 
-	public DeveloperVO selectDevDetail(String dId) {
-		return (DeveloperVO) select("devDAO.selectDevDetail",dId);
+	public DeveloperVO selectDevDetail(String d_id) {
+		return (DeveloperVO) select("devDAO.selectDevDetail",d_id);
 	}
 
-	public int deleteDev(String dId) {
-		return (int) delete("devDAO.deleteDev",dId);
+	public int deleteDev(String d_id) {
+		return (int) delete("devDAO.deleteDev",d_id);
 	}
 
 	public int updateDev(DeveloperVO vo) {

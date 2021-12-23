@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeveloperVO {
-	private String dId;
+	private String d_id;
 	//사번
-	private String dName;
+	private String d_name;
 	//개발자성명
-	private String dTier;
+	private String d_tier;
 	//등급
-	private String dJobgrade;
+	private String d_jobgrade;
 	//직급
-	private String dType;
+	private String d_type;
 	//직원구분여부
 	
 }
