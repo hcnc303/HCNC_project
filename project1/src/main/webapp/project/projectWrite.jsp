@@ -112,11 +112,17 @@
                         <li><a href="/projectWrite.do">프로젝트 등록</a>
                         </li>
                     </ul>
-                  </li>      
+                  </li>    
+                  <li><a><i class="fa fa-sitemap"></i> 인력투입 관리 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="/inputList.do">인력투입 목록</a>
+                        <li><a href="#">인력투입 등록</a>
+                        </li>
+                    </ul>
+                  </li> 
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
-
             </div>
             <!-- /sidebar menu -->
 
