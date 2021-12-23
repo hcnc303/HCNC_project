@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeveloperVO {
+	private int tier;
+	//카테고리 티어
 	private String d_id;
 	//사번
 	private String d_name;
