@@ -13,7 +13,7 @@ public class DeveloperVO {
 	private String dName;
 	//개발자성명
 	private String dTier;
-	//역할
+	//등급
 	private String dJobgrade;
 	//직급
 	private String dType;
