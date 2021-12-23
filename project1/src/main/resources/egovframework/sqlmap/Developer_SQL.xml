@@ -8,8 +8,8 @@
 	<typeAlias  alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 
 	<insert id="devDAO.insertDev">
-		INSERT INTO hc_developer(dId,dName,dTier,dRole,dJobgrade,dType )
-			VALUES (#dId#,#dName#,#dTier#,#dRole#,#dJobgrade#,#dType#)
+		INSERT INTO hc_developer(dId,dName,dTier,dJobgrade,dType )
+			VALUES (#dId#,#dName#,#dTier#,#dJobgrade#,#dType#)
 	</insert>
 	
 	<select id="devDAO.selectDtCateList" resultClass="egovMap">
