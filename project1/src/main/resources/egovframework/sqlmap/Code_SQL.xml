@@ -10,8 +10,8 @@
 	
 	<!-- 대분류 코드 입력 SQL -->
 	<insert id="codeDAO.insertMsCode">
-		INSERT INTO hc_mscode(tier, masterCd, masterNm)
-			VALUES(#tier#, #masterCd#, #masterNm#)
+		INSERT INTO hc_mscode(msTier, masterCd, masterNm)
+			VALUES(#msTier#, #masterCd#, #masterNm#)
 	</insert>
 	
 	<!-- 소분류 코드 입력 SQL -->

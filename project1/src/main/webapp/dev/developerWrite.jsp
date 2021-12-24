@@ -400,7 +400,7 @@
 			/* 카테고리 배열 초기화 메서드 */
 			function makeCateArray(obj,array,cateList, tier){
 				for(let i = 0; i < cateList.length; i++){
-					if(cateList[i].tier === tier){
+					if(cateList[i].masterCd === masterCd){
 						obj = new Object();
 						
 						obj.masterCd = cateList[i].masterCd;
@@ -416,9 +416,9 @@
 
 			
 			/* 배열 초기화 */
-			makeCateArray(cate1Obj,cate1Array,cateList,1);
-			makeCateArray(cate2Obj,cate2Array,cateList,2);
-			makeCateArray(cate3Obj,cate3Array,cateList,3);
+			makeCateArray(cate1Obj,cate1Array,cateList,'A');
+			makeCateArray(cate2Obj,cate2Array,cateList,'B');
+			makeCateArray(cate3Obj,cate3Array,cateList,'J');
 			
 			$(document).ready(function(){
 				console.log(cate1Array);

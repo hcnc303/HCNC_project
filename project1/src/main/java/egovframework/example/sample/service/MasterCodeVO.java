@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class MasterCodeVO {
-	
+	private int msTier;
 	private String masterCd;
 	private String masterNm;
 
