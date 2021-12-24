@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public class DtCateVO {
 
-	private int tier;
 	private int codeNo;
 	private String masterCd;
 	private String detailCd;

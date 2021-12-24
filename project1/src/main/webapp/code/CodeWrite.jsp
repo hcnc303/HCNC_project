@@ -279,10 +279,10 @@
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="MsCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="tier" >티어 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="msTier" >티어 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="tier" required="required" class="form-control "name="tier" value=1 readonly>
+													<input type="text" id="msTier" required="required" class="form-control "name="msTier" value=1 readonly>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -432,10 +432,10 @@
 			var cateSelect1 = $(".cate1");
 			
 			/* 카테고리 배열 초기화 메서드 */
-			function makeCateArray(obj,array,MsCateList, tier){
+			function makeCateArray(obj,array,MsCateList, msTier){
 				
 				for(var i = 0; i < MsCateList.length; i++){
-					if(MsCateList[i].tier === tier){
+					if(MsCateList[i].msTier === msTier){
 						obj = new Object();
 						
 						obj.masterCd = MsCateList[i].masterCd;

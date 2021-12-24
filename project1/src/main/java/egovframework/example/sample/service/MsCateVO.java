@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class MsCateVO {
-	private int tier;
+	private int msTier;
 	private String masterCd;
 	private String masterNm;
 }
