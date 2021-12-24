@@ -244,7 +244,7 @@
 					<div class="">
 						<div class="page-title">
 							<div class="title_left">
-								<h3>코드 작성</h3>
+								<h3>개발자 관리</h3>
 							</div>
 	
 							<div class="title_right">
@@ -263,7 +263,7 @@
 							<div class="col-md-12 col-sm-12 ">
 								<div class="x_panel">
 									<div class="x_title">
-										<h2>대분류 코드 작성 <small></small></h2>
+										<h2>개발자 등록 <small></small></h2>
 										<ul class="nav navbar-right panel_toolbox">
 											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 											</li>
@@ -416,9 +416,9 @@
 
 			
 			/* 배열 초기화 */
-			makeCateArray(cate1Obj,cate1Array,cateList,'A');
-			makeCateArray(cate2Obj,cate2Array,cateList,'B');
-			makeCateArray(cate3Obj,cate3Array,cateList,'J');
+			makeCateArray(cate1Obj,cate1Array,cateList,'G');
+			makeCateArray(cate2Obj,cate2Array,cateList,'T');
+			makeCateArray(cate3Obj,cate3Array,cateList,'O');
 			
 			$(document).ready(function(){
 				console.log(cate1Array);

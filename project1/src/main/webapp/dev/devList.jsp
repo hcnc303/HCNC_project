@@ -261,7 +261,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>코드 관리<small></small></h3>
+                <h3>개발자 관리<small></small></h3>
               </div>
 
               <div class="title_right">
@@ -283,7 +283,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>코드 리스트 <small></small></h2>
+                    <h2>개발자 리스트 <small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -298,7 +298,7 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                     <p class="text-muted font-13 m-b-30">
-                         전체 코드 리스트 입니다.
+                         개발자 리스트 입니다.
                     </p>
                     <table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
                       <thead>

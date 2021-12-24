@@ -278,10 +278,10 @@
 										<form id="demo-form2" name="frm" method="post" action="devModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_id" >사번 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_id" >사번 <span class="required" readonly>*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="d_id" required="required" class="form-control "name="d_id" value="${vo.d_id}">
+													<input type="text" id="d_id" required="required" class="form-control "name="d_id" value="${vo.d_id}" readonly>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -398,9 +398,9 @@
 			let cateSelect3 = $(".cate3");
 			
 			/* 카테고리 배열 초기화 메서드 */
-			function makeCateArray(obj,array,cateList, tier){
+			function makeCateArray(obj,array,cateList, masterCd){
 				for(let i = 0; i < cateList.length; i++){
-					if(cateList[i].tier === tier){
+					if(cateList[i].masterCd === masterCd){
 						obj = new Object();
 						
 						obj.masterCd = cateList[i].masterCd;
@@ -416,9 +416,9 @@
 
 			
 			/* 배열 초기화 */
-			makeCateArray(cate1Obj,cate1Array,cateList,1);
-			makeCateArray(cate2Obj,cate2Array,cateList,2);
-			makeCateArray(cate3Obj,cate3Array,cateList,3);
+			makeCateArray(cate1Obj,cate1Array,cateList,'G');
+			makeCateArray(cate2Obj,cate2Array,cateList,'T');
+			makeCateArray(cate3Obj,cate3Array,cateList,'O');
 			
 			$(document).ready(function(){
 				console.log(cate1Array);
