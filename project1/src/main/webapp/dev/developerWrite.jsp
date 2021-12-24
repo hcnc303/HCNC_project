@@ -295,7 +295,7 @@
 			                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="d_jobgrade">직급 <span class="required">*</span></label>
 			                                    <div class="col-md-6 col-sm-6 ">
 			                                       <select class="form-control cate1" id="d_jobgrade"  name="d_jobgrade">
-			                                          <option selected value="none">직급을 선택해주세요.</option>
+			                                          <option selected value="">직급을 선택해주세요.</option>
 			                                       </select>
 			                                    </div>
 			                                 </div>
