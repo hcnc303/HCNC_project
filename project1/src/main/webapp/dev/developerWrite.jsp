@@ -383,6 +383,8 @@
 		<script src="/build/js/custom.min.js"></script>
 		
 		<script>
+		
+		
 			/* 카테고리 */
 			let cateList = JSON.parse('${cateList}');
 			
