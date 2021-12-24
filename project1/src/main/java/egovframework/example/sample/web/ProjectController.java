@@ -1,6 +1,7 @@
 package egovframework.example.sample.web;
 
 import java.util.List;
+/*import java.util.logging.Logger;*/
 
 import javax.annotation.Resource;
 
@@ -16,16 +17,19 @@ import egovframework.example.sample.service.ProjectVO;
 @Controller
 public class ProjectController {
 	
+	/*private final static Logger LOGGER = Logger.getGlobal();*/
+	
 	@Resource(name="projectService")
 	private ProjectService projectService;
 	
 	@RequestMapping(value="/projectWrite.do")
-	public String projectWrite(DtCateVO vo, ModelMap model) throws Exception{
+	public String projectWrite(DtCateVO dVo, ModelMap model) throws Exception{
 		ObjectMapper objm = new ObjectMapper();
-		List<?> list = projectService.selectDtCateList(vo);
+		List<?> list = projectService.selectDtCateList(dVo);
 		String cateList = objm.writeValueAsString(list);
 		
 		model.addAttribute("cateList", cateList);
+		
 		
 		return "project/projectWrite";
 		
@@ -79,10 +83,15 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="/projectModifyWrite.do")
-	public String selectProjectModify(String p_id, ModelMap model) throws Exception{
+	public String selectProjectModify(String p_id, DtCateVO dVo, ModelMap model) throws Exception{
+		
+		ObjectMapper objm = new ObjectMapper();
+		List<?> list = projectService.selectDtCateList(dVo);
+		String cateList = objm.writeValueAsString(list);
 		
 		ProjectVO vo = projectService.selectProjectDetail(p_id);
 		model.addAttribute("vo", vo);
+		model.addAttribute("cateList", cateList);
 		
 		return "project/projectModify";
 	}

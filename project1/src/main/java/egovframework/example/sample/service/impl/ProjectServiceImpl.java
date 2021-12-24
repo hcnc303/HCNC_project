@@ -54,9 +54,9 @@ public class ProjectServiceImpl extends EgovAbstractServiceImpl implements Proje
 	}
 
 	@Override
-	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
+	public List<?> selectDtCateList(DtCateVO dVo) throws Exception {
 		
-		return projectDAO.selectDtCateList(vo);
+		return projectDAO.selectDtCateList(dVo);
 	}
 
 	

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="CodeSpace">
+
+	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+	<typeAlias alias="MasterCodeVO" type="egovframework.example.sample.service.MasterCodeVO"/>
+	<typeAlias alias="DetailCodeVO" type="egovframework.example.sample.service.DetailCodeVO"/>
+	<typeAlias alias="MsCateVO" type="egovframework.example.sample.service.MsCateVO"/>
+	
+	<!-- 대분류 코드 입력 SQL -->
+	<insert id="codeDAO.insertMsCode">
+		INSERT INTO hc_mscode(tier, masterCd, masterNm)
+			VALUES(#tier#, #masterCd#, #masterNm#)
+	</insert>
+	
+	<!-- 소분류 코드 입력 SQL -->
+	<insert id="codeDAO.insertDtCode">
+		INSERT INTO hc_dtcode(codeNo, masterCd, detailCd, detailNm)
+			VALUES(#codeNo#,#masterCd#,#detailCd#, #detailNm#)
+	</insert>
+	
+	<!-- 코드 리스트 출력 SQL -->
+	<select id="codeDAO.selectCodesList" resultClass="egovMap">
+		
+			SELECT *
+			FROM(
+				SELECT ROW_NUMBER() OVER (ORDER BY m.masterCd ASC) as rownum
+							,m.masterCd 
+							,m.masterNm 
+							,d.detailCd
+							,d.detailNm	 from hc_mscode AS m
+					INNER JOIN hc_dtcode AS d
+					ON m.masterCd = d.masterCd
+			)hc_mscode
+	</select>
+	
+	<select id="codeDAO.selectMsCodeList" resultClass="egovMap">
+		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
+		* from hc_mscode;
+	</select>
+	
+	<select id="codeDAO.selectDtCodeList" resultClass="egovMap">
+		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
+		* from hc_dtcode;
+	</select>
+	
+	<select id="codeDAO.selectMsCateList" resultClass="egovMap">
+		select * from hc_mscode;
+	</select>
+	
+	<!-- 전체코드 개수 출력 SQL -->
+	<select id="codeDAO.selectCodesCount" resultClass="int">
+		SELECT COUNT(*) 
+		FROM hc_mscode as m
+		INNER JOIN hc_dtcode as d
+		ON m.masterCd = d.masterCd
+	</select>
+	
+	<select id="codeDAO.selectCodesDetail" resultClass="DetailCodeVO">
+		SELECT codeNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
+	</select>
+	
+	<update id = "codeDAO.updateCodes">
+		update hc_dtcode set codeNo = #codeNo#, masterCd = #masterCd#, detailCd = #detailCd#, detailNm = #detailNm#
+		WHERE codeNo = #codeNo#
+	</update>
+	
+</sqlMap>

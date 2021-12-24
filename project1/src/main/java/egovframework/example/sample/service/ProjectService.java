@@ -10,5 +10,5 @@ public interface ProjectService {
 	public int updateProject(ProjectVO vo) throws Exception;
 	
 	public int selectProjectTotal(ProjectVO vo) throws Exception;
-	public List<?> selectDtCateList(DtCateVO vo) throws Exception;
+	public List<?> selectDtCateList(DtCateVO dVo) throws Exception;
 }

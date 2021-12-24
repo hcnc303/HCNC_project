@@ -310,14 +310,18 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_place">사업 장소<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_place" required="required" class="form-control" name="p_place" value="${vo.p_place }">
+													<select class="form-control cate4" id="p_place" name="p_place">
+			                                          <option selected value="none">사업장소를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_buyer">발주처<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_buyer" required="required" class="form-control" name="p_buyer" value="${vo.p_buyer }">
+													<select class="form-control cate6" id="p_buyer" name="p_buyer">
+			                                          <option selected value="none">발주처를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -335,10 +339,12 @@
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_progress">진행과정<span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_progress">진행상태<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_progress" required="required" class="form-control" name="p_progress" value="${vo.p_progress }">
+													<select class="form-control cate5" id="p_progress" name="p_progress">
+			                                          <option selected value="none">진행상태를 선택해주세요.</option>
+			                                       </select>
 												</div>
 											</div>
 											<div class="item form-group">
@@ -412,6 +418,60 @@
 		<script src="/vendors/starrr/dist/starrr.js"></script>
 		<!-- Custom Theme Scripts -->
 		<script src="/build/js/custom.min.js"></script>
-	
+		
+		<script>
+		/* 카테고리 */
+		let cateList = JSON.parse('${cateList}');
+		
+		
+		let cate4Array = new Array();
+		let cate5Array = new Array();
+		let cate6Array = new Array();
+		let cate4Obj = new Object();
+		let cate5Obj = new Object();
+		let cate6Obj = new Object();
+		
+		let cateSelect4 = $(".cate4");
+		let cateSelect5 = $(".cate5");
+		let cateSelect6 = $(".cate6");
+		
+		/* 카테고리 배열 초기화 메서드 */
+		function makeCateArray(obj,array,cateList, masterCd){
+			for(let i = 0; i < cateList.length; i++){
+				if(cateList[i].masterCd === masterCd){
+					obj = new Object();
+					
+					obj.masterCd = cateList[i].masterCd;
+					obj.detailCd = cateList[i].detailCd;
+					obj.detailNm = cateList[i].detailNm;
+					
+					array.push(obj);				
+					
+				}
+			}
+		}	
+
+		/* 배열 초기화 */
+		makeCateArray(cate4Obj,cate4Array,cateList,'L');
+		makeCateArray(cate5Obj,cate5Array,cateList,'P');
+		makeCateArray(cate6Obj,cate6Array,cateList,'B');
+		
+		/* 발주처 카테고리 */
+		for(let i = 0; i < cate4Array.length; i++){
+			cateSelect4.append("<option value='"+cate4Array[i].detailNm+"'>" + cate4Array[i].detailNm + "</option>");
+		}
+		
+		
+		for(let i = 0; i < cate6Array.length; i++){
+			cateSelect6.append("<option value='"+cate6Array[i].detailNm+"'>" + cate6Array[i].detailNm + "</option>");
+		}// for
+		
+		for(let i = 0; i < cate5Array.length; i++){
+			cateSelect5.append("<option value='"+cate5Array[i].detailNm+"'>" + cate5Array[i].detailNm + "</option>");
+		}// for
+		
+		
+		
+		</script>
 	</body>
 </html>

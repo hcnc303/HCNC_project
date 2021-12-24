@@ -41,9 +41,9 @@ public class ProjectDAO extends EgovAbstractDAO {
 		return (int) select("projectDAO.selectProjectTotal", vo);
 	}
 
-	public List<?> selectDtCateList(DtCateVO vo) {
+	public List<?> selectDtCateList(DtCateVO dVo) {
 		
-		return list("projectDAO.selectDtCateList", vo);
+		return list("projectDAO.selectDtCateList", dVo);
 	}
 	
 }

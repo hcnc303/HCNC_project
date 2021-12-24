@@ -321,7 +321,7 @@
 															varStatus="status">
 															<tr>
 																<td>${result.pId }</td>
-																<td><a href="projectDetail.do?p_id=${result.pId }">${result.pName }</a></td>
+																<td>${result.pName }</td>
 																<td>${result.pStartdate }</td>
 																<td>${result.pEnddate }</td>
 																<td>${result.pPlace }</td>
