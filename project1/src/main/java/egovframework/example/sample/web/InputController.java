@@ -5,9 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class InputController {
+	
 	@RequestMapping(value="/inputList.do")
 	public String selectInputList() {
 		return "input/inputList";
+		
+	}
+	
+	@RequestMapping(value="/inputWrite.do")
+	public String insertInput() {
+		return "input/inputWrite";
 		
 	}
 }
