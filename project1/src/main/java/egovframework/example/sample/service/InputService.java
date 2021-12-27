@@ -8,4 +8,6 @@ public interface InputService {
 	
 	List<?> selectDtCateList(DtCateVO vo) throws Exception;
 	
+	List<?> selectDevCateList(DeveloperVO dvo) throws Exception;
+	
 }

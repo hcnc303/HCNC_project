@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.InputService;
 import egovframework.example.sample.service.InputVO;
@@ -26,5 +27,10 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
 
 		return inputDAO.selectDtCateList(vo);
+	}
+
+	@Override
+	public List<?> selectDevCateList(DeveloperVO dvo) throws Exception {
+		return inputDAO.selectDevCateList(dvo);
 	}
 }

@@ -5,6 +5,7 @@
 	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap" />
 	<typeAlias alias="InputVO" type="egovframework.example.sample.service.InputVO" />
 	<typeAlias alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
+	<typeAlias alias="DeveloperVO" type="egovframework.example.sample.service.DeveloperVO"/>
 	
 	
 	<insert id="inputDAO.insertInput">
@@ -14,5 +15,9 @@
 	
 	<select id="inputDAO.selectDtCateList" resultClass="egovMap">
 		select * from hc_dtcode;
+	</select>
+	
+	<select id="inputDAO.selectDevCateList" resultClass="egovMap">
+		select * from hc_developer;
 	</select>
 </sqlMap>

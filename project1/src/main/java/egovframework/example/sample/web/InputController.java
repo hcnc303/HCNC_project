@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.InputService;
 import egovframework.example.sample.service.InputVO;
@@ -28,15 +29,21 @@ public class InputController {
 	}
 	
 	@RequestMapping(value="/inputWrite.do")
-	public String insertInput(DtCateVO vo, Model model) throws Exception {
+	public String insertInput(DtCateVO vo, DeveloperVO dvo,Model model) throws Exception {
 		
 		ObjectMapper objm = new ObjectMapper();
 		
 		List DtList = inputService.selectDtCateList(vo);
 		
+		List DevList = inputService.selectDevCateList(dvo);
+		
 		String DtCateList = objm.writeValueAsString(DtList);
 		
+		String DevCateList = objm.writeValueAsString(DevList);
+		
 		model.addAttribute("DtCateList",DtCateList);
+		
+		model.addAttribute("DevCateList", DevCateList);
 		
 		return "input/inputWrite";
 		

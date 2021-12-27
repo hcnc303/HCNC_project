@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.InputVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
@@ -19,6 +20,10 @@ public class InputDAO extends EgovAbstractDAO{
 	public List<?> selectDtCateList(DtCateVO vo) {
 
 		return list("inputDAO.selectDtCateList", vo);
+	}
+
+	public List<?> selectDevCateList(DeveloperVO dvo) {
+		return list("inputDAO.selectDevCateList", dvo);
 	}
 	
 	

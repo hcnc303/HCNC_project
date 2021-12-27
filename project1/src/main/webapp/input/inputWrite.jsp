@@ -166,6 +166,7 @@
 		
 		<script>
 			var DtCateList = JSON.parse('${DtCateList}');
+			var DevCateList = JSON.parse('${DevCateList}');
 			
 			var cate1Array = new Array();
 			var cate2Array = new Array();
@@ -200,6 +201,25 @@
 				}
 			}
 			
+			function makeDevCateArray(obj,array,DevCateList,tier) {
+				
+				for(var i = 0; i < DevCateList.length; i++){
+					
+					if(DevCateList[i].tier === tier){
+						obj = new Object();
+						
+						obj.tier = DevCateList[i].tier;
+						obj.d_id = DevCateList[i].dId;
+						obj.d_name = DevCateList[i].dName;
+						obj.d_jobgrade = DevCateList[i].dJobgrade;
+						obj.d_tier = DevCateList[i].dTier;
+						obj.d_type =DevCateList[i].dType;
+						
+						array.push(obj);
+					}
+				}
+			}
+			
 			$(document).ready(function(){
 				console.log(cate1Array);
 				console.log(cate2Array);
@@ -208,8 +228,14 @@
 			});
 			
 			/* 배열 초기화 */
+			makeDevCateArray(cate2Obj,cate2Array,DevCateList,1);
 			makeCateArray(cate3Obj,cate3Array,DtCateList,'R');
 			makeCateArray(cate4Obj,cate4Array,DtCateList,'S');
+			
+			
+			for(let i = 0; i < cate2Array.length; i++){
+				cateSelect2.append("<option value='"+cate2Array[i].d_id+"'>" + cate2Array[i].d_name + "</option>");
+			}
 			
 			for(let i = 0; i < cate3Array.length; i++){
 				cateSelect3.append("<option value='"+cate3Array[i].detailNm+"'>" + cate3Array[i].detailNm + "</option>");
