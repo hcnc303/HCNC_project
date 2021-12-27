@@ -32,12 +32,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-    
-    <script>
-    	function fn_update(detailNm) {
-    		location = "codeModifyWrite.do?detailNm="+detailNm;
-    	}
-    </script>
+  
   </head>
 
   <body class="nav-md">

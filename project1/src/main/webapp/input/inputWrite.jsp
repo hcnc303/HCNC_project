@@ -164,5 +164,61 @@
 		<!-- Custom Theme Scripts -->
 		<script src="/build/js/custom.min.js"></script>		
 		
+		<script>
+			var DtCateList = JSON.parse('${DtCateList}');
+			
+			var cate1Array = new Array();
+			var cate2Array = new Array();
+			var cate3Array = new Array();
+			var cate4Array = new Array();
+			
+			var cate1Obj = new Object();
+			var cate2Obj = new Object();
+			var cate3Obj = new Object();
+			var cate4Obj = new Object();
+			
+			var cateSelect1 = $(".cate1");
+			var cateSelect2 = $(".cate2");
+			var cateSelect3 = $(".cate3");
+			var cateSelect4 = $(".cate4");
+			
+			/* 카테고리 배열 초기화 메서드 */
+			function makeCateArray(obj,array,DtCateList,masterCd) {
+				
+				for(var i = 0; i < DtCateList.length; i++) {
+					
+					if(DtCateList[i].masterCd === masterCd) {
+						
+						obj = new Object();
+						
+						obj.masterCd = DtCateList[i].masterCd;
+						obj.detailCd = DtCateList[i].detailCd;
+						obj.detailNm = DtCateList[i].detailNm;
+						
+						array.push(obj);
+					}
+				}
+			}
+			
+			$(document).ready(function(){
+				console.log(cate1Array);
+				console.log(cate2Array);
+				console.log(cate3Array);
+				console.log(cate4Array);
+			});
+			
+			/* 배열 초기화 */
+			makeCateArray(cate3Obj,cate3Array,DtCateList,'R');
+			makeCateArray(cate4Obj,cate4Array,DtCateList,'S');
+			
+			for(let i = 0; i < cate3Array.length; i++){
+				cateSelect3.append("<option value='"+cate3Array[i].detailNm+"'>" + cate3Array[i].detailNm + "</option>");
+			}
+			
+			for(let i = 0; i < cate4Array.length; i++){
+				cateSelect4.append("<option value='"+cate4Array[i].detailNm+"'>" + cate4Array[i].detailNm + "</option>");
+			}
+			
+		</script>
 	</body>
 </html>
