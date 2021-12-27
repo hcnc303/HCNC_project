@@ -53,7 +53,7 @@ public class ProjectController {
 		
 		List<?> list = projectService.selectProjectList(vo);
 		
-		System.out.println(list);
+		/*System.out.println(list);*/
 		model.addAttribute("resultList", list);
 		return "project/projectList";
 	}
@@ -62,7 +62,7 @@ public class ProjectController {
 	public String selectProjectDetail(String p_id, ModelMap model) throws Exception{
 		 
 		ProjectVO vo = projectService.selectProjectDetail(p_id);
-		System.out.println("프로젝트번호:"+vo.getP_id());
+		/*System.out.println("프로젝트번호:"+vo.getP_id());*/
 		
 		model.addAttribute("projectVO",vo);
 		

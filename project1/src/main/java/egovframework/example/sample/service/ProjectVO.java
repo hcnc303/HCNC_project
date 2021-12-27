@@ -33,4 +33,7 @@ public class ProjectVO {
 	
 	/* 비고 */
 	private String p_note;
+	
+	/* 티어 */
+	private int tier;
 }

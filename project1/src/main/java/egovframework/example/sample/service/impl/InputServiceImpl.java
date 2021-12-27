@@ -10,6 +10,7 @@ import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.InputService;
 import egovframework.example.sample.service.InputVO;
+import egovframework.example.sample.service.ProjectVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 @Service("inputService")
@@ -32,5 +33,11 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	@Override
 	public List<?> selectDevCateList(DeveloperVO dvo) throws Exception {
 		return inputDAO.selectDevCateList(dvo);
+	}
+
+	@Override
+	public List<?> selectProCateList(ProjectVO pvo) throws Exception {
+		
+		return inputDAO.selectProCateList(pvo);
 	}
 }

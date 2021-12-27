@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.DtCateVO;
 import egovframework.example.sample.service.InputVO;
+import egovframework.example.sample.service.ProjectVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("inputDAO")
@@ -26,6 +27,8 @@ public class InputDAO extends EgovAbstractDAO{
 		return list("inputDAO.selectDevCateList", dvo);
 	}
 	
-	
+	public List<?> selectProCateList(ProjectVO pvo) {
+		return list("inputDAO.selectProCateList", pvo);
+	}
 
 }

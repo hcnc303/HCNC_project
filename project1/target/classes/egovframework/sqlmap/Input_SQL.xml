@@ -6,6 +6,7 @@
 	<typeAlias alias="InputVO" type="egovframework.example.sample.service.InputVO" />
 	<typeAlias alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 	<typeAlias alias="DeveloperVO" type="egovframework.example.sample.service.DeveloperVO"/>
+	<typeAlias alias="ProjectVO" type="egovframework.example.sample.service.ProjectVO"/>
 	
 	
 	<insert id="inputDAO.insertInput">
@@ -19,5 +20,9 @@
 	
 	<select id="inputDAO.selectDevCateList" resultClass="egovMap">
 		select * from hc_developer;
+	</select>
+	
+	<select id="inputDAO.selectProCateList" resultClass="egovMap">
+		select * from hc_project;
 	</select>
 </sqlMap>

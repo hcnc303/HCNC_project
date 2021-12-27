@@ -67,7 +67,7 @@
 									</div>
 									<div class="x_content">
 										<br />
-										<form id="demo-form2" name="frm" method="post" action="inputtWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+										<form id="demo-form2" name="frm" method="post" action="inputWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 											<div class="form-group row">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id">프로젝트 <span class="required">*</span></label>
 												<div class="col-md-6 col-sm-6 ">
@@ -167,6 +167,7 @@
 		<script>
 			var DtCateList = JSON.parse('${DtCateList}');
 			var DevCateList = JSON.parse('${DevCateList}');
+			var ProCateList = JSON.parse('${ProCateList}');
 			
 			var cate1Array = new Array();
 			var cate2Array = new Array();
@@ -220,6 +221,31 @@
 				}
 			}
 			
+			function makeProCateArray(obj,array,ProCateList,tier) {
+				
+				for(var i = 0; i < ProCateList.length; i++){
+					
+					if(ProCateList[i].tier === tier){
+						obj = new Object();
+						
+						
+						obj.p_id = ProCateList[i].pId;
+						obj.p_name = ProCateList[i].pName;
+						obj.p_startdate = ProCateList[i].pStartdate;
+						obj.p_enddate = ProCateList[i].pEnddate;
+						obj.p_place = ProCateList[i].pPlace;
+						obj.p_buyer = ProCateList[i].pBuyer;
+						obj.p_salesman = ProCateList[i].pSalesman;
+						obj.p_tell = ProCateList[i].pTell;
+						obj.p_progress = ProCateList[i].pProgress;
+						obj.p_note = ProCateList[i].pNote;
+						obj.tier = ProCateList[i].tier;
+						
+						array.push(obj);
+					}
+				}
+			}
+			
 			$(document).ready(function(){
 				console.log(cate1Array);
 				console.log(cate2Array);
@@ -228,10 +254,14 @@
 			});
 			
 			/* 배열 초기화 */
+			makeProCateArray(cate1Obj,cate1Array,ProCateList,1);
 			makeDevCateArray(cate2Obj,cate2Array,DevCateList,1);
 			makeCateArray(cate3Obj,cate3Array,DtCateList,'R');
 			makeCateArray(cate4Obj,cate4Array,DtCateList,'S');
 			
+			for(let i = 0; i < cate1Array.length; i++){
+				cateSelect1.append("<option value='"+cate1Array[i].p_id+"'>" + cate1Array[i].p_name + "</option>");
+			}
 			
 			for(let i = 0; i < cate2Array.length; i++){
 				cateSelect2.append("<option value='"+cate2Array[i].d_id+"'>" + cate2Array[i].d_name + "</option>");

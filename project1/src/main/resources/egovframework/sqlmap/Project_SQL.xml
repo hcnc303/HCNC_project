@@ -8,8 +8,8 @@
 	<typeAlias  alias="dtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 	
 	<insert id="projectDAO.insertProject">
-		insert into hc_project(p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note)  
-        values (#p_id#, #p_name#, #p_startdate#, #p_enddate#, #p_place#, #p_buyer#, #p_salesman#, #p_tell#, #p_progress#, #p_note#)
+		insert into hc_project(p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note ,tier)  
+        values (#p_id#, #p_name#, #p_startdate#, #p_enddate#, #p_place#, #p_buyer#, #p_salesman#, #p_tell#, #p_progress#, #p_note#, 1)
 	</insert>
 	
 	<select id="projectDAO.selectDtCateList" resultClass="dtCateVO">
