@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>      
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
 <!DOCTYPE html>
 <html>
 	<head>
@@ -104,7 +105,10 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate4" id="p_place" name="p_place">
-			                                          <option selected value="none">사업장소를 선택해주세요.</option>
+														<c:forEach var="cateList" items="${dVo}" varStatus="i">
+			                                          		<option selected value="none">사업장소를 선택해주세요.</option>
+			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
+			                                          	</c:forEach>
 			                                       </select>
 												</div>
 											</div>
@@ -113,7 +117,10 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate6" id="p_buyer" name="p_buyer">
-			                                          <option selected value="none">발주처를 선택해주세요.</option>
+			                                          <c:forEach var="cateList" items="${dVo}" varStatus="i">
+			                                          		<option selected value="none">발주처를 선택해주세요.</option>
+			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
+			                                          	</c:forEach>
 			                                       </select>
 												</div>
 											</div>
@@ -136,7 +143,10 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate5" id="p_progress" name="p_progress">
-			                                          <option selected value="none">진행상태를 선택해주세요.</option>
+			                                          <c:forEach var="cateList" items="${dVo}" varStatus="i">
+			                                          		<option selected value="none">진행상태를 선택해주세요.</option>
+			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
+			                                          	</c:forEach>
 			                                       </select>
 												</div>
 											</div>
