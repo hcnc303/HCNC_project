@@ -136,14 +136,11 @@
 							<button type="submit" class="btn btn-success">저장</button>
 						</div>
 					</div>
-					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	</div>
-	</div>
 	<!-- /page content -->
 
 	<!-- footer content -->

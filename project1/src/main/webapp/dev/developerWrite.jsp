@@ -136,14 +136,13 @@
 							<button type="submit" class="btn btn-success">저장</button>
 						</div>
 					</div>
-					</form>
+
 				</div>
 			</div>
 		</div>
 	</div>
 
-	</div>
-	</div>
+
 	<!-- /page content -->
 
 	<!-- footer content -->
@@ -155,8 +154,7 @@
 		<div class="clearfix"></div>
 	</footer>
 	<!-- /footer content -->
-	</div>
-	</div>
+
 
 	<!-- jQuery -->
 	<script src="/vendors/jquery/dist/jquery.min.js"></script>
