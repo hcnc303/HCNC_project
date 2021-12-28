@@ -93,6 +93,7 @@
                           <th>지역</th>
                           <th>이름</th>
                           <th>직급</th>
+                          <th>등급</th>
                           <th>역할</th>
                           <th>상주</th>                                                                    
                         </tr>
@@ -111,6 +112,7 @@
 	                          <td>${list.pPlace }</td>
 	                          <td>${list.dName }</td>
 	                          <td>${list.dJobgrade }</td>
+	                          <td>${list.dTier }</td>
 	                          <td>${list.iRole }</td>
 	                          <td>${list.iStay }</td>
 	                        </tr>
