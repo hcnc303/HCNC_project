@@ -69,13 +69,6 @@
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="MsCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="msTier" >티어 <span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="msTier" required="required" class="form-control "name="msTier" value=1 readonly>
-												</div>
-											</div>
-											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
