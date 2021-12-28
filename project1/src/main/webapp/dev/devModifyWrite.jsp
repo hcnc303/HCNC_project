@@ -125,15 +125,16 @@
 										</select>
 									</div>
 								</div>
+							
+								<div class="ln_solid"></div>
+								<div class="item form-group">
+									<div class="col-md-6 col-sm-6 offset-md-3">
+										<button class="btn btn-primary" type="button">취소</button>
+										<button class="btn btn-primary" type="reset">초기화</button>
+										<button type="submit" class="btn btn-success">저장</button>
+									</div>
+								</div>
 							</form>
-						</div>
-					</div>
-					<div class="ln_solid"></div>
-					<div class="item form-group">
-						<div class="col-md-6 col-sm-6 offset-md-3">
-							<button class="btn btn-primary" type="button">취소</button>
-							<button class="btn btn-primary" type="reset">초기화</button>
-							<button type="submit" class="btn btn-success">저장</button>
 						</div>
 					</div>
 				</div>
