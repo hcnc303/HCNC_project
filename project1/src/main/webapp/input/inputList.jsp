@@ -92,6 +92,7 @@
                           <th>진행단계</th>
                           <th>지역</th>
                           <th>이름</th>
+                          <th>직급</th>
                           <th>역할</th>
                           <th>상주</th>                                                                    
                         </tr>
@@ -99,19 +100,21 @@
 
 
                       <tbody>
-                        <tr>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                          <td>a</td>
-                        </tr>
-                        
+                      	<c:forEach var="list" items="${resultList}" varStatus="status">
+	                      	<tr>
+	                          <td>${list.pId }</td>
+	                          <td>${list.pName }</td>
+	                          <td>${list.pStartdate }</td>
+	                          <td>${list.pEnddate }</td>
+	                          <td>${list.pBuyer }</td>
+	                          <td>${list.pProgress }</td>
+	                          <td>${list.pPlace }</td>
+	                          <td>${list.dName }</td>
+	                          <td>${list.dJobgrade }</td>
+	                          <td>${list.iRole }</td>
+	                          <td>${list.iStay }</td>
+	                        </tr>
+                      	</c:forEach>                 
                       </tbody>
                     </table>
                   </div>

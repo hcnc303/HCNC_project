@@ -23,8 +23,13 @@ import egovframework.example.sample.service.ProjectVO;
 public class InputController {
 	@Resource(name="inputService")
 	private InputService inputService;
+	
 	@RequestMapping(value="/inputList.do",method = {RequestMethod.GET, RequestMethod.POST})
-	public String selectInputList(InputVO vo) {
+	public String selectInputList(InputVO vo, Model model) throws Exception {
+		
+		List<?> list = inputService.selectInputList(vo);
+		
+		model.addAttribute("resultList", list);
 		
 		return "input/inputList";
 		

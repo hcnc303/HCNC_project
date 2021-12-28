@@ -40,4 +40,10 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 		
 		return inputDAO.selectProCateList(pvo);
 	}
+
+	@Override
+	public List<?> selectInputList(InputVO vo) throws Exception {
+		
+		return inputDAO.selectInputList(vo);
+	}
 }

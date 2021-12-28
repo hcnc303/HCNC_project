@@ -10,4 +10,7 @@ public class InputVO {
 	private String i_stay;
 	private String i_role;
 	
+	private ProjectVO projectVO;
+	private DeveloperVO developerVO;
+	
 }

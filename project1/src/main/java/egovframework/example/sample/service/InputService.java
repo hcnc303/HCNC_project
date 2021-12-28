@@ -11,4 +11,6 @@ public interface InputService {
 	List<?> selectDevCateList(DeveloperVO dvo) throws Exception;
 	
 	List<?> selectProCateList(ProjectVO pvo) throws Exception;
+	
+	List<?> selectInputList(InputVO vo) throws Exception;
 }

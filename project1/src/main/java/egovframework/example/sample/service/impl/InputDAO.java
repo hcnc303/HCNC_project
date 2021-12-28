@@ -31,4 +31,9 @@ public class InputDAO extends EgovAbstractDAO{
 		return list("inputDAO.selectProCateList", pvo);
 	}
 
+	public List<?> selectInputList(InputVO vo) {
+		
+		return list("inputDAO.selectInputList", vo);
+	}
+
 }
