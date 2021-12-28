@@ -93,12 +93,12 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 시작일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="date" name="p_startdate" required="required"></div>
+	                                                <input class="form-control" type="date" name="p_startdate" required="required" value="${vo.p_startdate}"></div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 종료일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="date" name="p_enddate" required="required"></div>
+	                                                <input class="form-control" type="date" name="p_enddate" required="required" value="${vo.p_enddate}"></div>
                                         	</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_place">사업 장소<span class="required">*</span>
