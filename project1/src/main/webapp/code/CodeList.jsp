@@ -44,21 +44,10 @@
     <%@include file="../includes/project/header.jsp" %>
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
+          <div class="contents">
             <div class="page-title">
               <div class="title_left">
                 <h3>코드 관리<small></small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -150,7 +139,7 @@
 	                          <td>${d.masterCd }</td>
 	                          <td>${d.detailCd }</td>
 	                          <td>${d.detailNm }</td>
-	                          <td><button type="button" class="btn btn-round btn-secondary" onclick="fn_update('${d.detailNm}')">수정</button></td>
+	                          <td><button type="button" class="btn btn-round btn-primary" onclick="fn_update('${d.detailNm}')">수정</button></td>
 	                        </tr>
 	                    </c:forEach>
 

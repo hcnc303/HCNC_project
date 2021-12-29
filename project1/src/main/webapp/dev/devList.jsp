@@ -64,25 +64,12 @@
 
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="">
+		<div class="contents">
 			<div class="page-title">
 				<div class="title_left">
 					<h3>
 						개발자 관리<small></small>
 					</h3>
-				</div>
-
-				<div class="title_right">
-					<div
-						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-						<div class="input-group">
-							<input type="text" class="form-control"
-								placeholder="Search for..."> <span
-								class="input-group-btn">
-								<button class="btn btn-secondary" type="button">Go!</button>
-							</span>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -136,9 +123,9 @@
 														<td>${result.dTier}</td>
 														<td>${result.dType}</td>
 														<td>
-															<button type="button" class="btn btn-round btn-secondary"
+															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${result.dId}')">수정</button>
-															<button type="button" class="btn btn-round btn-secondary"
+															<button type="button" class="btn btn-round btn-danger"
 																onclick="fn_delete('${result.dId}')">삭제</button>
 														</td>
 													</tr>
