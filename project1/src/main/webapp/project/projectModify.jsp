@@ -143,10 +143,9 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate5" id="p_progress" name="p_progress">
-			                                          <c:forEach var="cateList" items="${dVo}" varStatus="i">
-			                                          		<option selected value="none">진행상태를 선택해주세요.</option>
-			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
-			                                          	</c:forEach>
+			                                        	<option <c:out value="${vo.p_progress == '공고전'?'selected':''}" />>공고전</option>
+														<option <c:out value="${vo.p_progress == '수행중'?'selected':''}" />>수행중</option>
+														<option <c:out value="${vo.p_progress == '사업완료'?'selected':''}" />>사업완료</option>
 			                                       </select>
 												</div>
 											</div>
