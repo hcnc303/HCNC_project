@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>      
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,10 +43,22 @@
 
 	<!-- page content -->
 	<div class="right_col" role="main">
-		<div class="contents">
+		<div class="">
 			<div class="page-title">
 				<div class="title_left">
 					<h3>코드 작성</h3>
+				</div>
+
+				<div class="title_right">
+					<div class="col-md-5 col-sm-5  form-group pull-right top_search">
+						<div class="input-group">
+							<input type="text" class="form-control"
+								placeholder="Search for..."> <span
+								class="input-group-btn">
+								<button class="btn btn-default" type="button">Go!</button>
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -89,9 +106,16 @@
 									<label class="col-form-label col-md-3 col-sm-3 label-align"
 										for="d_jobgrade">직급 <span class="required">*</span></label>
 									<div class="col-md-6 col-sm-6 ">
-										<select class="form-control cate1" id="d_jobgrade"
-											name="d_jobgrade">
-											<option selected value="">직급을 선택해주세요.</option>
+										<select class="form-control" id="d_jobgrade" name="d_jobgrade">
+												<option <c:out value="${vo.d_jobgrade == '사원'?'selected':''}" />>사원</option>
+												<option <c:out value="${vo.d_jobgrade == '대리'?'selected':''}" />>대리</option>
+												<option <c:out value="${vo.d_jobgrade == '과장'?'selected':''}" />>과장</option>
+												<option <c:out value="${vo.d_jobgrade == '차장'?'selected':''}" />>차장</option>
+												<option <c:out value="${vo.d_jobgrade == '부장'?'selected':''}" />>부장</option>
+												<option <c:out value="${vo.d_jobgrade == '이사'?'selected':''}" />>이사</option>
+												<option <c:out value="${vo.d_jobgrade == '상무'?'selected':''}" />>상무</option>
+												<option <c:out value="${vo.d_jobgrade == '전무'?'selected':''}" />>전무</option>
+												<option <c:out value="${vo.d_jobgrade == '프리'?'selected':''}" />>프리</option>
 										</select>
 									</div>
 								</div>
@@ -99,8 +123,10 @@
 									<label class="col-form-label col-md-3 col-sm-3 label-align"
 										for="d_tier">등급 <span class="required">*</span></label>
 									<div class="col-md-6 col-sm-6 ">
-										<select class="form-control cate2" id="d_tier" name="d_tier">
-											<option selected value="none">등급을 선택해주세요.</option>
+										<select class="form-control cate2" id="d_tier" name="d_tier" value="${vo.d_tier }">
+											<option <c:out value="${vo.d_tier == '초급'?'selected':''}" />>초급</option>
+											<option <c:out value="${vo.d_tier == '중급'?'selected':''}" />>중급</option>
+											<option <c:out value="${vo.d_tier == '고급'?'selected':''}" />>고급</option>
 										</select>
 									</div>
 								</div>
@@ -108,8 +134,10 @@
 									<label class="col-form-label col-md-3 col-sm-3 label-align"
 										for="d_type">직원구분여부 <span class="required">*</span></label>
 									<div class="col-md-6 col-sm-6 ">
-										<select class="form-control cate3" id="d_type" name="d_type">
-											<option selected value="none">직원구분여부를 선택해주세요.</option>
+										<select class="form-control cate3" id="d_type" name="d_type" value="${vo.d_type }">
+											<option <c:out value="${vo.d_type == '정직원'?'selected':''}" />>정직원</option>
+											<option <c:out value="${vo.d_type == '프리'?'selected':''}" />>프리</option>
+											<option <c:out value="${vo.d_type == '하도급'?'selected':''}" />>하도급</option>
 										</select>
 									</div>
 								</div>
@@ -117,7 +145,8 @@
 								<div class="ln_solid"></div>
 								<div class="item form-group">
 									<div class="col-md-6 col-sm-6 offset-md-3">
-										<button class="btn btn-danger" type="button">취소</button>
+										<button class="btn btn-primary" type="button">취소</button>
+										<button class="btn btn-primary" type="reset">초기화</button>
 										<button type="submit" class="btn btn-success">저장</button>
 									</div>
 								</div>
