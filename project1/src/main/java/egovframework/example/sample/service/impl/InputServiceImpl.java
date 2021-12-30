@@ -52,4 +52,5 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 		
 		return inputDAO.insertInput2(vo);
 	}
+
 }

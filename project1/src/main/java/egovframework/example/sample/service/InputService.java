@@ -15,4 +15,5 @@ public interface InputService {
 	List<?> selectInputList(InputVO vo) throws Exception;
 	
 	public String insertInput2(InputVO vo) throws Exception;
+
 }

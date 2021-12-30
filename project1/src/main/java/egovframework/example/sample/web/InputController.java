@@ -57,6 +57,7 @@ public class InputController {
 		model.addAttribute("DevCateList", DevCateList);
 		
 		model.addAttribute("ProCateList", ProCateList);
+		
 		model.addAttribute("pvo", pvo);
 		
 		return "input/inputWrite";
@@ -87,8 +88,7 @@ public class InputController {
 		model.addAttribute("ProCateList", ProCateList);
 		model.addAttribute("pvo", pvo);
 		
-		return "input/inputWrite2";
-		
+		return "input/inputWrite2";		
 	}
 	
 	@RequestMapping(value="/inputWriteSave.do")
@@ -106,4 +106,5 @@ public class InputController {
 		return "redirect:inputWrite.do";
 		
 	}
+	
 }

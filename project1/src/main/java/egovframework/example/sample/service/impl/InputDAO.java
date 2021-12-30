@@ -40,4 +40,5 @@ public class InputDAO extends EgovAbstractDAO{
 
 		return (String) insert("inputDAO.insertInput2", vo);
 	}
+
 }

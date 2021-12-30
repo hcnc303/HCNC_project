@@ -66,9 +66,7 @@ public class DeveloperController {
 		
 		return "dev/devList";
 	}
-	
-
-	
+		
 	@RequestMapping(value="/devDelete.do")
 	public String deleteDev(String d_id) throws Exception {
 		
