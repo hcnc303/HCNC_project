@@ -57,8 +57,37 @@ public class InputController {
 		model.addAttribute("DevCateList", DevCateList);
 		
 		model.addAttribute("ProCateList", ProCateList);
+		model.addAttribute("pvo", pvo);
 		
 		return "input/inputWrite";
+		
+	}
+	
+	@RequestMapping(value="/inputWrite2.do") // 프로젝트 리스트에서 바로 input 입력으로 바로 가게 하는 것
+	public String insertInput2(DtCateVO vo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
+		
+		ObjectMapper objm = new ObjectMapper();
+		
+		List DtList = inputService.selectDtCateList(vo);
+		
+		List DevList = inputService.selectDevCateList(dvo);
+		
+		List ProList = inputService.selectProCateList(pvo);
+		
+		String DtCateList = objm.writeValueAsString(DtList);
+		
+		String DevCateList = objm.writeValueAsString(DevList);
+		
+		String ProCateList = objm.writeValueAsString(ProList);
+		
+		model.addAttribute("DtCateList",DtCateList);
+		
+		model.addAttribute("DevCateList", DevCateList);
+		
+		model.addAttribute("ProCateList", ProCateList);
+		model.addAttribute("pvo", pvo);
+		
+		return "input/inputWrite2";
 		
 	}
 	

@@ -46,4 +46,10 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 		
 		return inputDAO.selectInputList(vo);
 	}
+
+	@Override
+	public String insertInput2(InputVO vo) throws Exception {
+		
+		return inputDAO.insertInput2(vo);
+	}
 }
