@@ -219,11 +219,11 @@
 		let cate5Array = new Array();
 		let cate6Array = new Array();
 		let cate4Obj = new Object();
-		let cate5Obj = new Object();
+
 		let cate6Obj = new Object();
 		
 		let cateSelect4 = $(".cate4");
-		let cateSelect5 = $(".cate5");
+
 		let cateSelect6 = $(".cate6");
 		
 		/* 카테고리 배열 초기화 메서드 */
@@ -244,7 +244,7 @@
 
 		/* 배열 초기화 */
 		makeCateArray(cate4Obj,cate4Array,cateList,'L');
-		makeCateArray(cate5Obj,cate5Array,cateList,'P');
+
 		makeCateArray(cate6Obj,cate6Array,cateList,'B');
 		
 		/* 발주처 카테고리 */
@@ -256,12 +256,6 @@
 		for(let i = 0; i < cate6Array.length; i++){
 			cateSelect6.append("<option value='"+cate6Array[i].detailNm+"'>" + cate6Array[i].detailNm + "</option>");
 		}// for
-		
-		for(let i = 0; i < cate5Array.length; i++){
-			cateSelect5.append("<option value='"+cate5Array[i].detailNm+"'>" + cate5Array[i].detailNm + "</option>");
-		}// for
-		
-		
 		
 		</script>
 	</body>
