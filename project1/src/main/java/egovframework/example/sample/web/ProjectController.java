@@ -25,11 +25,13 @@ public class ProjectController {
 	@RequestMapping(value="/projectWrite.do")
 	public String projectWrite(DtCateVO dVo, ModelMap model) throws Exception{
 		ObjectMapper objm = new ObjectMapper();
-		List<?> list = projectService.selectDtCateList(dVo);
+		List<?> list = projectService.selectBuCateList(dVo);
+		List<?> loList = projectService.selectLoCateList(dVo);
 		String cateList = objm.writeValueAsString(list);
+		String loCateList = objm.writeValueAsString(loList);
 		
 		model.addAttribute("cateList", cateList);
-		
+		model.addAttribute("loCateList", loCateList);
 		
 		return "project/projectWrite";
 		
@@ -86,12 +88,14 @@ public class ProjectController {
 	public String selectProjectModify(String p_id, DtCateVO dVo, ModelMap model) throws Exception{
 		
 		ObjectMapper objm = new ObjectMapper();
-		List<?> cateList = projectService.selectDtCateList(dVo);
+		List<?> cateList = projectService.selectBuCateList(dVo);
+		List<?> loCateList = projectService.selectLoCateList(dVo);
 		//String cateList = objm.writeValueAsString(list);
 		
 		ProjectVO vo = projectService.selectProjectDetail(p_id);
 		model.addAttribute("vo", vo);
 		model.addAttribute("cateList", cateList);
+		model.addAttribute("loCateList", loCateList);
 		
 		return "project/projectModify";
 	}

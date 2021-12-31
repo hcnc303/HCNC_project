@@ -199,7 +199,7 @@
 		<script>
 		/* 카테고리 */
 		let cateList = JSON.parse('${cateList}');
-		
+		let loCateList = JSON.parse('${loCateList}');
 		
 		let cate4Array = new Array();
 		let cate5Array = new Array();
@@ -227,9 +227,24 @@
 				}
 			}
 		}	
+		
+		function makeLoCateArray(obj,array,loCateList, masterCd){
+			for(let i = 0; i < loCateList.length; i++){
+				if(loCateList[i].masterCd === masterCd){
+					obj = new Object();
+					
+					obj.masterCd = loCateList[i].masterCd;
+					obj.detailCd = loCateList[i].detailCd;
+					obj.detailNm = loCateList[i].detailNm;
+					
+					array.push(obj);				
+					
+				}
+			}
+		}
 
 		/* 배열 초기화 */
-		makeCateArray(cate4Obj,cate4Array,cateList,'L');
+		makeLoCateArray(cate4Obj,cate4Array,loCateList,'L');
 		makeCateArray(cate5Obj,cate5Array,cateList,'P');
 		makeCateArray(cate6Obj,cate6Array,cateList,'B');
 		
