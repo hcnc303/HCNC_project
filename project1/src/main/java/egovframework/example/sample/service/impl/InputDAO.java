@@ -41,8 +41,8 @@ public class InputDAO extends EgovAbstractDAO{
 		return (String) insert("inputDAO.insertInput2", vo);
 	}
 
-	public InputVO selectInputDetail(String d_id) {
-		return (InputVO) select("inputDAO.selectInputDetail",d_id);
+	public InputVO selectInputDetail(String p_id, String d_id) {
+		return (InputVO) select("inputDAO.selectInputDetail",p_id, d_id);
 	}
 
 	public int updateInput(InputVO vo) {

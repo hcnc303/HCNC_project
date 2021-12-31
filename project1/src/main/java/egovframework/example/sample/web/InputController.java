@@ -108,46 +108,12 @@ public class InputController {
 	}
 	
 	@RequestMapping(value="/inputModify.do") // 투입인력 리스트에서 바로 input 입력으로 바로 가게 하는 것
-	public String inputModify(DtCateVO vo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
-		
-		ObjectMapper objm = new ObjectMapper();
-		
-		List DtList = inputService.selectDtCateList(vo);
-		
-		List DevList = inputService.selectDevCateList(dvo);
-		
-		List ProList = inputService.selectProCateList(pvo);
-		
-		String DtCateList = objm.writeValueAsString(DtList);
-		
-		String DevCateList = objm.writeValueAsString(DevList);
-		
-		String ProCateList = objm.writeValueAsString(ProList);
-		
-		model.addAttribute("DtCateList",DtCateList);
-		
-		model.addAttribute("DevCateList", DevCateList);
-		
-		model.addAttribute("ProCateList", ProCateList);
-		model.addAttribute("pvo", pvo);
-		
-		return "input/inputModify";
+	
 		
 	}
 	
 	@RequestMapping(value="/inputModifySave.do")
-	public String insertModify(InputVO vo) throws Exception{
-		
-		String result = inputService.insertInput(vo);
-		
-
-		
-		if( result == null) {
-			System.out.println("저장완료");
-		}
-		
-		
-		return "redirect:inputModify.do";
+	
 		
 	}
 	

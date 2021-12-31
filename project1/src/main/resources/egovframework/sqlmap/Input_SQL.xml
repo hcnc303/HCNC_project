@@ -37,22 +37,23 @@
 	</select>
 	
 	<select id="inputDAO.selectInputDetail" resultClass="egovMap">
-		SELECT i.p_id, i.d_id, i.i_role, i.i_stay
+		SELECT p.p_id, d.d_id, i.i_role, i.i_stay
 		FROM hc_InputWorkers AS i
 		INNER JOIN hc_project AS p
 		ON i.p_id = p.p_id
 		INNER JOIN hc_developer AS d
 		ON i.d_id = d.d_id
+		WHERE p_id=#p_id# AND d_id=#d_id#
 	</select>
 		
 	<update id="inputDAO.updateInput">
 		UPDATE hc_InputWorkers SET 
 			p_id=#p_id#, d_id=#d_id#, i_role=#i_role#, i_stay=#i_stay#
-		WHERE d_id = #d_id#
+		WHERE d_id=#d_id#
 	</update>
 	
 	<delete id="inputDAO.deleteInput">
-		DELETE FROM hc_InputWorkers WHERE d_id = #d_id#
+		DELETE FROM hc_InputWorkers WHERE d_id=#d_id#
 	</delete>
 </sqlMap>
 
