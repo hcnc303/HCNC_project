@@ -94,10 +94,9 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate4" id="p_place" name="p_place">
-														<c:forEach var="cateList" items="${dVo}" varStatus="i">
-			                                          		<option selected value="none">사업장소를 선택해주세요.</option>
-			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
-			                                          	</c:forEach>
+														<c:forEach var="locateList" items="${loCateList}">
+															<option <c:out value="${vo.p_place==locateList.detailNm?'selected':''}" />>${ locateList.detailNm}</option>
+														</c:forEach>
 			                                       </select>
 												</div>
 											</div>
@@ -212,17 +211,15 @@
 		<script>
 		/* 카테고리 */
 		let cateList = JSON.parse('${cateList}');
-		
+		let loCateList = JSON.parse('${loCateList}');
 		
 		let cate4Array = new Array();
-		let cate5Array = new Array();
 		let cate6Array = new Array();
-		let cate4Obj = new Object();
-
+		
+		let cate4Obj = new Object();		
 		let cate6Obj = new Object();
 		
 		let cateSelect4 = $(".cate4");
-
 		let cateSelect6 = $(".cate6");
 		
 		/* 카테고리 배열 초기화 메서드 */
@@ -240,9 +237,24 @@
 				}
 			}
 		}	
+		
+		function makeLoCateArray(obj,array,loCateList, masterCd){
+			for(let i = 0; i < loCateList.length; i++){
+				if(loCateList[i].masterCd === masterCd){
+					obj = new Object();
+					
+					obj.masterCd = loCateList[i].masterCd;
+					obj.detailCd = loCateList[i].detailCd;
+					obj.detailNm = loCateList[i].detailNm;
+					
+					array.push(obj);				
+					
+				}
+			}
+		}
 
 		/* 배열 초기화 */
-		makeCateArray(cate4Obj,cate4Array,cateList,'L');
+		makeLoCateArray(cate4Obj,cate4Array,loCateList,'L');
 
 		makeCateArray(cate6Obj,cate6Array,cateList,'B');
 		
