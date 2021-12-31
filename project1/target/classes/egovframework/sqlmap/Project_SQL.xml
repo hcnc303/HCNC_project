@@ -13,7 +13,7 @@
 	</insert>
 	
 	<select id="projectDAO.selectDtCateList" resultClass="dtCateVO">
-		SELECT * FROM hc_dtcode order by codeNo
+		SELECT * FROM hc_dtcode where masterCd='B' order by codeNo
 	</select>
 
 	<select id="projectDAO.selectProjectList" resultClass="egovMap">

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>      
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -34,10 +38,21 @@
 	
 				<!-- page content -->
 				<div class="right_col" role="main">
-					<div class="contents">
+					<div class="">
 						<div class="page-title">
 							<div class="title_left">
 								<h3>프로젝트 작성</h3>
+							</div>
+	
+							<div class="title_right">
+								<div class="col-md-5 col-sm-5  form-group pull-right top_search">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Search for...">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">Go!</button>
+										</span>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -266,3 +281,7 @@
 		</script>
 	</body>
 </html>
+
+
+
+

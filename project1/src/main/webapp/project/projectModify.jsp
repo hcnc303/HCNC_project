@@ -105,12 +105,11 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_buyer">발주처<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<select class="form-control cate6" id="p_buyer" name="p_buyer">
-			                                          <c:forEach var="cateList" items="${dVo}" varStatus="i">
-			                                          		<option selected value="none">발주처를 선택해주세요.</option>
-			                                          		<option value="${cateList.p_place}">${cateList.p_place}</option>
-			                                          	</c:forEach>
-			                                       </select>
+													<select class="form-control" id="p_buyer" name="p_buyer">
+														<c:forEach var="bucateList" items="${cateList}">
+															<option <c:out value="${vo.p_buyer==bucateList.detailNm?'selected':''}" />>${ bucateList.detailNm}</option>
+														</c:forEach>
+													</select>
 												</div>
 											</div>
 											<div class="item form-group">

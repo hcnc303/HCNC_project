@@ -15,6 +15,16 @@
 	display : none;
 }
 </style>
+<script>
+	function fn_update(p_id, d_id) {
+		location = "inputModify.do?p_id=" + p_id + "&d_id=" + d_id;
+	}
+	function fn_delete(p_id, d_id) {
+		if (confirm("정말 삭제하시겠습니까?")) {
+			location = "inputDelete.do?p_id=" + p_id + "&d_id=" + d_id;
+		}
+	}
+</script>
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -46,11 +56,6 @@
 <!-- Custom Theme Style -->
 <link href="/build/css/custom.min.css" rel="stylesheet">
 
-<script>
-	function fn_update(p_id, d_id) {
-		location = "inputModifyWrite.do?p_id=" + p_id + "&d_id=" + d_id; 
-	}
-</script>
 </head>
 
 <body class="nav-md">
@@ -102,7 +107,7 @@
 													<th>발주처</th>
 													<th>진행단계</th>
 													<th>지역</th>
-													<th class = "hidden">사번</th>
+													<th class="hidden">사번</th>
 													<th>이름</th>
 													<th>직급</th>
 													<th>등급</th>
@@ -124,15 +129,17 @@
 														<td>${list.pBuyer }</td>
 														<td>${list.pProgress }</td>
 														<td>${list.pPlace }</td>
-														<td class = "hidden">${list.dId }</td>
+														<td class="hidden">${list.dId }</td>
 														<td>${list.dName }</td>
 														<td>${list.dJobgrade }</td>
 														<td>${list.dTier }</td>
 														<td>${list.iRole }</td>
 														<td>${list.iStay }</td>
 														<td>
-															<button type="button" class="btn btn-round btn-primary" onclick="fn_update('${list.pId}','${list.dId }')">수정</button>
-															<button type="button" class="btn btn-round btn-danger">삭제</button>
+															<button type="button" class="btn btn-round btn-primary"
+																onclick="fn_update('${list.pId}', '${list.dId}')">수정</button>
+															<button type="button" class="btn btn-round btn-danger"
+																onclick="fn_delete('${list.pId}', '${list.dId}')">삭제</button>
 														</td>
 													</tr>
 												</c:forEach>
@@ -199,3 +206,4 @@
 	<script src="/build/js/custom.min.js"></script>
 </body>
 </html>
+

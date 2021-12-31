@@ -86,8 +86,8 @@ public class ProjectController {
 	public String selectProjectModify(String p_id, DtCateVO dVo, ModelMap model) throws Exception{
 		
 		ObjectMapper objm = new ObjectMapper();
-		List<?> list = projectService.selectDtCateList(dVo);
-		String cateList = objm.writeValueAsString(list);
+		List<?> cateList = projectService.selectDtCateList(dVo);
+		//String cateList = objm.writeValueAsString(list);
 		
 		ProjectVO vo = projectService.selectProjectDetail(p_id);
 		model.addAttribute("vo", vo);

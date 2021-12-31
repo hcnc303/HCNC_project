@@ -15,5 +15,12 @@ public interface InputService {
 	List<?> selectInputList(InputVO vo) throws Exception;
 	
 	public String insertInput2(InputVO vo) throws Exception;
-
+	
+	public InputVO selectInputDetail(String d_id) throws Exception;
+	
+	public int updateInput(InputVO vo) throws Exception;
+	
+	public int deleteInput(String d_id) throws Exception;
 }
+
+
