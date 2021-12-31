@@ -123,7 +123,7 @@
 																<td>${result.pPlace }</td>
 																<td>${result.pBuyer }</td>
 																<td>${result.pSalesman }</td>
-																<td>${result.pTell }</td>
+																<td>${result.pTel }</td>
 																<td>${result.pProgress }</td>
 																<td>
 																 <span><button type="button" onclick="location='projectModifyWrite.do?p_id=${result.pId}'" class="btn btn-info btn-xs">수정</button></span> 

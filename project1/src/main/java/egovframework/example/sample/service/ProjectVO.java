@@ -26,7 +26,7 @@ public class ProjectVO {
 	private String p_salesman;
 	
 	/* 연락처 */
-	private String p_tell;
+	private String p_tel;
 	
 	/* 진행과정 */
 	private String p_progress;

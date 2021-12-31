@@ -8,8 +8,8 @@
 	<typeAlias  alias="dtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 	
 	<insert id="projectDAO.insertProject">
-		insert into hc_project(p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note ,tier)  
-        values (#p_id#, #p_name#, #p_startdate#, #p_enddate#, #p_place#, #p_buyer#, #p_salesman#, #p_tell#, #p_progress#, #p_note#, 1)
+		insert into hc_project(p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note ,tier)  
+        values (#p_id#, #p_name#, #p_startdate#, #p_enddate#, #p_place#, #p_buyer#, #p_salesman#, #p_tel#, #p_progress#, #p_note#, 1)
 	</insert>
 	
 	<select id="projectDAO.selectBuCateList" resultClass="dtCateVO">
@@ -21,11 +21,11 @@
 	</select>
 
 	<select id="projectDAO.selectProjectList" resultClass="egovMap">
-		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note from hc_project
+		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note from hc_project
 	</select>
 	
 	<select id="projectDAO.selectProjectDetail" resultClass="projectVO">
-		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tell, p_progress, p_note 
+		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note 
 		from hc_project where p_id=#p_id#
 	</select>
 	
@@ -36,7 +36,7 @@
 	<update id="projectDAO.updateProject">
 		update hc_project set 
 			p_name=#p_name#, p_startdate=#p_startdate#, p_enddate=#p_enddate#, p_place=#p_place#, p_buyer=#p_buyer#,
-			p_salesman=#p_salesman#, p_tell=#p_tell#, p_progress=#p_progress#, p_note=#p_note#
+			p_salesman=#p_salesman#, p_tel=#p_tel#, p_progress=#p_progress#, p_note=#p_note#
 		where p_id=#p_id#
 	</update>
 	

@@ -107,15 +107,8 @@ public class InputController {
 		
 	}
 	
-	@RequestMapping(value="/inputModify.do") // 투입인력 리스트에서 바로 input 입력으로 바로 가게 하는 것
-	
 		
-	}
 	
-	@RequestMapping(value="/inputModifySave.do")
-	
-		
-	}
 	
 
 	

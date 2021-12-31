@@ -109,10 +109,10 @@
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_tell">연락처 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_tel">연락처 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_tell" required="required" class="form-control" name="p_tell">
+													<input type="text" id="p_tel" required="required" class="form-control" name="p_tel">
 												</div>
 											</div>
 											<div class="item form-group">
