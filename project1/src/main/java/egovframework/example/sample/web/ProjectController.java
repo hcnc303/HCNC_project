@@ -27,11 +27,14 @@ public class ProjectController {
 		ObjectMapper objm = new ObjectMapper();
 		List<?> list = projectService.selectBuCateList(dVo);
 		List<?> loList = projectService.selectLoCateList(dVo);
+		List<?> poList = projectService.selectPoCateList(dVo);
 		String cateList = objm.writeValueAsString(list);
 		String loCateList = objm.writeValueAsString(loList);
+		String poCateList = objm.writeValueAsString(poList);
 		
 		model.addAttribute("cateList", cateList);
 		model.addAttribute("loCateList", loCateList);
+		model.addAttribute("poCateList", poCateList);
 		
 		return "project/projectWrite";
 		
@@ -90,12 +93,14 @@ public class ProjectController {
 		ObjectMapper objm = new ObjectMapper();
 		List<?> cateList = projectService.selectBuCateList(dVo);
 		List<?> loCateList = projectService.selectLoCateList(dVo);
+		List<?> poCateList = projectService.selectPoCateList(dVo);
 		//String cateList = objm.writeValueAsString(list);
 		
 		ProjectVO vo = projectService.selectProjectDetail(p_id);
 		model.addAttribute("vo", vo);
 		model.addAttribute("cateList", cateList);
 		model.addAttribute("loCateList", loCateList);
+		model.addAttribute("poCateList", poCateList);
 		
 		return "project/projectModify";
 	}

@@ -50,5 +50,10 @@ public class ProjectDAO extends EgovAbstractDAO {
 
 		return list("projectDAO.selectLoCateList", dvo);
 	}
+
+	public List<?> selectPoCateList(DtCateVO dvo) {
+		
+		return list("projectDAO.selectPoCateList", dvo);
+	}
 	
 }

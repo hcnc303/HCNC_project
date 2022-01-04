@@ -19,6 +19,10 @@
 	<select id="projectDAO.selectLoCateList" resultClass="dtCateVO">
 		SELECT * FROM hc_dtcode where masterCd='L' order by codeNo
 	</select>
+	
+	<select id="projectDAO.selectPoCateList" resultClass="dtCateVO">
+		SELECT * FROM hc_dtcode where masterCd='P' order by codeNo
+	</select>
 
 	<select id="projectDAO.selectProjectList" resultClass="egovMap">
 		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note from hc_project

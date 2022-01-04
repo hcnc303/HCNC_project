@@ -65,6 +65,12 @@ public class ProjectServiceImpl extends EgovAbstractServiceImpl implements Proje
 		return projectDAO.selectLoCateList(dvo);
 	}
 
+	@Override
+	public List<?> selectPoCateList(DtCateVO dvo) throws Exception {
+		
+		return projectDAO.selectPoCateList(dvo);
+	}
+
 	
 	
 	

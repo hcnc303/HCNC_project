@@ -31,6 +31,8 @@
 		<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
 		<!-- bootstrap-daterangepicker -->
 		<link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="datepicker/air-datepicker/dist/css/datepicker.min.css">
 	
 		<!-- Custom Theme Style -->
 		<link href="/build/css/custom.min.css" rel="stylesheet">
@@ -82,12 +84,12 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 시작일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="date" name="p_startdate" required="required" value="${vo.p_startdate}"></div>
+	                                                <input class="form-control" type="date" name="p_startdate" id="datepicker1" required="required" value="${vo.p_startdate}"></div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 종료일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="date" name="p_enddate" required="required" value="${vo.p_enddate}"></div>
+	                                                <input class="form-control" type="date" name="p_enddate" id="datepicker2" required="required" value="${vo.p_enddate}"></div>
                                         	</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_place">사업 장소<span class="required">*</span>
@@ -208,18 +210,25 @@
 		<!-- Custom Theme Scripts -->
 		<script src="/build/js/custom.min.js"></script>
 		
+		<script src="datepicker/air-datepicker/dist/js/datepicker.min.js"></script>
+	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
+		
 		<script>
 		/* 카테고리 */
 		let cateList = JSON.parse('${cateList}');
 		let loCateList = JSON.parse('${loCateList}');
+		let poCateList = JSON.parse('${poCateList}');
 		
 		let cate4Array = new Array();
+		let cate5Array = new Array();
 		let cate6Array = new Array();
 		
-		let cate4Obj = new Object();		
+		let cate4Obj = new Object();
+		let cate5Obj = new Object();
 		let cate6Obj = new Object();
 		
 		let cateSelect4 = $(".cate4");
+		let cateSelect5 = $(".cate5");
 		let cateSelect6 = $(".cate6");
 		
 		/* 카테고리 배열 초기화 메서드 */
@@ -252,10 +261,25 @@
 				}
 			}
 		}
+		
+		function makePoCateArray(obj,array,poCateList, masterCd){
+			for(let i = 0; i < poCateList.length; i++){
+				if(poCateList[i].masterCd === masterCd){
+					obj = new Object();
+					
+					obj.masterCd = poCateList[i].masterCd;
+					obj.detailCd = poCateList[i].detailCd;
+					obj.detailNm = poCateList[i].detailNm;
+					
+					array.push(obj);				
+					
+				}
+			}
+		}
 
 		/* 배열 초기화 */
 		makeLoCateArray(cate4Obj,cate4Array,loCateList,'L');
-
+		makePoCateArray(cate5Obj,cate5Array,poCateList,'P');
 		makeCateArray(cate6Obj,cate6Array,cateList,'B');
 		
 		/* 발주처 카테고리 */
@@ -263,11 +287,96 @@
 			cateSelect4.append("<option value='"+cate4Array[i].detailNm+"'>" + cate4Array[i].detailNm + "</option>");
 		}
 		
-		
 		for(let i = 0; i < cate6Array.length; i++){
 			cateSelect6.append("<option value='"+cate6Array[i].detailNm+"'>" + cate6Array[i].detailNm + "</option>");
-		}// for
+		}
+		
+		for(let i = 0; i < cate5Array.length; i++){
+			cateSelect5.append("<option value='"+cate5Array[i].detailNm+"'>" + cate5Array[i].detailNm + "</option>");
+		}
 		
 		</script>
+		
+		<script>// 달력
+
+        //두개짜리 제어 연결된거 만들어주는 함수
+        datePickerSet($("#datepicker1"), $("#datepicker2"), true); //다중은 시작하는 달력 먼저, 끝달력 2번째
+
+        /*
+            * 달력 생성기
+            * @param sDate 파라미터만 넣으면 1개짜리 달력 생성
+            * @example   datePickerSet($("#datepicker"));
+            * 
+            * 
+            * @param sDate, 
+            * @param eDate 2개 넣으면 연결달력 생성되어 서로의 날짜를 넘어가지 않음
+            * @example   datePickerSet($("#datepicker1"), $("#datepicker2"));
+            */
+        function datePickerSet(sDate, eDate, flag) {
+
+            //시작 ~ 종료 2개 짜리 달력 datepicker	
+            if (!isValidStr(sDate) && !isValidStr(eDate) && sDate.length > 0 && eDate.length > 0) {
+                var sDay = sDate.val();
+                var eDay = eDate.val();
+
+                if (flag && !isValidStr(sDay) && !isValidStr(eDay)) { //처음 입력 날짜 설정, update...			
+                    var sdp = sDate.datepicker().data("datepicker");
+                    sdp.selectDate(new Date(sDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+
+                    var edp = eDate.datepicker().data("datepicker");
+                    edp.selectDate(new Date(eDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+                }
+
+                //시작일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
+                if (!isValidStr(eDay)) {
+                    sDate.datepicker({
+                        maxDate: new Date(eDay.replace(/-/g, "/"))
+                    });
+                }
+                sDate.datepicker({
+                    language: 'ko',
+                    autoClose: true,
+                    onSelect: function () {
+                        datePickerSet(sDate, eDate);
+                    }
+                });
+
+                //종료일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
+                if (!isValidStr(sDay)) {
+                    eDate.datepicker({
+                        minDate: new Date(sDay.replace(/-/g, "/"))
+                    });
+                }
+                eDate.datepicker({
+                    language: 'ko',
+                    autoClose: true,
+                    onSelect: function () {
+                        datePickerSet(sDate, eDate);
+                    }
+                });
+
+                //한개짜리 달력 datepicker
+            } else if (!isValidStr(sDate)) {
+                var sDay = sDate.val();
+                if (flag && !isValidStr(sDay)) { //처음 입력 날짜 설정, update...			
+                    var sdp = sDate.datepicker().data("datepicker");
+                    sdp.selectDate(new Date(sDay.replace(/-/g, "/"))); //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+                }
+
+                sDate.datepicker({
+                    language: 'ko',
+                    autoClose: true
+                });
+            }
+
+
+            function isValidStr(str) {
+                if (str == null || str == undefined || str == "")
+                    return true;
+                else
+                    return false;
+            }
+        }
+    	</script>
 	</body>
 </html>
