@@ -123,7 +123,7 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate5" id="p_progress" name="p_progress">
-			                                          <option selected value="none">진행상태를 선택해주세요.</option>
+			                                          <option selected value="none">진행상태를 선택해주세요. </option>
 			                                       </select>
 												</div>
 											</div>
