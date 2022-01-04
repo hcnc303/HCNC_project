@@ -14,8 +14,12 @@
 			VALUES(#p_id#, #d_id#, #i_stay#, #i_role#)
 	</insert>
 	
-	<select id="inputDAO.selectDtCateList" resultClass="egovMap">
-		select * from hc_dtcode;
+	<select id="inputDAO.selectRoCateList" resultClass="DtCateVO">
+		select * from hc_dtcode where masterCd = 'R';
+	</select>
+	
+	<select id="inputDAO.selectSCateList" resultClass="DtCateVO">
+		select * from hc_dtcode where masterCd = 'S';
 	</select>
 	
 	<select id="inputDAO.selectDevCateList" resultClass="egovMap">
@@ -36,14 +40,10 @@
 		
 	</select>
 	
-	<select id="inputDAO.selectInputDetail" resultClass="egovMap">
-		SELECT p.p_id, d.d_id, i.i_role, i.i_stay
-		FROM hc_InputWorkers AS i
-		INNER JOIN hc_project AS p
-		ON i.p_id = p.p_id
-		INNER JOIN hc_developer AS d
-		ON i.d_id = d.d_id
-		WHERE p_id=#p_id# AND d_id=#d_id#
+	<select id="inputDAO.selectInputDetail" resultClass="InputVO">
+		SELECT p_id, d_id, i_stay, i_role
+		FROM hc_InputWorkers
+		where d_id = #d_id#
 	</select>
 		
 	<update id="inputDAO.updateInput">

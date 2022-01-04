@@ -6,7 +6,9 @@ public interface InputService {
 
 	public String insertInput(InputVO vo) throws Exception;
 	
-	List<?> selectDtCateList(DtCateVO vo) throws Exception;
+	List<?> selectRoCateList(DtCateVO tvo) throws Exception;
+	
+	List<?> selectSCateList(DtCateVO tvo) throws Exception;
 	
 	List<?> selectDevCateList(DeveloperVO dvo) throws Exception;
 	

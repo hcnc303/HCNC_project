@@ -25,9 +25,15 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	}
 
 	@Override
-	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
+	public List<?> selectRoCateList(DtCateVO tvo) throws Exception {
 
-		return inputDAO.selectDtCateList(vo);
+		return inputDAO.selectRoCateList(tvo);
+	}
+	
+	@Override
+	public List<?> selectSCateList(DtCateVO tvo) throws Exception {
+
+		return inputDAO.selectSCateList(tvo);
 	}
 
 	@Override
@@ -67,6 +73,8 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	public int deleteInput(String d_id) throws Exception {
 		return inputDAO.deleteInput(d_id);
 	}
+
+
 
 	
 }

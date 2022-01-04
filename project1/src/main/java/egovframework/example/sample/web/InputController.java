@@ -36,26 +36,23 @@ public class InputController {
 	}
 	
 	@RequestMapping(value="/inputWrite.do")
-	public String insertInput(DtCateVO vo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
+	public String insertInput(DtCateVO tvo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
 		
 		ObjectMapper objm = new ObjectMapper();
 		
-		List DtList = inputService.selectDtCateList(vo);
-		
-		List DevList = inputService.selectDevCateList(dvo);
-		
+		List RoList = inputService.selectRoCateList(tvo);
+		List Slist = inputService.selectSCateList(tvo);
+		List DevList = inputService.selectDevCateList(dvo);	
 		List ProList = inputService.selectProCateList(pvo);
 		
-		String DtCateList = objm.writeValueAsString(DtList);
-		
-		String DevCateList = objm.writeValueAsString(DevList);
-		
+		String RoCateList = objm.writeValueAsString(RoList);
+		String ScateList = objm.writeValueAsString(Slist);
+		String DevCateList = objm.writeValueAsString(DevList);		
 		String ProCateList = objm.writeValueAsString(ProList);
 		
-		model.addAttribute("DtCateList",DtCateList);
-		
-		model.addAttribute("DevCateList", DevCateList);
-		
+		model.addAttribute("RoCateList",RoCateList);
+		model.addAttribute("ScateList",ScateList);
+		model.addAttribute("DevCateList", DevCateList);		
 		model.addAttribute("ProCateList", ProCateList);
 		model.addAttribute("pvo", pvo);
 		
@@ -64,26 +61,23 @@ public class InputController {
 	}
 	
 	@RequestMapping(value="/inputWrite2.do") // 프로젝트 리스트에서 바로 input 입력으로 바로 가게 하는 것
-	public String insertInput2(DtCateVO vo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
+	public String insertInput2(DtCateVO tvo, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {
 		
 		ObjectMapper objm = new ObjectMapper();
 		
-		List DtList = inputService.selectDtCateList(vo);
-		
-		List DevList = inputService.selectDevCateList(dvo);
-		
+		List RoList = inputService.selectRoCateList(tvo);
+		List Slist = inputService.selectSCateList(tvo);
+		List DevList = inputService.selectDevCateList(dvo);		
 		List ProList = inputService.selectProCateList(pvo);
 		
-		String DtCateList = objm.writeValueAsString(DtList);
-		
-		String DevCateList = objm.writeValueAsString(DevList);
-		
+		String RoCateList = objm.writeValueAsString(RoList);	
+		String ScateList = objm.writeValueAsString(Slist);
+		String DevCateList = objm.writeValueAsString(DevList);		
 		String ProCateList = objm.writeValueAsString(ProList);
 		
-		model.addAttribute("DtCateList",DtCateList);
-		
-		model.addAttribute("DevCateList", DevCateList);
-		
+		model.addAttribute("DtCateList",RoCateList);
+		model.addAttribute("ScateList",ScateList);
+		model.addAttribute("DevCateList", DevCateList);	
 		model.addAttribute("ProCateList", ProCateList);
 		model.addAttribute("pvo", pvo);
 		
@@ -107,10 +101,34 @@ public class InputController {
 		
 	}
 	
+	
+	@RequestMapping(value="/inputModifyWrite.do")
+	public String inputDetail(DtCateVO tvo, String d_id, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {		
+		ObjectMapper objm = new ObjectMapper();
 		
-	
-	
-
+		List RoCateList = inputService.selectRoCateList(tvo);		
+		List ScateList = inputService.selectSCateList(tvo);
+		List DevCateList = inputService.selectDevCateList(dvo);		
+		List ProCateList = inputService.selectProCateList(pvo);
+		
+		//String RoCateList = objm.writeValueAsString(RoList);
+		//String ScateList = objm.writeValueAsString(Slist);
+		//String DevCateList = objm.writeValueAsString(DevList);		
+		//String ProCateList = objm.writeValueAsString(ProList);
+		
+		model.addAttribute("RoCateList",RoCateList);
+		model.addAttribute("ScateList",ScateList);
+		model.addAttribute("DevCateList", DevCateList);	
+		model.addAttribute("ProCateList", ProCateList);
+		model.addAttribute("pvo", pvo);
+		
+		InputVO vo = inputService.selectInputDetail(d_id);
+		model.addAttribute("vo", vo);
+		
+		
+		return "input/inputModifyWrite";
+	}
+		
 	
 	@RequestMapping(value="/inputDelete.do")
 	public String deleteDev(String d_id) throws Exception {
@@ -122,11 +140,5 @@ public class InputController {
 			System.out.println("삭제실패");
 		}
 		return "redirect:inputList.do";
-	}
-	
-	
+	} 
 }
-
-
-
-
