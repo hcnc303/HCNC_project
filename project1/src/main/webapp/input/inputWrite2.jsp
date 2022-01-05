@@ -157,7 +157,8 @@
 		<script src="/build/js/custom.min.js"></script>		
 		
 		<script>
-			var DtCateList = JSON.parse('${DtCateList}');
+			var RoCateList = JSON.parse('${RoCateList}');
+			var ScateList = JSON.parse('${ScateList}');
 			var DevCateList = JSON.parse('${DevCateList}');
 			var ProCateList = JSON.parse('${ProCateList}');
 			
@@ -177,17 +178,34 @@
 			var cateSelect4 = $(".cate4");
 			
 			/* 카테고리 배열 초기화 메서드 */
-			function makeCateArray(obj,array,DtCateList,masterCd) {
+			function makeSCateArray(obj,array,ScateList,masterCd) {
 				
-				for(var i = 0; i < DtCateList.length; i++) {
+				for(var i = 0; i < ScateList.length; i++) {
 					
-					if(DtCateList[i].masterCd === masterCd) {
+					if(ScateList[i].masterCd === masterCd) {
 						
 						obj = new Object();
 						
-						obj.masterCd = DtCateList[i].masterCd;
-						obj.detailCd = DtCateList[i].detailCd;
-						obj.detailNm = DtCateList[i].detailNm;
+						obj.masterCd = ScateList[i].masterCd;
+						obj.detailCd = ScateList[i].detailCd;
+						obj.detailNm = ScateList[i].detailNm;
+						
+						array.push(obj);
+					}
+				}
+			}
+			
+			function makeRoCateArray(obj,array,RoCateList,masterCd) {
+				
+				for(var i = 0; i < RoCateList.length; i++) {
+					
+					if(RoCateList[i].masterCd === masterCd) {
+						
+						obj = new Object();
+						
+						obj.masterCd = RoCateList[i].masterCd;
+						obj.detailCd = RoCateList[i].detailCd;
+						obj.detailNm = RoCateList[i].detailNm;
 						
 						array.push(obj);
 					}
@@ -248,8 +266,8 @@
 			/* 배열 초기화 */
 			/* makeProCateArray(cate1Obj,cate1Array,ProCateList,1); */
 			makeDevCateArray(cate2Obj,cate2Array,DevCateList,1);
-			makeCateArray(cate3Obj,cate3Array,DtCateList,'R');
-			makeCateArray(cate4Obj,cate4Array,DtCateList,'S');
+			makeRoCateArray(cate3Obj,cate3Array,RoCateList,'R');
+			makeSCateArray(cate4Obj,cate4Array,ScateList,'S');
 			
 			/* for(let i = 0; i < cate1Array.length; i++){
 				cateSelect1.append("<option value='"+cate1Array[i].p_id+"'>" + cate1Array[i].p_name + "</option>");

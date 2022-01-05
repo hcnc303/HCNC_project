@@ -61,13 +61,19 @@
 									</div>
 									<div class="x_content">
 										<br />
-										<form id="demo-form2" name="frm" method="post" action="inputWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+										<form id="demo-form2" name="frm" method="post" action="inputModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
+											<div class="form-group row">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="no">no <span class="required">*</span></label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="no" required="required" class="form-control "name="no" value="${vo.no }" readonly> 
+												</div>
+											</div>
 											<div class="form-group row">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id">프로젝트 <span class="required">*</span></label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate1" id="p_id"  name="p_id">
 														<c:forEach var="proCateList" items="${ProCateList }">
-															<option <c:out value="${vo.p_id==proCateList.pId?'selected':''}"/>>${proCateList.pName}</option>
+															<option value="${proCateList.pId }"<c:out value="${vo.p_id==proCateList.pId?'selected':''}"/>>${proCateList.pName}</option>
 														</c:forEach>
 													</select>
 												</div>
@@ -77,7 +83,7 @@
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate2" id="d_id"  name="d_id">
 														<c:forEach var="devCateList" items="${DevCateList }">
-															<option <c:out value="${vo.d_id==devCateList.dId?'selected':''}"/>>${devCateList.dName}</option>
+															<option value="${devCateList.dId }" <c:out value="${vo.d_id==devCateList.dId?'selected':''}"/>>${devCateList.dName} </option>
 														</c:forEach>
 													</select>
 												</div>

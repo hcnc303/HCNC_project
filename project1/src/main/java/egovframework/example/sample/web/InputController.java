@@ -75,7 +75,7 @@ public class InputController {
 		String DevCateList = objm.writeValueAsString(DevList);		
 		String ProCateList = objm.writeValueAsString(ProList);
 		
-		model.addAttribute("DtCateList",RoCateList);
+		model.addAttribute("RoCateList",RoCateList);
 		model.addAttribute("ScateList",ScateList);
 		model.addAttribute("DevCateList", DevCateList);	
 		model.addAttribute("ProCateList", ProCateList);
@@ -127,6 +127,20 @@ public class InputController {
 		
 		
 		return "input/inputModifyWrite";
+	}
+	
+	@RequestMapping(value="/inputModifySave.do")
+	public String updateInput(InputVO vo) throws Exception {
+		
+		int result = inputService.updateInput(vo);
+		if(result == 1) {
+			System.out.println("수정완료");
+		} else {
+			System.out.println("수정실패");
+		}
+		
+		return "redirect:/inputList.do";
+		
 	}
 		
 	

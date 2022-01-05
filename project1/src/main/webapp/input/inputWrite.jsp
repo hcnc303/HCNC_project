@@ -41,7 +41,7 @@
 					<div class="contents">
 						<div class="page-title">
 							<div class="title_left">
-								<h3>프로젝트 작성</h3>
+								<h3>투입인력 등록</h3>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -49,7 +49,7 @@
 							<div class="col-md-12 col-sm-12 ">
 								<div class="x_panel">
 									<div class="x_title">
-										<h2>프로젝트 작성 <small></small></h2>
+										<h2>투입인력 등록 <small></small></h2>
 										<ul class="nav navbar-right panel_toolbox">
 											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 											</li>
