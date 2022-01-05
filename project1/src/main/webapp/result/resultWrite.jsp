@@ -63,29 +63,29 @@
 										<form id="demo-form2" name="frm" method="post" action="projectWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly">
+													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly" value="P001">
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name">프로젝트 이름 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name">사번 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_name" required="required" class="form-control" name="p_name" autocomplete="off" readonly="readonly">
+													<input type="text" id="p_name" required="required" class="form-control" name="p_name" autocomplete="off" readonly="readonly" value="A0001">
 												</div>
 											</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker1" name="p_startdate" required="required" autocomplete="'off" placeholder="____년__월__일">
+	                                                <input class="form-control" type="text"  name="p_startdate" required="required" autocomplete="'off" readonly="readonly" value="2022-01-05">
 	                                            </div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker2" name="p_enddate" required="required" autocomplete="'off" placeholder="____년__월__일">
+	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="2025-07-05">
 	                                            </div>
                                         	</div>
 											<div class="card-box table-responsive">
