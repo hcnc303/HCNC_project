@@ -145,7 +145,7 @@
 																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0"> 
 															</td>
 															<td>
 																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
