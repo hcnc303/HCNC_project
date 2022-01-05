@@ -79,12 +79,12 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 시작일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker1" name="p_startdate" required="required" autocomplete="'off" placeholder="____년__월__일"></div>
+	                                                <input class="form-control" type="text" id="datepicker1" name="p_startdate" required="required" autocomplete="off" placeholder="____년__월__일"></div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 종료일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker2" name="p_enddate" required="required" autocomplete="'off" placeholder="____년__월__일"></div>
+	                                                <input class="form-control" type="text" id="datepicker2" name="p_enddate" required="required" autocomplete="off" placeholder="____년__월__일"></div>
                                         	</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_place">사업 장소 <span class="required">*</span>
