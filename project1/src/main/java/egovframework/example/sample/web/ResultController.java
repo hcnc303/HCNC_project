@@ -1,0 +1,15 @@
+package egovframework.example.sample.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ResultController {
+	@RequestMapping(value="/resultWrite.do")
+	public String resultWrite() throws Exception {
+		
+		return "result/resultWrite";
+		
+	}
+
+}
