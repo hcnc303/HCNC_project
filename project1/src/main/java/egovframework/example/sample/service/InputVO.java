@@ -9,6 +9,8 @@ public class InputVO {
 	private String d_id;
 	private String i_stay;
 	private String i_role;
+	private String d_startdate;
+	private String d_enddate;
 	
 	private ProjectVO projectVO;
 	private DeveloperVO developerVO;

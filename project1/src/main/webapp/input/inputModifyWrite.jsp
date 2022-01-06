@@ -29,6 +29,8 @@
 		<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
 		<!-- bootstrap-daterangepicker -->
 		<link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="datepicker/air-datepicker/dist/css/datepicker.min.css">
 	
 		<!-- Custom Theme Style -->
 		<link href="/build/css/custom.min.css" rel="stylesheet">
@@ -107,6 +109,16 @@
 													</select>
 												</div>
 											</div>
+											<div class="field item form-group">
+	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label>
+	                                            <div class="col-md-6 col-sm-6">
+	                                                <input class="form-control" type="text" id="datepicker1" name="d_startdate" required="required" autocomplete="off" value="${vo.d_startdate }"></div>
+                                        	</div>
+											<div class="field item form-group">
+	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
+	                                            <div class="col-md-6 col-sm-6">
+	                                                <input class="form-control" type="text" id="datepicker2" name="d_enddate" required="required" autocomplete="off" placeholder="${vo.d_enddate }"></div>
+                                        	</div>
 											<div class="ln_solid"></div>
 											<div class="item form-group">
 												<div class="col-md-6 col-sm-6 offset-md-3">
@@ -170,6 +182,9 @@
 		<script src="/vendors/starrr/dist/starrr.js"></script>
 		<!-- Custom Theme Scripts -->
 		<script src="/build/js/custom.min.js"></script>		
+		
+	    <script src="datepicker/air-datepicker/dist/js/datepicker.min.js"></script>
+	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
 		
 		<script>
 			var DevCateList = JSON.parse('${DevCateList}');
@@ -250,5 +265,87 @@
 			
 			
 		</script>
+		
+		<script>// 달력
+
+        //두개짜리 제어 연결된거 만들어주는 함수
+        datePickerSet($("#datepicker1"), $("#datepicker2"), true); //다중은 시작하는 달력 먼저, 끝달력 2번째
+
+        /*
+            * 달력 생성기
+            * @param sDate 파라미터만 넣으면 1개짜리 달력 생성
+            * @example   datePickerSet($("#datepicker"));
+            * 
+            * 
+            * @param sDate, 
+            * @param eDate 2개 넣으면 연결달력 생성되어 서로의 날짜를 넘어가지 않음
+            * @example   datePickerSet($("#datepicker1"), $("#datepicker2"));
+            */
+        function datePickerSet(sDate, eDate, flag) {
+
+            //시작 ~ 종료 2개 짜리 달력 datepicker	
+            if (!isValidStr(sDate) && !isValidStr(eDate) && sDate.length > 0 && eDate.length > 0) {
+                var sDay = sDate.val();
+                var eDay = eDate.val();
+
+                if (flag && !isValidStr(sDay) && !isValidStr(eDay)) { //처음 입력 날짜 설정, update...			
+                    var sdp = sDate.datepicker().data("datepicker");
+                    sdp.selectDate(new Date(sDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+
+                    var edp = eDate.datepicker().data("datepicker");
+                    edp.selectDate(new Date(eDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+                }
+
+                //시작일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
+                if (!isValidStr(eDay)) {
+                    sDate.datepicker({
+                        maxDate: new Date(eDay.replace(/-/g, "/"))
+                    });
+                }
+                sDate.datepicker({
+                    language: 'ko',
+                    autoClose: true,
+                    onSelect: function () {
+                        datePickerSet(sDate, eDate);
+                    }
+                });
+
+                //종료일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
+                if (!isValidStr(sDay)) {
+                    eDate.datepicker({
+                        minDate: new Date(sDay.replace(/-/g, "/"))
+                    });
+                }
+                eDate.datepicker({
+                    language: 'ko',
+                    autoClose: true,
+                    onSelect: function () {
+                        datePickerSet(sDate, eDate);
+                    }
+                });
+
+                //한개짜리 달력 datepicker
+            } else if (!isValidStr(sDate)) {
+                var sDay = sDate.val();
+                if (flag && !isValidStr(sDay)) { //처음 입력 날짜 설정, update...			
+                    var sdp = sDate.datepicker().data("datepicker");
+                    sdp.selectDate(new Date(sDay.replace(/-/g, "/"))); //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
+                }
+
+                sDate.datepicker({
+                    language: 'ko',
+                    autoClose: true
+                });
+            }
+
+
+            function isValidStr(str) {
+                if (str == null || str == undefined || str == "")
+                    return true;
+                else
+                    return false;
+            }
+        }
+    	</script>
 	</body>
 </html>

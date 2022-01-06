@@ -10,8 +10,8 @@
 	
 	
 	<insert id="inputDAO.insertInput">
-		INSERT INTO hc_InputWorkers(p_id, d_id, i_stay, i_role)
-			VALUES(#p_id#, #d_id#, #i_stay#, #i_role#)
+		INSERT INTO hc_InputWorkers(p_id, d_id, i_stay, i_role, d_startdate, d_enddate)
+			VALUES(#p_id#, #d_id#, #i_stay#, #i_role#, #d_startdate#, #d_enddate#)
 	</insert>
 	
 	<select id="inputDAO.selectRoCateList" resultClass="DtCateVO">
@@ -43,14 +43,14 @@
 	
 	<select id="inputDAO.selectInputDetail" resultClass="InputVO">
 		SELECT 
-			no, p_id, d_id, i_stay, i_role
+			no, p_id, d_id, i_stay, i_role, d_startdate, d_enddate
 			FROM hc_InputWorkers
 			where d_id = #d_id#
 	</select>
 		
 	<update id="inputDAO.updateInput">
 		UPDATE hc_InputWorkers SET 
-			p_id=#p_id#, d_id=#d_id#, i_role=#i_role#, i_stay=#i_stay#
+			p_id=#p_id#, d_id=#d_id#, i_role=#i_role#, i_stay=#i_stay#, d_startdate=#d_startdate#, d_enddate=#d_enddate# 
 		WHERE no=#no#
 	</update>
 	
