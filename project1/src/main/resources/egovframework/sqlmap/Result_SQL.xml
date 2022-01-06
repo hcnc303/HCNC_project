@@ -8,7 +8,7 @@
 	<typeAlias  alias="inputVO" type="egovframework.example.sample.service.InputVO"/>
 	
 	<select id="resultDAO.selectResultDetail" resultClass="inputVO">
-		select p_id, d_id from hc_InputWorkers where d_id = #d_id#
+		select p_id, d_id, d_startdate, d_enddate from hc_InputWorkers where d_id = #d_id#
 	</select>
 	
 </sqlMap>

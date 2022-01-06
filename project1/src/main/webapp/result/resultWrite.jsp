@@ -15,7 +15,7 @@
 		<!-- iCheck -->
 		<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 		<!-- bootstrap-wysiwyg -->
-		<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+		<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"> 
 		<!-- Select2 -->
 		<link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
 		<!-- Switchery -->
@@ -79,13 +79,13 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label> 
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text"  name="p_startdate" required="required" autocomplete="'off" readonly="readonly" value="2022-01-05"> 
+	                                                <input class="form-control" type="text"  name="p_startdate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_startdate }"> 
 	                                            </div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="2025-07-05">
+	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_enddate }">
 	                                            </div>
                                         	</div>
 											<div class="card-box table-responsive">
@@ -112,7 +112,7 @@
 														</tr>
 													</thead>
 													<tbody>
-<tr>
+														<tr>
 															<td>#</td>
 															<td>
 																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
@@ -239,9 +239,7 @@
 					<div class="clearfix"></div>
 				</footer>
 				<!-- /footer content -->
-			</div>
-		</div>
-	
+
 		<!-- jQuery -->
 		<script src="/vendors/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap -->
