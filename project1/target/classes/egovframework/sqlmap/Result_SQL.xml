@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+
+<sqlMap namespace = "ResultSpace">
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="resultVO" type="egovframework.example.sample.service.ResultVO"/>
+	<typeAlias  alias="inputVO" type="egovframework.example.sample.service.InputVO"/>
+	
+	<select id="resultDAO.selectResultDetail" resultClass="inputVO">
+		select p_id, d_id from hc_InputWorkers where d_id = #d_id#
+	</select>
+	
+</sqlMap>

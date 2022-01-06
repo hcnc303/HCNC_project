@@ -8,4 +8,5 @@
 	<sqlMap resource="egovframework/sqlmap/Project_SQL.xml"/>
 	<sqlMap resource="egovframework/sqlmap/Developer_SQL.xml"/>
 	<sqlMap resource="egovframework/sqlmap/Input_SQL.xml"/>
+	<sqlMap resource="egovframework/sqlmap/Result_SQL.xml"/>	
 </sqlMapConfig>

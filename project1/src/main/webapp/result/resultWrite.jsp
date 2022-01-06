@@ -66,14 +66,14 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly" value="P001">
+													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly" value="${ivo.p_id}">
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name">사번 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_name" required="required" class="form-control" name="p_name" autocomplete="off" readonly="readonly" value="A0001">
+													<input type="text" id="p_name" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${ivo.d_id}">
 												</div>
 											</div>
 											<div class="field item form-group">
@@ -284,69 +284,6 @@
 	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
 		
 		<script>
-		/* 카테고리 */
-		let cateList = JSON.parse('${cateList}');
-		let loCateList = JSON.parse('${loCateList}');
-		let poCateList = JSON.parse('${poCateList}');
-		
-		let cate4Array = new Array();
-		let cate5Array = new Array();
-		let cate6Array = new Array();
-		
-		let cate4Obj = new Object();
-		let cate5Obj = new Object();
-		let cate6Obj = new Object();
-		
-		let cateSelect4 = $(".cate4");
-		let cateSelect5 = $(".cate5");
-		let cateSelect6 = $(".cate6");
-		
-		/* 카테고리 배열 초기화 메서드 */
-		function makeCateArray(obj,array,cateList, masterCd){
-			for(let i = 0; i < cateList.length; i++){
-				if(cateList[i].masterCd === masterCd){
-					obj = new Object();
-					
-					obj.masterCd = cateList[i].masterCd;
-					obj.detailCd = cateList[i].detailCd;
-					obj.detailNm = cateList[i].detailNm;
-					
-					array.push(obj);				
-					
-				}
-			}
-		}	
-		
-		function makeLoCateArray(obj,array,loCateList, masterCd){
-			for(let i = 0; i < loCateList.length; i++){
-				if(loCateList[i].masterCd === masterCd){
-					obj = new Object();
-					
-					obj.masterCd = loCateList[i].masterCd;
-					obj.detailCd = loCateList[i].detailCd;
-					obj.detailNm = loCateList[i].detailNm;
-					
-					array.push(obj);				
-					
-				}
-			}
-		}
-		
-		function makePoCateArray(obj,array,poCateList, masterCd){
-			for(let i = 0; i < poCateList.length; i++){
-				if(poCateList[i].masterCd === masterCd){
-					obj = new Object();
-					
-					obj.masterCd = poCateList[i].masterCd;
-					obj.detailCd = poCateList[i].detailCd;
-					obj.detailNm = poCateList[i].detailNm;
-					
-					array.push(obj);				
-					
-				}
-			}
-		}
-
 		/* 배열 초기화 */
 		makeLoCateArray(cate4Obj,cate4Array,loCateList,'L');
 		makePoCateArray(cate5Obj,cate5Array,poCateList,'P');

@@ -95,9 +95,7 @@
 													프로젝트 리스트 입니다.
 													<code></code>
 												</p>
-												<table id="datatable"
-													class="table table-striped table-bordered"
-													style="width: 100%">
+												<table id="datatable" class="table table-striped table-bordered" style="width: 100%">
 													<thead>
 														<tr>
 															<th>프로젝트 코드</th>
