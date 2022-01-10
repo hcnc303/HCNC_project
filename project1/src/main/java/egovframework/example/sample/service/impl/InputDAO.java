@@ -1,6 +1,8 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -46,8 +48,13 @@ public class InputDAO extends EgovAbstractDAO{
 		return (String) insert("inputDAO.insertInput2", vo);
 	}
 
-	public InputVO selectInputDetail(String d_id) {
-		return (InputVO) select("inputDAO.selectInputDetail",d_id);
+	public InputVO selectInputDetail(String p_id, String d_id) {
+		
+		Map map = new HashMap();
+			map.put("p_id", p_id);
+			map.put("d_id", d_id);
+		
+		return (InputVO) select("inputDAO.selectInputDetail",map);
 	}
 
 	public int updateInput(InputVO vo) {

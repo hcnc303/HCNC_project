@@ -60,8 +60,8 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	}
 
 	@Override
-	public InputVO selectInputDetail(String d_id) throws Exception {
-		return inputDAO.selectInputDetail(d_id);
+	public InputVO selectInputDetail(String p_id, String d_id) throws Exception {
+		return inputDAO.selectInputDetail(p_id, d_id);
 	}
 
 	@Override

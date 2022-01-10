@@ -45,7 +45,7 @@
 		SELECT 
 			no, p_id, d_id, i_stay, i_role, d_startdate, d_enddate
 			FROM hc_InputWorkers
-			where d_id = #d_id#
+			where p_id = #p_id# and d_id = #d_id#
 	</select>
 		
 	<update id="inputDAO.updateInput">

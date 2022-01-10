@@ -102,7 +102,7 @@ public class InputController {
 	}
 	
 	@RequestMapping(value="/inputModifyWrite.do")
-	public String inputDetail(DtCateVO tvo, String d_id, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {		
+	public String inputDetail(DtCateVO tvo, String p_id, String d_id, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {		
 		ObjectMapper objm = new ObjectMapper();
 		
 		List RoCateList = inputService.selectRoCateList(tvo);		
@@ -121,7 +121,7 @@ public class InputController {
 		model.addAttribute("ProCateList", ProCateList);
 		model.addAttribute("pvo", pvo);
 		
-		InputVO vo = inputService.selectInputDetail(d_id);
+		InputVO vo = inputService.selectInputDetail(p_id,d_id);
 		model.addAttribute("vo", vo);
 		
 		
