@@ -16,16 +16,15 @@
 	
 	<!-- 소분류 코드 입력 SQL -->
 	<insert id="codeDAO.insertDtCode">
-		INSERT INTO hc_dtcode(codeNo, masterCd, detailCd, detailNm)
-			VALUES(#codeNo#,#masterCd#,#detailCd#, #detailNm#)
+		INSERT INTO hc_dtcode(masterCd, detailCd, detailNm)
+			VALUES(#masterCd#,#detailCd#, #detailNm#)
 	</insert>
 	
 	<!-- 코드 리스트 출력 SQL -->
 	<select id="codeDAO.selectCodesList" resultClass="egovMap">
-		
 			SELECT *
 			FROM(
-				SELECT ROW_NUMBER() OVER (ORDER BY m.masterCd ASC) as rownum
+				SELECT ROW_NUMBER() OVER (ORDER BY m.masterCd, d.detailCd ASC) as no
 							,m.masterCd 
 							,m.masterNm 
 							,d.detailCd
@@ -41,8 +40,13 @@
 	</select>
 	
 	<select id="codeDAO.selectDtCodeList" resultClass="egovMap">
-		select ROW_NUMBER() OVER(ORDER BY masterCd ASC) AS rownum,
-		* from hc_dtcode;
+			SELECT *
+			FROM(
+				SELECT ROW_NUMBER() OVER (ORDER BY masterCd, detailCd ASC) as no
+							,masterCd 
+							,detailCd
+							,detailNm from hc_dtcode
+			)hc_detailCd
 	</select>
 	
 	<select id="codeDAO.selectMsCateList" resultClass="egovMap">
@@ -58,12 +62,12 @@
 	</select>
 	
 	<select id="codeDAO.selectCodesDetail" resultClass="DetailCodeVO">
-		SELECT codeNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
+		SELECT dtNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
 	</select>
 	
 	<update id = "codeDAO.updateCodes">
-		update hc_dtcode set codeNo = #codeNo#, masterCd = #masterCd#, detailCd = #detailCd#, detailNm = #detailNm#
-		WHERE codeNo = #codeNo#
+		update hc_dtcode set masterCd = #masterCd#, detailCd = #detailCd#, detailNm = #detailNm#
+		WHERE dtNo = #dtNo#
 	</update>
 	
 </sqlMap>

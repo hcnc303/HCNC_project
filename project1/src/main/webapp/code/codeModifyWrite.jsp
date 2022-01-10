@@ -69,7 +69,7 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="codeNo" >codeNo <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="codeNo" required="required" class="form-control "name="codeNo" value="${vo.codeNo }" readonly> 
+													<input type="text" id="codeNo" required="required" class="form-control "name="codeNo" value="${vo.dtNo }" readonly> 
 												</div>
 											</div>
 											<div class="item form-group">

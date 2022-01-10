@@ -122,7 +122,7 @@
                       <thead>
                         <tr>
                           <th class="hidden"></th>
-						  <th>codeNo</th>
+						  <th>NO</th>
                           <th>대분류 코드</th>
                           <th>소분류 코드</th>
                           <th>소분류명</th>
@@ -135,7 +135,7 @@
 	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
 	                        <tr>
 	                          <td class="hidden"></td>
-							  <td>${d.codeNo }</td>
+							  <td>${d.no }</td>
 	                          <td>${d.masterCd }</td>
 	                          <td>${d.detailCd }</td>
 	                          <td>${d.detailNm }</td>
