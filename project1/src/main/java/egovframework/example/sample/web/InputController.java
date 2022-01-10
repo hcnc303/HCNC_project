@@ -97,10 +97,9 @@ public class InputController {
 		}
 		
 		
-		return "redirect:inputWrite.do";
+		return "redirect:inputList.do";
 		
 	}
-	
 	
 	@RequestMapping(value="/inputModifyWrite.do")
 	public String inputDetail(DtCateVO tvo, String d_id, DeveloperVO dvo, ProjectVO pvo, Model model) throws Exception {		

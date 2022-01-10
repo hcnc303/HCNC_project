@@ -13,19 +13,24 @@
 	</insert>
 	
 	<select id="projectDAO.selectBuCateList" resultClass="dtCateVO">
-		SELECT * FROM hc_dtcode where masterCd='B' order by codeNo
+		SELECT * FROM hc_dtcode where masterCd='B' order by dtNo
 	</select>
 	
 	<select id="projectDAO.selectLoCateList" resultClass="dtCateVO">
-		SELECT * FROM hc_dtcode where masterCd='L' order by codeNo
+		SELECT * FROM hc_dtcode where masterCd='L' order by dtNo
 	</select>
 	
 	<select id="projectDAO.selectPoCateList" resultClass="dtCateVO">
-		SELECT * FROM hc_dtcode where masterCd='P' order by codeNo
+		SELECT * FROM hc_dtcode where masterCd='P' order by dtNo
 	</select>
 
 	<select id="projectDAO.selectProjectList" resultClass="egovMap">
-		select p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note from hc_project
+			SELECT *
+			FROM(
+				SELECT ROW_NUMBER() OVER (ORDER BY p_no ASC) as no
+					,p_no, p_id, p_name, p_startdate, p_enddate, p_place, p_buyer, p_salesman, p_tel, p_progress, p_note	
+					from hc_project
+			)hc_project
 	</select>
 	
 	<select id="projectDAO.selectProjectDetail" resultClass="projectVO">

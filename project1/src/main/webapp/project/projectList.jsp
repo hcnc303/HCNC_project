@@ -98,6 +98,7 @@
 												<table id="datatable" class="table table-striped table-bordered" style="width: 100%">
 													<thead>
 														<tr>
+															<th>no</th>
 															<th>프로젝트 코드</th>
 															<th>프로젝트 이름</th>
 															<th>시작일</th>
@@ -108,12 +109,14 @@
 															<th>연락처</th>
 															<th>진행상태</th>
 															<th>비고</th>
+															<th>관리</th>
 														</tr>
 													</thead>
 													<tbody>
 														<c:forEach var="result" items="${resultList}"
 															varStatus="status">
 															<tr>
+																<td>${result.no }</td>
 																<td>${result.pId }</td>
 																<td><a href="inputWrite2.do?p_id=${result.pId }">${result.pName }</a></td>
 																<td>${result.pStartdate }</td>
@@ -121,8 +124,9 @@
 																<td>${result.pPlace }</td>
 																<td>${result.pBuyer }</td>
 																<td>${result.pSalesman }</td>
-																<td>${result.pTel }</td>
+																<td>${result.pTel }</td>																
 																<td>${result.pProgress }</td>
+																<td>${result.pNote }</td>
 																<td>
 																 <span><button type="button" onclick="location='projectModifyWrite.do?p_id=${result.pId}'" class="btn btn-info btn-xs">수정</button></span> 
 																 <span><button type="button" onclick="location='projectDelete.do?p_id=${result.pId}'" class="btn btn-danger btn-xs">삭제</button></span>
