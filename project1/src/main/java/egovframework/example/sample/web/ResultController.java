@@ -17,9 +17,9 @@ public class ResultController {
 	
 	
 	@RequestMapping(value="/resultWrite.do")
-	public String resultWrite(String d_id, Model model) throws Exception {
+	public String resultWrite(String p_id,String d_id, Model model) throws Exception {
 		
-		InputVO ivo = resultService.selectResultDetail(d_id);
+		InputVO ivo = resultService.selectResultDetail(p_id,d_id);
 		model.addAttribute("ivo", ivo);
 		System.out.println("list=====>" + ivo);
 		
