@@ -1,5 +1,7 @@
 package egovframework.example.sample.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -45,6 +47,10 @@ public class ResultController {
 	
 	@RequestMapping(value="/resultList.do") 
 	public String selectResultList(ResultVO rvo, Model model) throws Exception {
+		
+		List<?> list = resultService.selectResultList(rvo);
+		
+		model.addAttribute("resultList",list);
 		
 		return "result/resultList";
 		

@@ -1,5 +1,7 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.ibatis.annotations.Param;
@@ -25,6 +27,12 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 	public String insertResult(ResultVO rvo) throws Exception {
 
 		return resultDAO.insertResult(rvo);
+	}
+
+	@Override
+	public List<?> selectResultList(ResultVO rvo) throws Exception {
+
+		return resultDAO.selectResultList(rvo);
 	}
 
 }

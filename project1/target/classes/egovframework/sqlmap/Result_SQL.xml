@@ -16,4 +16,16 @@
 			values(#p_id#,#d_id#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
 	</insert>
 	
+	<select id="resultDAO.selectResultList" resultClass="egovMap">
+		SELECT 
+			p.p_id, p.p_name, p.p_startdate, p.p_enddate, p.p_buyer, p.p_progress, p.p_place, d.d_id, d.d_name,d.d_jobgrade, d.d_tier,i.i_role, i.i_stay, r.year,r.jan,r.feb,r.mar,r.apr,r.may,r.jun,r.jul,r.aug,r.sep,r.oct,r.nov,r.dec
+			from hc_project as p
+			inner join hc_InputWorkers as i
+			on p.p_id = i.p_id 
+			inner join hc_developer as d
+			on d.d_id = i.d_id
+			inner join hc_result as r
+			on p.p_id = r.p_id and d.d_id = r.d_id
+	</select>
+	
 </sqlMap>

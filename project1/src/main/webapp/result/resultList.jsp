@@ -134,31 +134,32 @@
 												<c:forEach var="list" items="${resultList}"
 													varStatus="status">
 													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
+														<td>${list.pId }</td>
+														<td>${list.pName }</td>
+														<td>${list.pStartdate }</td>
+														<td>${list.pEnddate }</td>
+														<td>${list.pBuyer }</td>
+														<td>${list.pProgress }</td>
+														<td>${list.pPlace }</td>
 														<td class="hidden">${list.dId }</td>
 														<td><a href="/resultWrite.do?p_id=${list.pId}&d_id=${list.dId}">${list.dName }</a></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
+														<td>${list.dJobgrade }</td>
+														<td>${list.dTier }</td>
+														<td>${list.iRole }</td>
+														<td>${list.iStay }</td>
+														<td>${list.year }년</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${list.pId}', '${list.dId}')">수정</button>

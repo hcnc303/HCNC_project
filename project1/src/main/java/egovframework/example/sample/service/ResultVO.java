@@ -20,4 +20,6 @@ public class ResultVO {
 	private int nov;
 	private int dec;
 
+	private ProjectVO projectVO;
+	private DeveloperVO developerVO;
 }
