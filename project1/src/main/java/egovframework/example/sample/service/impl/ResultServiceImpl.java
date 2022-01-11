@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import egovframework.example.sample.service.InputVO;
 import egovframework.example.sample.service.ResultService;
+import egovframework.example.sample.service.ResultVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 @Service("resultService")
@@ -18,6 +19,12 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 	public InputVO selectResultDetail(String p_id, String d_id) throws Exception {
 		
 		return resultDAO.selectResultDetail(p_id,d_id);
+	}
+
+	@Override
+	public String insertResult(ResultVO rvo) throws Exception {
+
+		return resultDAO.insertResult(rvo);
 	}
 
 }

@@ -11,4 +11,9 @@
 		select p_id, d_id, d_startdate, d_enddate from hc_InputWorkers where p_id = #p_id# and d_id = #d_id#
 	</select>
 	
+	<insert id="resultDAO.insertResult">
+		insert into hc_result(p_id,d_id,year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
+			values(#p_id#,#d_id#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
+	</insert>
+	
 </sqlMap>

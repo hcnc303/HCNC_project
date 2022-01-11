@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import egovframework.example.sample.service.InputVO;
+import egovframework.example.sample.service.ResultVO;
 import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("resultDAO")
@@ -19,6 +20,11 @@ public class ResultDAO extends EgovAbstractDAO {
 		
 		return (InputVO) select("resultDAO.selectResultDetail",map);
 		
+	}
+
+	public String insertResult(ResultVO rvo) {
+
+		return (String) insert("resultDAO.insertResult",rvo);
 	}
 
 

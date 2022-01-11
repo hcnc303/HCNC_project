@@ -97,6 +97,8 @@
 			                                        	<option <c:out value="${vo.i_role == '개발자'?'selected':''}" />>개발자</option>
 														<option <c:out value="${vo.i_role == 'PL'?'selected':''}" />>PL</option>
 														<option <c:out value="${vo.i_role == 'PM'?'selected':''}" />>PM</option>
+														<option <c:out value="${vo.i_role == 'RA'?'selected':''}" />>RA</option>
+														<option <c:out value="${vo.i_role == '사업관리'?'selected':''}" />>사업관리</option>														
 													</select>
 												</div>
 											</div>

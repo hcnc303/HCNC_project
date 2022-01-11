@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix= "spring" uri= "http://www.springframework.org/tags" %>      
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 	<head>
@@ -60,7 +65,7 @@
 									</div>
 									<div class="x_content">
 										<br />
-										<form id="demo-form2" name="frm" method="post" action="projectWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+										<form id="demo-form2" name="frm" method="post" action="resultWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
@@ -88,6 +93,17 @@
 	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_enddate }">
 	                                            </div>
                                         	</div>
+											<div class="form-group row">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="year">년도 <span class="required">*</span></label>
+												<div class="col-md-6 col-sm-6 ">
+													<select class="form-control cate4" id="year"  name="year">
+														<option value="">년</option>
+														  <c:forEach var="i" begin="${ivo.d_startdate }" end="${ivo.d_enddate }">
+														    <option value="${i}">${i}</option>
+														  </c:forEach>
+													</select>
+												</div>
+											</div>
 											<div class="card-box table-responsive">
 												<p class="text-muted font-13 m-b-30">
 						
@@ -96,7 +112,6 @@
 												<table id="datatable" class="table table-striped table-bordered" style="width: 100%">
 													<thead>
 														<tr>
-															<th>2022년</th>
 															<th>1월</th>
 															<th>2월</th>
 															<th>3월</th>
@@ -113,106 +128,45 @@
 													</thead>
 													<tbody>
 														<tr>
-															<td>#</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="feb" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="mar" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="apr" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="may" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jun" required="required" autocomplete="off" value="0">
 															</td>	
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jul" required="required" autocomplete="off" value="0">
 															</td>																																																										
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="aug" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="sep" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="oct" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0"> 
+																<input class="form-control" type="text" name="nov" required="required" autocomplete="off" value="0"> 
 															</td>
 															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="0">
 															</td>
 														</tr>
 													</tbody>
-												</table>
-												<table id="datatable" class="table table-striped table-bordered" style="width: 100%">
-													<thead>
-														<tr>
-															<th>2023년</th>
-															<th>1월</th>
-															<th>2월</th>
-															<th>3월</th>
-															<th>4월</th>
-															<th>5월</th>
-															<th>6월</th>
-															<th>7월</th>
-															<th>8월</th>
-															<th>9월</th>
-															<th>10월</th>
-															<th>11월</th>
-															<th>12월</th>															
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>#</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>	
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>																																																										
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-															<td>
-																<input class="form-control" type="text" name="p_enddate" required="required" autocomplete="off" value="0">
-															</td>
-														</tr>
-													</tbody>
-												</table>
+												</table>			
 											</div>
 											<div class="ln_solid"></div>
 											<div class="item form-group">
@@ -280,88 +234,6 @@
 		
 	    <script src="datepicker/air-datepicker/dist/js/datepicker.min.js"></script>
 	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
-		
-		<script>// 달력
-
-	        //두개짜리 제어 연결된거 만들어주는 함수
-	        datePickerSet($("#datepicker1"), $("#datepicker2"), true); //다중은 시작하는 달력 먼저, 끝달력 2번째
-	
-	        /*
-	            * 달력 생성기
-	            * @param sDate 파라미터만 넣으면 1개짜리 달력 생성
-	            * @example   datePickerSet($("#datepicker"));
-	            * 
-	            * 
-	            * @param sDate, 
-	            * @param eDate 2개 넣으면 연결달력 생성되어 서로의 날짜를 넘어가지 않음
-	            * @example   datePickerSet($("#datepicker1"), $("#datepicker2"));
-	            */
-	        function datePickerSet(sDate, eDate, flag) {
-	
-	            //시작 ~ 종료 2개 짜리 달력 datepicker	
-	            if (!isValidStr(sDate) && !isValidStr(eDate) && sDate.length > 0 && eDate.length > 0) {
-	                var sDay = sDate.val();
-	                var eDay = eDate.val();
-	
-	                if (flag && !isValidStr(sDay) && !isValidStr(eDay)) { //처음 입력 날짜 설정, update...			
-	                    var sdp = sDate.datepicker().data("datepicker");
-	                    sdp.selectDate(new Date(sDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
-	
-	                    var edp = eDate.datepicker().data("datepicker");
-	                    edp.selectDate(new Date(eDay.replace(/-/g, "/")));  //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
-	                }
-	
-	                //시작일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
-	                if (!isValidStr(eDay)) {
-	                    sDate.datepicker({
-	                        maxDate: new Date(eDay.replace(/-/g, "/"))
-	                    });
-	                }
-	                sDate.datepicker({
-	                    language: 'ko',
-	                    autoClose: true,
-	                    onSelect: function () {
-	                        datePickerSet(sDate, eDate);
-	                    }
-	                });
-	
-	                //종료일자 세팅하기 날짜가 없는경우엔 제한을 걸지 않음
-	                if (!isValidStr(sDay)) {
-	                    eDate.datepicker({
-	                        minDate: new Date(sDay.replace(/-/g, "/"))
-	                    });
-	                }
-	                eDate.datepicker({
-	                    language: 'ko',
-	                    autoClose: true,
-	                    onSelect: function () {
-	                        datePickerSet(sDate, eDate);
-	                    }
-	                });
-	
-	                //한개짜리 달력 datepicker
-	            } else if (!isValidStr(sDate)) {
-	                var sDay = sDate.val();
-	                if (flag && !isValidStr(sDay)) { //처음 입력 날짜 설정, update...			
-	                    var sdp = sDate.datepicker().data("datepicker");
-	                    sdp.selectDate(new Date(sDay.replace(/-/g, "/"))); //익스에서는 그냥 new Date하면 -을 인식못함 replace필요
-	                }
-	
-	                sDate.datepicker({
-	                    language: 'ko',
-	                    autoClose: true
-	                });
-	            }
-	
-	
-	            function isValidStr(str) {
-	                if (str == null || str == undefined || str == "")
-	                    return true;
-	                else
-	                    return false;
-	            }
-	        }
-    	</script>
 		
 	</body>
 </html>
