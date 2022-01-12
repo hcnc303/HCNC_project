@@ -98,7 +98,7 @@
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate4" id="year"  name="year">
 														<option value="">년</option>
-														  <c:forEach var="i" begin="${ivo.d_startdate }" end="${ivo.d_enddate }">
+														  <c:forEach var="i" begin="${ivo.d_startdate.substring(0,4) }" end="${ivo.d_enddate.substring(0,4) }">
 														    <option value="${i}">${i}</option>
 														  </c:forEach>
 													</select>

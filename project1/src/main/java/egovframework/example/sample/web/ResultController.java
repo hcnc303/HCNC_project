@@ -41,7 +41,7 @@ public class ResultController {
 			System.out.println("저장완료");
 		}
 		
-		return "redirect:resultWrite.do";
+		return "redirect:resultList.do";
 		
 	}
 	
