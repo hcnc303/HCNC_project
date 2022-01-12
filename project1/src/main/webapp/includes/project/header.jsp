@@ -61,7 +61,7 @@
                   </li>     
                   <li><a><i class="fa fa-sitemap"></i> 프로젝트별 공수관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="/#.do">프로젝트별 공수현황 목록</a>
+                        <li><a href="/resultList.do">프로젝트별 공수현황 목록</a>
                         <li><a href="/#.do">프로젝트별 공수 등록</a>
                         </li>
                     </ul>
