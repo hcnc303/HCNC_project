@@ -75,7 +75,7 @@
 			<div class="clearfix"></div>
 
 			<div class="row">
-				<div class="col-md-12 col-sm-12">
+				<div class="col-md-12 col-sm-12 ">
 					<div class="x_panel">
 						<div class="x_title">
 							<h2>
@@ -112,7 +112,7 @@
 													<th>직급</th>
 													<th>등급</th>
 													<th>역할</th>
-													<th>상주</th> 
+													<th>상주</th>
 													<th>투입년도</th>
 													<th>1월</th>
 													<th>2월</th>

@@ -97,9 +97,10 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="year">년도 <span class="required">*</span></label>
 												<div class="col-md-6 col-sm-6 ">
 													<select class="form-control cate4" id="year"  name="year">
-														<option value="">년</option>
-														  <c:forEach var="i" begin="${ivo.d_startdate.substring(0,4) }" end="${ivo.d_enddate.substring(0,4) }">
-														    <option value="${i}">${i}</option>
+														<option value="">년도를 선택해주세요</option>
+														  <c:forEach var="i" begin="${ivo.d_startdate.substring(0,4) }" end="${ivo.d_enddate.substring(0,4) }"> 
+														   
+														    <option value="${i}">${i}년</option>
 														  </c:forEach>
 													</select>
 												</div>
@@ -127,6 +128,7 @@
 														</tr>
 													</thead>
 													<tbody>
+													
 														<tr>
 															<td>
 																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="0">
@@ -165,6 +167,7 @@
 																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="0">
 															</td>
 														</tr>
+														
 													</tbody>
 												</table>			
 											</div>
