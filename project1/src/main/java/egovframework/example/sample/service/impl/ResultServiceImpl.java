@@ -22,6 +22,12 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 		
 		return resultDAO.selectResultDetail(p_id,d_id);
 	}
+	
+	@Override
+	public ResultVO selectResultModifyDetail(String p_id, String d_id, String year) throws Exception {
+		// TODO Auto-generated method stub
+		return resultDAO.selectResultModifyDetail(p_id,d_id,year);
+	}
 
 	@Override
 	public String insertResult(ResultVO rvo) throws Exception {
@@ -40,5 +46,7 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 		
 		return resultDAO.deleteResult(p_id,d_id,year);
 	}
+
+
 
 }

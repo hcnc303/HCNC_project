@@ -16,6 +16,7 @@ public class InputVO {
 	
 	private ProjectVO projectVO;
 	private DeveloperVO developerVO;
+	private ResultVO resultVO;
 
 	
 }

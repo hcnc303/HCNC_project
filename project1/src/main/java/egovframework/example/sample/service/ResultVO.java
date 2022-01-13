@@ -6,6 +6,8 @@ import lombok.Data;
 public class ResultVO {
 	private String p_id;
 	private String d_id;
+	private String d_startdate;
+	private String d_enddate;
 	private String year;
 	private int jan;
 	private int feb;
@@ -22,4 +24,5 @@ public class ResultVO {
 
 	private ProjectVO projectVO;
 	private DeveloperVO developerVO;
+	private InputVO inputVO; 
 }

@@ -11,9 +11,15 @@
 		select p_id, d_id, d_startdate, d_enddate from hc_InputWorkers where p_id = #p_id# and d_id = #d_id#
 	</select>
 	
+	<select id="resultDAO.selectResultModifyDetail" resultClass="resultVO">
+		select p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+		from hc_result
+		where p_id = #p_id# and d_id = #d_id# and year=#year#
+	</select>
+	
 	<insert id="resultDAO.insertResult">
-		insert into hc_result(p_id,d_id,year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
-			values(#p_id#,#d_id#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
+		insert into hc_result(p_id,d_id,d_startdate,d_enddate,year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
+			values(#p_id#,#d_id#,#d_startdate#,#d_enddate#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
 	</insert>
 	
 	<select id="resultDAO.selectResultList" resultClass="egovMap">

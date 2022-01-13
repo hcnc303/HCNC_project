@@ -22,6 +22,16 @@ public class ResultDAO extends EgovAbstractDAO {
 		return (InputVO) select("resultDAO.selectResultDetail",map);
 		
 	}
+	
+	public ResultVO selectResultModifyDetail(String p_id, String d_id, String year) {
+	
+		Map map = new HashMap();
+			map.put("p_id", p_id);
+			map.put("d_id", d_id);
+			map.put("year",year);
+		
+		return (ResultVO) select("resultDAO.selectResultModifyDetail", map);
+	}
 
 	public String insertResult(ResultVO rvo) {
 
@@ -42,5 +52,7 @@ public class ResultDAO extends EgovAbstractDAO {
 			
 		return (int) delete("resultDAO.deleteResult",map);
 	}
+
+
 
 }

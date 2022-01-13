@@ -65,7 +65,7 @@
 									</div>
 									<div class="x_content">
 										<br />
-										<form id="demo-form2" name="frm" method="post" action="resultWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+										<form id="demo-form2" name="frm" method="post" action="resultModifyWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
@@ -84,27 +84,21 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label> 
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text"  name="d_startdate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_startdate }"> 
+	                                                <input class="form-control" type="text"  name="p_startdate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_startdate }"> 
 	                                            </div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" name="d_enddate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_enddate }">
+	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="${ivo.d_enddate }">
 	                                            </div>
                                         	</div>
-											<div class="form-group row">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="year">년도 <span class="required">*</span></label>
-												<div class="col-md-6 col-sm-6 ">
-													<select class="form-control cate4" id="year"  name="year">
-														<option value="">년도를 선택해주세요</option>
-														  <c:forEach var="i" begin="${ivo.d_startdate.substring(0,4) }" end="${ivo.d_enddate.substring(0,4) }"> 
-														   
-														    <option value="${i}">${i}년</option>
-														  </c:forEach>
-													</select>
-												</div>
-											</div>
+											<div class="field item form-group">
+	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">년도<span class="required">*</span></label>
+	                                            <div class="col-md-6 col-sm-6">
+	                                                <input class="form-control" type="text" name="year" required="required" autocomplete="'off" readonly="readonly" value="${ivo.year }">
+	                                            </div>
+                                        	</div>
 											<div class="card-box table-responsive">
 												<p class="text-muted font-13 m-b-30">
 						
@@ -131,40 +125,40 @@
 													
 														<tr>
 															<td>
-																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="${ivo.jan }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="feb" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="feb" required="required" autocomplete="off" value="${ivo.feb }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="mar" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="mar" required="required" autocomplete="off" value="${ivo.mar }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="apr" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="apr" required="required" autocomplete="off" value="${ivo.apr }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="may" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="may" required="required" autocomplete="off" value="${ivo.may }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="jun" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jun" required="required" autocomplete="off" value="${ivo.jun }">
 															</td>	
 															<td>
-																<input class="form-control" type="text" name="jul" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="jul" required="required" autocomplete="off" value="${ivo.jul }">
 															</td>																																																										
 															<td>
-																<input class="form-control" type="text" name="aug" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="aug" required="required" autocomplete="off" value="${ivo.aug }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="sep" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="sep" required="required" autocomplete="off" value="${ivo.sep }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="oct" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="oct" required="required" autocomplete="off" value="${ivo.oct }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="nov" required="required" autocomplete="off" value="0"> 
+																<input class="form-control" type="text" name="nov" required="required" autocomplete="off" value="${ivo.nov }"> 
 															</td>
 															<td>
-																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="${ivo.dec }">
 															</td>
 														</tr>
 														

@@ -32,6 +32,16 @@ public class ResultController {
 		
 	}
 	
+	@RequestMapping(value="/resultModifyWrite.do")
+	public String resultModify(String p_id, String d_id, String year, Model model) throws Exception {
+		
+		ResultVO rvo = resultService.selectResultModifyDetail(p_id, d_id, year);
+		model.addAttribute("ivo", rvo);
+		
+		
+		return "result/resultModifyWrite";
+	}
+	
 	@RequestMapping(value="/resultWriteSave.do")
 	public String insertResult(ResultVO rvo) throws Exception {
 		
