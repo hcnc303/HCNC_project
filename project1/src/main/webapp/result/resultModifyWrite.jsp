@@ -90,13 +90,13 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label> 
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text"  name="p_startdate" required="required" autocomplete="'off" readonly="readonly" value="${rvo.d_startdate }"> 
+	                                                <input class="form-control" type="text"  name="p_startdate" autocomplete="'off" readonly="readonly" value="${rvo.d_startdate }"> 
 	                                            </div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" name="p_enddate" required="required" autocomplete="'off" readonly="readonly" value="${rvo.d_enddate }">
+	                                                <input class="form-control" type="text" name="p_enddate" autocomplete="'off" readonly="readonly" value="${rvo.d_enddate }">
 	                                            </div>
                                         	</div>
 											<div class="field item form-group">
