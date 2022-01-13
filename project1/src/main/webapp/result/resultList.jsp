@@ -17,7 +17,7 @@
 </style>
 <script>
 	function fn_update(p_id, d_id) {
-		location = "resultModifyWrite.do?p_id=" + p_id + "&d_id=" + d_id;
+		location = "resultModifyWrite.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year;
 	}
 	function fn_delete(p_id, d_id, year) {
 		if (confirm("정말 삭제하시겠습니까?")) {
@@ -162,7 +162,7 @@
 														<td>${list.dec }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
-																onclick="fn_update('${list.pId}', '${list.dId}')">수정</button>
+																onclick="fn_update('${list.pId}', '${list.dId}', '${list.year}')">수정</button>
 															<button type="button" class="btn btn-round btn-danger"
 																onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
 														</td>
