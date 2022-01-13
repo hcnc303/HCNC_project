@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class ResultVO {
+	private int no;
 	private String p_id;
 	private String d_id;
 	private String d_startdate;

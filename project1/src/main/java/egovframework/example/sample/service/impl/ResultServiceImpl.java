@@ -47,6 +47,12 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 		return resultDAO.deleteResult(p_id,d_id,year);
 	}
 
+	@Override
+	public int updateResult(ResultVO rvo) throws Exception {
+		
+		return resultDAO.updateResult(rvo);
+	}
+
 
 
 }

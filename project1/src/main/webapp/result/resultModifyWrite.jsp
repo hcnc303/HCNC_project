@@ -66,7 +66,13 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="resultModifyWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
-	
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="no" >no <span class="required" >*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="no" required="required" class="form-control "name="no" autocomplete="off" readonly="readonly" value="${rvo.no}">
+												</div>
+											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
 												</label>

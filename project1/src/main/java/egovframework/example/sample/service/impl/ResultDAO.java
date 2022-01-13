@@ -53,6 +53,11 @@ public class ResultDAO extends EgovAbstractDAO {
 		return (int) delete("resultDAO.deleteResult",map);
 	}
 
+	public int updateResult(ResultVO rvo) {
+
+		return (int) update("resultDAO.updateResult", rvo);
+	}
+
 
 
 }

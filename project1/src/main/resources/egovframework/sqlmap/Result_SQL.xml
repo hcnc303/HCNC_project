@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="resultDAO.selectResultModifyDetail" resultClass="resultVO">
-		select p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+		select no, p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
 		from hc_result
 		where p_id = #p_id# and d_id = #d_id# and year=#year#
 	</select>
@@ -33,6 +33,12 @@
 			inner join hc_result as r
 			on p.p_id = r.p_id and d.d_id = r.d_id
 	</select>
+	
+	<update id="resultDAO.updateResult">
+		update hc_result set
+			jan=#jan#,feb=#feb#,mar=#mar#,apr=#apr#,may=#may#,jun=#jun#,jul=#jul#,aug=#aug#,sep=#sep#,oct=#oct#,nov=#nov#,dec=#dec#
+		where no=#no#
+	</update>
 	
 	<delete id="resultDAO.deleteResult">
 		DELETE FROM hc_Result WHERE p_id=#p_id# AND d_id=#d_id# AND year=#year#

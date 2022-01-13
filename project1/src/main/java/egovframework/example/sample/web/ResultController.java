@@ -56,7 +56,14 @@ public class ResultController {
 	}
 	
 	@RequestMapping(value="/resultModifyWriteSave.do")
-	public String updateResult() throws Exception {
+	public String updateResult(ResultVO rvo) throws Exception {
+		
+		int result = resultService.updateResult(rvo);
+		if(result == 1) {
+			System.out.println("수정완료");
+		} else {
+			System.out.println("수정실패");
+		}
 		
 		return "redirect:/resultList.do";
 		
