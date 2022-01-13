@@ -56,4 +56,16 @@ public class ResultController {
 		
 	}
 
+
+	@RequestMapping(value="/resultDelete.do")
+	public String deleteResult(String p_id, String d_id, String year) throws Exception {
+		
+		int result = resultService.deleteResult(p_id, d_id, year);
+		if(result == 1) {
+			System.out.println("삭제완료");
+		} else {
+			System.out.println("삭제실패");
+		}
+		return "redirect:resultList.do";
+	} 
 }

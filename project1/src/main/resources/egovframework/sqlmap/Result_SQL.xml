@@ -28,4 +28,8 @@
 			on p.p_id = r.p_id and d.d_id = r.d_id
 	</select>
 	
+	<delete id="resultDAO.deleteResult">
+		DELETE FROM hc_Result WHERE p_id=#p_id# AND d_id=#d_id# AND year=#year#
+	</delete>
+	
 </sqlMap>

@@ -19,9 +19,9 @@
 	function fn_update(p_id, d_id) {
 		location = "resultModifyWrite.do?p_id=" + p_id + "&d_id=" + d_id;
 	}
-	function fn_delete(p_id, d_id) {
+	function fn_delete(p_id, d_id, year) {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id;
+			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year;
 		}
 	}
 </script>
@@ -164,7 +164,7 @@
 															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${list.pId}', '${list.dId}')">수정</button>
 															<button type="button" class="btn btn-round btn-danger"
-																onclick="fn_delete('${list.pId}', '${list.dId}')">삭제</button>
+																onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
 														</td>
 													</tr>
 												</c:forEach>

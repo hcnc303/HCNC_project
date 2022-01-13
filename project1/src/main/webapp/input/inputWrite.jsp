@@ -106,6 +106,16 @@
 	                                            <div class="col-md-6 col-sm-6">
 	                                                <input class="form-control" type="text" id="datepicker2" name="d_enddate" required="required" autocomplete="off" placeholder="____년__월__일"></div>
                                         	</div>
+											<div class="field item form-group">
+	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입년도<span class="required">*</span></label>
+	                                            <div class="col-md-6 col-sm-6">
+	                                                <input class="form-control" type="text" id="startyear" name="startyear" autocomplete="off" ></div>
+                                        	</div>
+											<div class="field item form-group">
+	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수년도<span class="required">*</span></label>
+	                                            <div class="col-md-6 col-sm-6">
+	                                                <input class="form-control" type="text" id="endyear" name="endyear" autocomplete="off" ></div>
+                                        	</div>
 											<div class="ln_solid"></div>
 											<div class="item form-group">
 												<div class="col-md-6 col-sm-6 offset-md-3">

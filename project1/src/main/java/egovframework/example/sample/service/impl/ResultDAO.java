@@ -33,6 +33,14 @@ public class ResultDAO extends EgovAbstractDAO {
 		return list("resultDAO.selectResultList", rvo);
 	}
 
-
+	public int deleteResult(String p_id, String d_id, String year) {
+		
+		Map map = new HashMap();
+			map.put("p_id", p_id);
+			map.put("d_id", d_id);
+			map.put("year", year);
+			
+		return (int) delete("resultDAO.deleteResult",map);
+	}
 
 }

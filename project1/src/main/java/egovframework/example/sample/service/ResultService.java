@@ -10,4 +10,6 @@ public interface ResultService {
 	
 	List<?> selectResultList(ResultVO rvo) throws Exception;
 
+	public int deleteResult(String p_id, String d_id, String year);
+
 }

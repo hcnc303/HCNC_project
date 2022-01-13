@@ -11,6 +11,8 @@ public class InputVO {
 	private String i_role;
 	private String d_startdate;
 	private String d_enddate;
+	private String startyear;
+	private String endyear;
 	
 	private ProjectVO projectVO;
 	private DeveloperVO developerVO;
