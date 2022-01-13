@@ -113,7 +113,6 @@
 													<th>등급</th>
 													<th>역할</th>
 													<th>상주</th>
-													<th>투입공수</th>
 													<th>투입년도</th>
 													<th>1월</th>
 													<th>2월</th>
@@ -148,7 +147,6 @@
 														<td>${list.dTier }</td>
 														<td>${list.iRole }</td>
 														<td>${list.iStay }</td>
-														<td>${list.jan }+${list.feb }+${list.mar }+${list.apr }+${list.may }+${list.jun }+${list.jul }+${list.aug }+${list.sep }+${list.oct }+${list.nov }+${list.dec }</td>
 														<td>${list.year }년</td>
 														<td id="jan">${list.jan }</td>
 														<td id="feb">${list.feb }</td>

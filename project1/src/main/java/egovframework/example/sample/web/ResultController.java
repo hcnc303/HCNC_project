@@ -36,7 +36,7 @@ public class ResultController {
 	public String resultModify(String p_id, String d_id, String year, Model model) throws Exception {
 		
 		ResultVO rvo = resultService.selectResultModifyDetail(p_id, d_id, year);
-		model.addAttribute("ivo", rvo);
+		model.addAttribute("rvo", rvo);
 		
 		
 		return "result/resultModifyWrite";
@@ -52,6 +52,13 @@ public class ResultController {
 		}
 		
 		return "redirect:resultList.do";
+		
+	}
+	
+	@RequestMapping(value="/resultModifyWriteSave.do")
+	public String updateResult() throws Exception {
+		
+		return "redirect:/resultList.do";
 		
 	}
 	
