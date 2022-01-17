@@ -72,7 +72,7 @@
 					<div class="x_panel">
 						<div class="x_title">
 							<h2>
-								개발자 리스트 <small></small>
+								사원비율 및 등급비율 <small></small>
 							</h2>
 							<ul class="nav navbar-right panel_toolbox">
 								<li><a class="collapse-link"><i
