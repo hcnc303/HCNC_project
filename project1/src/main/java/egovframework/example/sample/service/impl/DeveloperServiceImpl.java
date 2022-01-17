@@ -54,4 +54,55 @@ public class DeveloperServiceImpl extends EgovAbstractServiceImpl
 	public List<?> selectDtCateList(DtCateVO vo) throws Exception {
 		return devDAO.selectDtCateList(vo);
 	}
+
+	@Override
+	public List<?> selectGrade1List(DeveloperVO vo) throws Exception {
+		
+		return devDAO.selectGrade1List(vo);
+	}
+
+	@Override
+	public List<?> selectGrade2List(DeveloperVO vo) throws Exception {
+		return devDAO.selectGrade2List(vo);
+	}
+
+	@Override
+	public List<?> selectGrade3List(DeveloperVO vo) throws Exception {
+		return devDAO.selectGrade3List(vo);
+	}
+
+	@Override
+	public List<?> selectGrade4List(DeveloperVO vo) throws Exception {
+		return devDAO.selectGrade4List(vo);
+	}
+
+	@Override
+	public List<?> selectGrade5List(DeveloperVO vo) throws Exception {
+		return devDAO.selectGrade5List(vo);
+	}
+
+	@Override
+	public List<?> selectGrade6List(DeveloperVO vo) throws Exception {
+		return devDAO.selectGrade6List(vo); 
+	}
+
+	@Override
+	public List<?> selcetTier1List(DeveloperVO vo) throws Exception {
+		return devDAO.selcetTier1List(vo); 
+	}
+
+	@Override
+	public List<?> selcetTier2List(DeveloperVO vo) throws Exception {
+		return devDAO.selcetTier2List(vo); 
+	}
+
+	@Override
+	public List<?> selcetTier3List(DeveloperVO vo) throws Exception {
+		return devDAO.selcetTier3List(vo);
+	}
+
+	@Override
+	public List<?> selcetTier4List(DeveloperVO vo) throws Exception {
+		return devDAO.selcetTier4List(vo);
+	}
 }

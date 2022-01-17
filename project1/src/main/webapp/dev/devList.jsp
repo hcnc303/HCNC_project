@@ -9,12 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<style>
-.hidden {
-	
-}
-</style>
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -72,11 +66,46 @@
 					</h3>
 				</div>
 			</div>
-
 			<div class="clearfix"></div>
-
 			<div class="row">
-
+				<div class="col-md-12 col-sm-12 ">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>
+								개발자 리스트 <small></small>
+							</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-expanded="false"><i
+										class="fa fa-wrench"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="card-box table-responsive">
+										<p class="text-muted font-13 m-b-30">사원비율 및 등급비율</p>
+									</div>
+								</div>	
+								<div style="display: flex; width: 100%; justify-content: center;" >
+									<div style="width: 400px; height: 400px; margin-right: 200px; ">
+										<!--차트가 그려질 부분-->
+										<canvas id="grade" style="width: 400px; height: 400px;" ></canvas>
+									</div>
+									<div style="width: 400px; height: 400px;">
+										<!--차트가 그려질 부분-->
+										<canvas id="tier" style="width: 400px; height: 400px;" ></canvas>
+									</div>
+								</div>														
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-12 col-sm-12 ">
 					<div class="x_panel">
 						<div class="x_title">
@@ -112,10 +141,7 @@
 													<th>구분</th>
 												</tr>
 											</thead>
-
-
 											<tbody>
-
 												<c:forEach var="result" items="${resultList}"
 													varStatus="status">
 													<tr>
@@ -137,7 +163,7 @@
 											</tbody>
 										</table>
 									</div>
-								</div>
+								</div>														
 							</div>
 						</div>
 					</div>
@@ -193,6 +219,130 @@
 
 	<!-- Custom Theme Scripts -->
 	<script src="/build/js/custom.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script type="text/javascript">
+            var context = document
+                .getElementById('grade')
+                .getContext('2d');
+            var myChart = new Chart(context, {
+                type: 'pie', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '사원','대리','과장','차장','부장','이사'
+                    ],
+                    datasets: [
+                        { //데이터
+                            label: '사원 비율', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                ${list1},${list2},${list3},${list4},${list5},${list6} //x축 label에 대응되는 데이터 값
+                            ], 
+                            backgroundColor: [
+                                //색상
+                                'rgba(247, 8, 5, 0.5)',
+                                'rgba(57, 79, 240, 0.5)',
+                                'rgba(247, 246, 28, 0.5)',
+                                'rgba(75, 192, 192, 0.5)',
+                                'rgba(153, 102, 255, 0.5)',
+                                'rgba(255, 159, 64, 0.5)'
+                            ],
+                            borderColor: [
+                                //경계선 색상
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1 //경계선 굵기
+                        }/* ,
+                        {
+                            label: 'test2',
+                            fill: false,
+                            data: [
+                                8, 34, 12, 24
+                            ],
+                            backgroundColor: 'rgb(157, 109, 12)',
+                            borderColor: 'rgb(157, 109, 12)'
+                        } */
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
+        <script type="text/javascript">
+            var context = document
+                .getElementById('tier')
+                .getContext('2d');
+            var myChart = new Chart(context, {
+                type: 'pie', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '초급','중급','고급','특급'
+                    ],
+                    datasets: [
+                        { //데이터
+                            label: '등급 비율', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                ${tierlist1},${tierlist2},${tierlist3},${tierlist4} //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                'rgba(247, 8, 5, 0.5)',
+                                'rgba(57, 79, 240, 0.5)',
+                                'rgba(247, 246, 28, 0.5)',
+                                'rgba(75, 192, 192, 0.5)',
+                                'rgba(153, 102, 255, 0.5)',
+                                'rgba(255, 159, 64, 0.5)'
+                            ], 
+                            borderColor: [
+                                //경계선 색상
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1 //경계선 굵기
+                        }/* ,
+                        {
+                            label: 'test2',
+                            fill: false,
+                            data: [
+                                8, 34, 12, 24
+                            ],
+                            backgroundColor: 'rgb(157, 109, 12)',
+                            borderColor: 'rgb(157, 109, 12)'
+                        } */
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
 </body>
 </html>

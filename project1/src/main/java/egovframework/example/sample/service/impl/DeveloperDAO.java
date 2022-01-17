@@ -39,6 +39,49 @@ public class DeveloperDAO extends EgovAbstractDAO {
 	public List<?> selectDtCateList(DtCateVO vo) {
 		return list("devDAO.selectDtCateList",vo);
 	}
+	
+
+	public List<?> selectGrade1List(DeveloperVO vo) {
+		
+		return list("devDAO.selectGrade1List",vo);
+	}
+
+	public List<?> selectGrade2List(DeveloperVO vo) {
+		return list("devDAO.selectGrade2List",vo);
+	}
+
+	public List<?> selectGrade3List(DeveloperVO vo) {
+		return list("devDAO.selectGrade3List",vo);
+	}
+
+	public List<?> selectGrade4List(DeveloperVO vo) {
+		return list("devDAO.selectGrade4List",vo);
+	}
+
+	public List<?> selectGrade5List(DeveloperVO vo) {
+		return list("devDAO.selectGrade5List",vo);
+	}
+
+	public List<?> selectGrade6List(DeveloperVO vo) {
+		return list("devDAO.selectGrade6List",vo);
+	}
+	
+
+	public List<?> selcetTier1List(DeveloperVO vo) {
+		return list("devDAO.selcetTier1List",vo);
+	}
+
+	public List<?> selcetTier2List(DeveloperVO vo) {
+		return list("devDAO.selcetTier2List",vo);
+	}
+
+	public List<?> selcetTier3List(DeveloperVO vo) {
+		return list("devDAO.selcetTier3List",vo);
+	}
+
+	public List<?> selcetTier4List(DeveloperVO vo) {
+		return list("devDAO.selcetTier4List",vo);
+	}
 
 
 }

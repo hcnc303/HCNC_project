@@ -18,4 +18,20 @@ public interface DeveloperService {
 	public int updateDev(DeveloperVO vo) throws Exception; 
 	
 	List<?> selectDtCateList(DtCateVO vo) throws Exception;
+	
+	// 사원 비율
+	List<?> selectGrade1List(DeveloperVO vo) throws Exception;
+	List<?> selectGrade2List(DeveloperVO vo) throws Exception;
+	List<?> selectGrade3List(DeveloperVO vo) throws Exception;
+	List<?> selectGrade4List(DeveloperVO vo) throws Exception;
+	List<?> selectGrade5List(DeveloperVO vo) throws Exception;
+	List<?> selectGrade6List(DeveloperVO vo) throws Exception;
+	
+	// 등급 비율
+	List<?> selcetTier1List(DeveloperVO vo) throws Exception;
+	List<?> selcetTier2List(DeveloperVO vo) throws Exception;
+	List<?> selcetTier3List(DeveloperVO vo) throws Exception;
+	List<?> selcetTier4List(DeveloperVO vo) throws Exception;
+	
+	
 }

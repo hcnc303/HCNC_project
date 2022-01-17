@@ -45,6 +45,57 @@
 			d_id=#d_id#, d_name=#d_name#, d_tier=#d_tier#, d_jobgrade=#d_jobgrade#, d_type=#d_type#, joindate=#joindate#
 		WHERE d_id = #d_id#
 	</update>
+	
+	<select id="devDAO.selectGrade1List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '사원' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selectGrade2List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '대리' and d_type = '정직원'
+	</select>
+
+	<select id="devDAO.selectGrade3List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '과장' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selectGrade4List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '차장' and d_type = '정직원'
+	</select>	
+
+	<select id="devDAO.selectGrade5List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '부장' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selectGrade6List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_jobgrade = '이사' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selcetTier1List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_tier = '초급' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selcetTier2List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_tier = '중급' and d_type = '정직원'
+	</select>	
+	
+	<select id="devDAO.selcetTier3List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_tier = '고급' and d_type = '정직원'
+	</select>
+	
+	<select id="devDAO.selcetTier4List" resultClass="java.lang.Integer">
+		select count(*) from hc_developer
+		where d_tier = '특급' and d_type = '정직원'
+	</select>	
+	
 </sqlMap>
 
 
