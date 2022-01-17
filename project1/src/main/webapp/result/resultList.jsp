@@ -16,8 +16,8 @@
 }
 </style>
 <script>
-	function fn_update(p_id, d_id, year) {
-		location = "resultModifyWrite.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year;
+	function fn_update(p_id, p_name, d_id, d_name, year) {
+		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;
 	}
 	function fn_delete(p_id, d_id, year) {
 		if (confirm("정말 삭제하시겠습니까?")) {
@@ -113,7 +113,7 @@
 													<th>등급</th>
 													<th>역할</th>
 													<th>상주</th>
-													<th>투입년도</th>
+													<th>년도</th>
 													<th>1월</th>
 													<th>2월</th>
 													<th>3월</th>
@@ -162,7 +162,7 @@
 														<td id="dec">${list.dec }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
-																onclick="fn_update('${list.pId}', '${list.dId}', '${list.year}')">수정</button>
+																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}', '${list.year}')">수정</button>
 															<button type="button" class="btn btn-round btn-danger"
 																onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
 														</td>
@@ -190,8 +190,6 @@
 		<div class="clearfix"></div>
 	</footer>
 	<!-- /footer content -->
-	</div>
-	</div>
 
 	<!-- jQuery -->
 	<script src="/vendors/jquery/dist/jquery.min.js"></script>
@@ -229,6 +227,7 @@
 
 	<!-- Custom Theme Scripts -->
 	<script src="/build/js/custom.min.js"></script>
+	
 
 </body>
 </html>

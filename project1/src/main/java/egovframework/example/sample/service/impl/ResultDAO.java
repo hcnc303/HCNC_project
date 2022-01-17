@@ -12,11 +12,13 @@ import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 
 @Repository("resultDAO")
 public class ResultDAO extends EgovAbstractDAO {
-	public InputVO selectResultDetail(String p_id, String d_id) {
+	public InputVO selectResultDetail(String p_id, String p_name, String d_id, String d_name) {
 		
 		Map map = new HashMap();
 			map.put("p_id", p_id);
+			map.put("p_name", p_name);
 			map.put("d_id", d_id);
+			map.put("d_name", d_name);
 		
 		
 		return (InputVO) select("resultDAO.selectResultDetail",map);

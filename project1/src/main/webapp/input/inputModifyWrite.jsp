@@ -64,7 +64,7 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="inputModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
-											<div class="form-group row">
+											<div class="form-group row" style= display:none;>
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="no">no <span class="required">*</span></label>
 												<div class="col-md-6 col-sm-6 ">
 													<input type="text" id="no" required="required" class="form-control "name="no" value="${vo.no }" readonly> 
@@ -114,12 +114,12 @@
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 투입일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker1" name="d_startdate" required="required" autocomplete="off" value="${vo.d_startdate }"></div>
+	                                                <input class="form-control" type="text" id="datepicker1" name="d_startdate" autocomplete="off" value="${vo.d_startdate }"></div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 철수일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" id="datepicker2" name="d_enddate" required="required" autocomplete="off" placeholder="${vo.d_enddate }"></div>
+	                                                <input class="form-control" type="text" id="datepicker2" name="d_enddate" autocomplete="off" value="${vo.d_enddate }"></div>
                                         	</div>
 											<div class="ln_solid"></div>
 											<div class="item form-group">

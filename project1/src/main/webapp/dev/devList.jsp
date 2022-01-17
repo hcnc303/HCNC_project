@@ -108,6 +108,7 @@
 													<th>직급</th>
 													<th>등급</th>
 													<th>직원구분여부</th>
+													<th>입사일</th>
 													<th>구분</th>
 												</tr>
 											</thead>
@@ -124,6 +125,7 @@
 														<td>${result.dJobgrade}</td>
 														<td>${result.dTier}</td>
 														<td>${result.dType}</td>
+														<td>${result.joindate }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${result.dId}')">수정</button>

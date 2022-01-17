@@ -21,5 +21,6 @@ public class DeveloperVO {
 	//직급
 	private String d_type;
 	//직원구분여부
+	private String joindate;
 	
 }

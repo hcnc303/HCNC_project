@@ -129,7 +129,7 @@
 														<td>${list.pProgress }</td>
 														<td>${list.pPlace }</td>
 														<td class="hidden">${list.dId }</td>
-														<td><a href="/resultWrite.do?p_id=${list.pId}&d_id=${list.dId}">${list.dName }</a></td>
+														<td><a href="/resultWrite.do?p_id=${list.pId}&p_name=${list.pName}&d_id=${list.dId}&d_name=${list.dName}">${list.dName }</a></td>
 														<td>${list.dJobgrade }</td>
 														<td>${list.dTier }</td>
 														<td>${list.iRole }</td>

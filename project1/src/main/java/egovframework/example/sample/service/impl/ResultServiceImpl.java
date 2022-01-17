@@ -18,9 +18,9 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 	private ResultDAO resultDAO;
 
 	@Override
-	public InputVO selectResultDetail(String p_id, String d_id) throws Exception {
+	public InputVO selectResultDetail(String p_id, String p_name, String d_id, String d_name) throws Exception {
 		
-		return resultDAO.selectResultDetail(p_id,d_id);
+		return resultDAO.selectResultDetail(p_id, p_name, d_id, d_name);
 	}
 	
 	@Override

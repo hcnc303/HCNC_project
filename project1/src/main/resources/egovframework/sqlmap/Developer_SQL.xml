@@ -8,8 +8,8 @@
 	<typeAlias  alias="DtCateVO" type="egovframework.example.sample.service.DtCateVO"/>
 
 	<insert id="devDAO.insertDev">
-		INSERT INTO hc_developer(d_id,d_name,d_tier,d_jobgrade,d_type,tier )
-			VALUES (#d_id#,#d_name#,#d_tier#,#d_jobgrade#,#d_type#, 1)
+		INSERT INTO hc_developer(d_id,d_name,d_tier,d_jobgrade,d_type,tier,joindate )
+			VALUES (#d_id#,#d_name#,#d_tier#,#d_jobgrade#,#d_type#, 1,#joindate#)
 	</insert>
 	
 	<select id="devDAO.selectDtCateList" resultClass="egovMap">
@@ -21,7 +21,7 @@
          SELECT * 
          FROM(
          	SELECT ROW_NUMBER() OVER (ORDER BY d_no ASC) as no,
-            		d_no, d_id, d_name, d_tier, d_jobgrade, d_type
+            		d_no, d_id, d_name, d_tier, d_jobgrade, d_type,joindate
             FROM hc_developer
          )hc_developer 
     	]]>
@@ -32,7 +32,7 @@
 	</select>
 	
 	<select id="devDAO.selectDevDetail" resultClass="DeveloperVO">
-		SELECT d_id, d_name, d_tier, d_jobgrade, d_type
+		SELECT d_id, d_name, d_tier, d_jobgrade, d_type,joindate
 		FROM hc_developer WHERE d_id = #d_id#
 	</select>
 	
@@ -42,7 +42,7 @@
 		
 	<update id="devDAO.updateDev">
 		UPDATE hc_developer SET 
-			d_id=#d_id#, d_name=#d_name#, d_tier=#d_tier#, d_jobgrade=#d_jobgrade#, d_type=#d_type#
+			d_id=#d_id#, d_name=#d_name#, d_tier=#d_tier#, d_jobgrade=#d_jobgrade#, d_type=#d_type#, joindate=#joindate#
 		WHERE d_id = #d_id#
 	</update>
 </sqlMap>

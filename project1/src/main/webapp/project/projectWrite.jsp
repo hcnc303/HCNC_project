@@ -23,6 +23,7 @@
 		<!-- starrr -->
 		<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
 		<!-- bootstrap-daterangepicker -->
+		
 		<!-- <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"> -->
 		
 		<link rel="stylesheet" href="datepicker/air-datepicker/dist/css/datepicker.min.css">

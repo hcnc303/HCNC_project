@@ -118,7 +118,7 @@
 															<tr>
 																<td>${result.no }</td>
 																<td>${result.pId }</td>
-																<td><a href="inputWrite2.do?p_id=${result.pId }">${result.pName }</a></td>
+																<td><a href="inputWrite2.do?p_id=${result.pId }&p_name=${result.pName}">${result.pName }</a></td>
 																<td>${result.pStartdate }</td>
 																<td>${result.pEnddate }</td>
 																<td>${result.pPlace }</td>

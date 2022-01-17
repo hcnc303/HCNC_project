@@ -67,7 +67,7 @@
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="resultWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 	
-											<div class="item form-group">
+											<div class="item form-group" style=display:none;>
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
@@ -75,10 +75,24 @@
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name">사번 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name" >프로젝트 이름 <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_name" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${ivo.d_id}">
+													<input type="text" id="p_name" required="required" class="form-control "name="p_name" autocomplete="off" readonly="readonly" value="${ivo.p_name}">
+												</div>
+											</div>
+											<div class="item form-group" style=display:none;>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_id">사번 <span class="required">*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="d_id" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${ivo.d_id}">
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_name" >이름 <span class="required" >*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="d_name" required="required" class="form-control "name="d_name" autocomplete="off" readonly="readonly" value="${ivo.d_name}">
 												</div>
 											</div>
 											<div class="field item form-group">
@@ -131,40 +145,40 @@
 													
 														<tr>
 															<td>
-																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="jan" name="jan" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="feb" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="feb" name="feb" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="mar" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="mar" name="mar" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="apr" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="apr" name="apr" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="may" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="may" name="may" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="jun" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="jun" name="jun" required="required" autocomplete="off" value="0">
 															</td>	
 															<td>
-																<input class="form-control" type="text" name="jul" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="jul" name="jul" required="required" autocomplete="off" value="0">
 															</td>																																																										
 															<td>
-																<input class="form-control" type="text" name="aug" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="aug" name="aug" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="sep" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="sep" name="sep" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="oct" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="oct" name="oct" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="nov" required="required" autocomplete="off" value="0"> 
+																<input class="form-control" type="text" id="nov" name="nov" required="required" autocomplete="off" value="0"> 
 															</td>
 															<td>
-																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" id="dec" name="dec" required="required" autocomplete="off" value="0">
 															</td>
 														</tr>
 														
@@ -176,7 +190,7 @@
 												<div class="col-md-6 col-sm-6 offset-md-3">
 													<button class="btn btn-primary" type="button">취소</button>
 													<button class="btn btn-primary" type="reset">초기화</button>
-													<button class="btn btn-success" type="submit">저장</button>
+													<button class="btn btn-success" type="submit" onclick="check()">저장</button>
 												</div>
 											</div>
 										</form>
@@ -236,7 +250,6 @@
 		<script src="/build/js/custom.min.js"></script>
 		
 	    <script src="datepicker/air-datepicker/dist/js/datepicker.min.js"></script>
-	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>
-		
+	    <script src="datepicker/air-datepicker/dist/js/i18n/datepicker.ko.js"></script>	
 	</body>
 </html>

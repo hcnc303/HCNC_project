@@ -66,7 +66,7 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="resultModifyWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
-											<div class="item form-group">
+											<div class="item form-group" style=display:none;>
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="no" >no <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
@@ -80,11 +80,11 @@
 													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly" value="${rvo.p_id}">
 												</div>
 											</div>
-											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name">사번 <span class="required">*</span>
+											<div class="item form-group" style=display:none;>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_id">사번 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_name" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${rvo.d_id}">
+													<input type="text" id="d_id" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${rvo.d_id}">
 												</div>
 											</div>
 											<div class="field item form-group">

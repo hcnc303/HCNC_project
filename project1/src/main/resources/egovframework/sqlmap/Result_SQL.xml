@@ -8,18 +8,22 @@
 	<typeAlias  alias="inputVO" type="egovframework.example.sample.service.InputVO"/>
 	
 	<select id="resultDAO.selectResultDetail" resultClass="inputVO">
-		select p_id, d_id, d_startdate, d_enddate from hc_InputWorkers where p_id = #p_id# and d_id = #d_id#
+		select i.p_id, i.p_name, i.d_id, d.d_name, i.d_startdate, i.d_enddate 
+		from hc_InputWorkers as i
+		inner join hc_developer as d
+		on i.d_id = d.d_id
+		where i.p_id = #p_id# and i.d_id = #d_id#
 	</select>
 	
 	<select id="resultDAO.selectResultModifyDetail" resultClass="resultVO">
-		select no, p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+		select no, p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may,jun, jul, aug, sep, oct, nov, dec
 		from hc_result
 		where p_id = #p_id# and d_id = #d_id# and year=#year#
 	</select>
 	
 	<insert id="resultDAO.insertResult">
-		insert into hc_result(p_id,d_id,d_startdate,d_enddate,year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
-			values(#p_id#,#d_id#,#d_startdate#,#d_enddate#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
+		insert into hc_result(p_id,p_name,d_id,d_name,d_startdate,d_enddate,year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec)
+			values(#p_id#,#p_name#,#d_id#,#d_name#,#d_startdate#,#d_enddate#,#year#,#jan#,#feb#,#mar#,#apr#,#may#,#jun#,#jul#,#aug#,#sep#,#oct#,#nov#,#dec#)
 	</insert>
 	
 	<select id="resultDAO.selectResultList" resultClass="egovMap">
