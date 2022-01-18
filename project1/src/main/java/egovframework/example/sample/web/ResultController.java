@@ -92,4 +92,9 @@ public class ResultController {
 		}
 		return "redirect:resultList.do";
 	} 
+	
+	@RequestMapping(value="/monthResultList.do")
+	public String selectMonthList() throws Exception {
+		return "result/monthResultList";
+	}
 }

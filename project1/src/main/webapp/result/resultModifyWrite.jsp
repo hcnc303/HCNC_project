@@ -145,40 +145,40 @@
 													
 														<tr>
 															<td>
-																<input class="form-control" type="text" name="jan" required="required" autocomplete="off" value="${rvo.jan }">
+																<input class="form-control" type="text" min="0" max="1" name="jan" required="required" autocomplete="off" value="${rvo.jan }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="feb" required="required" autocomplete="off" value="${rvo.feb }">
+																<input class="form-control" type="text" min="0" max="1" name="feb" required="required" autocomplete="off" value="${rvo.feb }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="mar" required="required" autocomplete="off" value="${rvo.mar }">
+																<input class="form-control" type="text" min="0" max="1" name="mar" required="required" autocomplete="off" value="${rvo.mar }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="apr" required="required" autocomplete="off" value="${rvo.apr }">
+																<input class="form-control" type="text" min="0" max="1" name="apr" required="required" autocomplete="off" value="${rvo.apr }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="may" required="required" autocomplete="off" value="${rvo.may }">
+																<input class="form-control" type="text" min="0" max="1" name="may" required="required" autocomplete="off" value="${rvo.may }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="jun" required="required" autocomplete="off" value="${rvo.jun }">
+																<input class="form-control" type="text" min="0" max="1" name="jun" required="required" autocomplete="off" value="${rvo.jun }">
 															</td>	
 															<td>
-																<input class="form-control" type="text" name="jul" required="required" autocomplete="off" value="${rvo.jul }">
+																<input class="form-control" type="text" min="0" max="1" name="jul" required="required" autocomplete="off" value="${rvo.jul }">
 															</td>																																																										
 															<td>
-																<input class="form-control" type="text" name="aug" required="required" autocomplete="off" value="${rvo.aug }">
+																<input class="form-control" type="text" min="0" max="1" name="aug" required="required" autocomplete="off" value="${rvo.aug }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="sep" required="required" autocomplete="off" value="${rvo.sep }">
+																<input class="form-control" type="text" min="0" max="1" name="sep" required="required" autocomplete="off" value="${rvo.sep }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="oct" required="required" autocomplete="off" value="${rvo.oct }">
+																<input class="form-control" type="text" min="0" max="1" name="oct" required="required" autocomplete="off" value="${rvo.oct }">
 															</td>
 															<td>
-																<input class="form-control" type="text" name="nov" required="required" autocomplete="off" value="${rvo.nov }"> 
+																<input class="form-control" type="text" min="0" max="1" name="nov" required="required" autocomplete="off" value="${rvo.nov }"> 
 															</td>
 															<td>
-																<input class="form-control" type="text" name="dec" required="required" autocomplete="off" value="${rvo.dec }">
+																<input class="form-control" type="text" min="0" max="1" name="dec" required="required" autocomplete="off" value="${rvo.dec }">
 															</td>
 														</tr>
 														

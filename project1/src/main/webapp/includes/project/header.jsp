@@ -58,10 +58,10 @@
                         </li>
                     </ul>
                   </li>     
-                  <li><a><i class="fa fa-sitemap"></i> 프로젝트별 공수관리 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-sitemap"></i>공수관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="/resultList.do">프로젝트별 공수현황 목록</a>
-                        </li>
+                        <li><a href="/resultList.do">프로젝트별 공수현황 목록</a></li>
+                        <li><a href="/monthResultList.do">월별 공수현황 목록</a></li>
                     </ul>
                   </li> 
                 </ul>
