@@ -162,7 +162,7 @@
 														<td id="dec">${list.dec }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
-																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}', '${list.year}')">수정</button>
+																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
 															<button type="button" class="btn btn-round btn-danger"
 																onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
 														</td>

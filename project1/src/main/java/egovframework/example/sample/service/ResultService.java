@@ -6,7 +6,7 @@ public interface ResultService {
 	
 	public InputVO selectResultDetail(String p_id, String p_name, String d_id, String d_name) throws Exception;
 	
-	public ResultVO selectResultModifyDetail(String p_id, String d_id, String year) throws Exception;
+	public ResultVO selectResultModifyDetail(String p_id, String p_name, String d_id, String d_name, String year) throws Exception;
 	
 	public String insertResult(ResultVO rvo) throws Exception;
 	

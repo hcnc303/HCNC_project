@@ -24,9 +24,9 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 	}
 	
 	@Override
-	public ResultVO selectResultModifyDetail(String p_id, String d_id, String year) throws Exception {
+	public ResultVO selectResultModifyDetail(String p_id, String p_name, String d_id, String d_name, String year) throws Exception {
 		// TODO Auto-generated method stub
-		return resultDAO.selectResultModifyDetail(p_id,d_id,year);
+		return resultDAO.selectResultModifyDetail(p_id,p_name,d_id,d_name,year);
 	}
 
 	@Override

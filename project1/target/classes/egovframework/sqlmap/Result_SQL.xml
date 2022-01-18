@@ -16,7 +16,7 @@
 	</select>
 	
 	<select id="resultDAO.selectResultModifyDetail" resultClass="resultVO">
-		select no, p_id, d_id, d_startdate, d_enddate, year, jan, feb, mar, apr, may,jun, jul, aug, sep, oct, nov, dec
+		select no, p_id,p_name, d_id,d_name, d_startdate, d_enddate, year, jan, feb, mar, apr, may,jun, jul, aug, sep, oct, nov, dec
 		from hc_result
 		where p_id = #p_id# and d_id = #d_id# and year=#year#
 	</select>

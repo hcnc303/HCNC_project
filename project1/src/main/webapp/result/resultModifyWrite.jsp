@@ -73,11 +73,18 @@
 													<input type="text" id="no" required="required" class="form-control "name="no" autocomplete="off" readonly="readonly" value="${rvo.no}">
 												</div>
 											</div>
-											<div class="item form-group">
+											<div class="item form-group" style=display:none;>
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_id" >프로젝트 코드 <span class="required" >*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<input type="text" id="p_id" required="required" class="form-control "name="p_id" autocomplete="off" readonly="readonly" value="${rvo.p_id}">
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name" >프로젝트 이름 <span class="required" >*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="p_name" required="required" class="form-control "name="p_name" autocomplete="off" readonly="readonly" value="${rvo.p_name}">
 												</div>
 											</div>
 											<div class="item form-group" style=display:none;>
@@ -85,6 +92,13 @@
 												</label>
 												<div class="col-md-6 col-sm-6 ">
 													<input type="text" id="d_id" required="required" class="form-control" name="d_id" autocomplete="off" readonly="readonly" value="${rvo.d_id}">
+												</div>
+											</div>
+											<div class="item form-group">
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="d_name">이름 <span class="required" >*</span>
+												</label>
+												<div class="col-md-6 col-sm-6 ">
+													<input type="text" id="d_name" required="required" class="form-control "name="d_name" autocomplete="off" readonly="readonly" value="${rvo.d_name}">
 												</div>
 											</div>
 											<div class="field item form-group">
