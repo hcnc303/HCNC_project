@@ -114,6 +114,7 @@
 													<th>역할</th>
 													<th>상주</th>
 													<th>년도</th>
+													<th>투입공수</th>
 													<th>1월</th>
 													<th>2월</th>
 													<th>3월</th>
@@ -148,18 +149,19 @@
 														<td>${list.iRole }</td>
 														<td>${list.iStay }</td>
 														<td>${list.year }년</td>
-														<td id="jan">${list.jan }</td>
-														<td id="feb">${list.feb }</td>
-														<td id="mar">${list.mar }</td>
-														<td id="apr">${list.apr }</td>
-														<td id="may">${list.may }</td>
-														<td id="jun">${list.jun }</td>
-														<td id="jul">${list.jul }</td>
-														<td id="aug">${list.aug }</td>
-														<td id="sep">${list.sep }</td>
-														<td id="oct">${list.oct }</td>
-														<td id="nov">${list.nov }</td>
-														<td id="dec">${list.dec }</td>
+														<td>${list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec}</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
