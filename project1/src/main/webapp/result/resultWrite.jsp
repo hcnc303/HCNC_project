@@ -145,40 +145,40 @@
 													
 														<tr>
 															<td>
-																<input class="form-control" type="text" id="jan" name="jan" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="jan" name="jan" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="feb" name="feb" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="feb" name="feb" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="mar" name="mar" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="mar" name="mar" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="apr" name="apr" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="apr" name="apr" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="may" name="may" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="may" name="may" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="jun" name="jun" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="jun" name="jun" required="required" autocomplete="off" value="0">
 															</td>	
 															<td>
-																<input class="form-control" type="text" id="jul" name="jul" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="jul" name="jul" required="required" autocomplete="off" value="0">
 															</td>																																																										
 															<td>
-																<input class="form-control" type="text" id="aug" name="aug" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="aug" name="aug" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="sep" name="sep" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="sep" name="sep" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="oct" name="oct" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="oct" name="oct" required="required" autocomplete="off" value="0">
 															</td>
 															<td>
-																<input class="form-control" type="text" id="nov" name="nov" required="required" autocomplete="off" value="0"> 
+																<input class="form-control" type="text" min="0" max="1" id="nov" name="nov" required="required" autocomplete="off" value="0"> 
 															</td>
 															<td>
-																<input class="form-control" type="text" id="dec" name="dec" required="required" autocomplete="off" value="0">
+																<input class="form-control" type="text" min="0" max="1" id="dec" name="dec" required="required" autocomplete="off" value="0">
 															</td>
 														</tr>
 														
@@ -210,7 +210,7 @@
 					<div class="clearfix"></div>
 				</footer>
 				<!-- /footer content -->
-
+		
 		<!-- jQuery -->
 		<script src="/vendors/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap -->
