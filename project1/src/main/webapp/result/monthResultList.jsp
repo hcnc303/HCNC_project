@@ -98,7 +98,7 @@
 										<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width: 100%">
 											<thead>
 												<tr>
-												 	<th>no</th>
+												 	<th style=display:none;>no</th>
 													<th>코드</th>
 													<th>프로젝트명</th>												
 													<th>투입공수</th>
@@ -120,7 +120,7 @@
 											<tbody>
 												<c:forEach var="list" items="${monthList}">
 													<tr>
-														<td>${list.no }</td>
+														<td style=display:none;>${list.no }</td>
 														<td>${list.pId }</td>
 														<td>${list.pName }</td>												
 														<td>
