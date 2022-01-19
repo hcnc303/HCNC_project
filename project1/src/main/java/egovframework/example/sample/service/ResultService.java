@@ -16,6 +16,8 @@ public interface ResultService {
 	
 	public int updateResult(ResultVO rvo) throws Exception ;
 	
-	List<?> selectMonthResultList(ResultVO rvo) throws Exception;
+	List<?> selectDevResultList(ResultVO rvo) throws Exception;
+
+	public List<?> selectMonthResultList(ResultVO rvo) throws Exception;
 
 }

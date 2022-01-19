@@ -93,6 +93,13 @@ public class ResultController {
 		return "redirect:resultList.do";
 	} 
 	
+	@RequestMapping(value="/devResultList.do")
+	public String selectDevList(ResultVO rvo, Model model) throws Exception {
+		List<?> monthList = resultService.selectDevResultList(rvo);
+		model.addAttribute("monthList", monthList);
+		return "result/devResultList";
+	}
+	
 	@RequestMapping(value="/monthResultList.do")
 	public String selectMonthList(ResultVO rvo, Model model) throws Exception {
 		List<?> monthList = resultService.selectMonthResultList(rvo);

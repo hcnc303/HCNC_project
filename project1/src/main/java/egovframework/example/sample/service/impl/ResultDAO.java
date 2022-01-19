@@ -62,6 +62,11 @@ public class ResultDAO extends EgovAbstractDAO {
 		return (int) update("resultDAO.updateResult", rvo);
 	}
 
+	public List<?> selectDevResultList(ResultVO rvo) {
+		
+		return list("resultDAO.selectDevResultList", rvo);
+	}
+
 	public List<?> selectMonthResultList(ResultVO rvo) {
 		
 		return list("resultDAO.selectMonthResultList", rvo);

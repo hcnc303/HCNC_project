@@ -67,7 +67,7 @@
 			<div class="page-title">
 				<div class="title_left">
 					<h3>
-						프로젝트별 공수 관리<small></small>
+						인력별 공수 관리<small></small>
 					</h3>
 				</div>
 			</div>
@@ -79,7 +79,7 @@
 					<div class="x_panel">
 						<div class="x_title">
 							<h2>
-								월별 공수 관리 <small></small>
+								인력별 공수 관리 <small></small>
 							</h2>
 							<ul class="nav navbar-right panel_toolbox">
 								<li><a class="collapse-link"><i
@@ -94,7 +94,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="card-box table-responsive">
-										<p class="text-muted font-13 m-b-30">월별 공수 리스트 입니다.</p>
+										<p class="text-muted font-13 m-b-30">인력별 공수 리스트 입니다.</p>
 										<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width: 100%">
 											<thead>
 												<tr>
@@ -121,7 +121,7 @@
 											<tbody>
 												<c:forEach var="list" items="${monthList}">
 													<tr>
-													<td>${list.no }</td>
+														<td>${list.no }</td>
 														<td>${list.dName }</td>
 														<td>${list.year }</td>
 														<td>

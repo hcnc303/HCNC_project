@@ -54,8 +54,13 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 	}
 
 	@Override
-	public List<?> selectMonthResultList(ResultVO rvo) throws Exception {
+	public List<?> selectDevResultList(ResultVO rvo) throws Exception {
 		
+		return resultDAO.selectDevResultList(rvo);
+	}
+
+	@Override
+	public List<?> selectMonthResultList(ResultVO rvo) throws Exception {
 		return resultDAO.selectMonthResultList(rvo);
 	}
 

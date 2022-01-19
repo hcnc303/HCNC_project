@@ -60,8 +60,9 @@
                   </li>     
                   <li><a><i class="fa fa-sitemap"></i>공수관리 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="/resultList.do">프로젝트별 공수현황 목록</a></li>
-                        <li><a href="/monthResultList.do">월별 공수현황 목록</a></li>
+                        <li><a href="/resultList.do">프로젝트별 인력투입 목록</a></li>
+                        <li><a href="/devResultList.do">인력별 투입공수</a></li>
+                        <li><a href="/monthResultList.do">프로젝트별 월투입 공수현황</a></li>
                     </ul>
                   </li> 
                 </ul>
