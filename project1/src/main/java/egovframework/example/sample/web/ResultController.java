@@ -94,7 +94,9 @@ public class ResultController {
 	} 
 	
 	@RequestMapping(value="/monthResultList.do")
-	public String selectMonthList() throws Exception {
+	public String selectMonthList(ResultVO rvo, Model model) throws Exception {
+		List<?> monthList = resultService.selectMonthResultList(rvo);
+		model.addAttribute("monthList", monthList);
 		return "result/monthResultList";
 	}
 }

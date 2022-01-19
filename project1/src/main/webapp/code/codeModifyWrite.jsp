@@ -65,7 +65,7 @@
 									<div class="x_content">
 										<br />
 										<form id="demo-form2" name="frm" method="post" action="codeModifySave.do" data-parsley-validate class="form-horizontal form-label-left">
-											<div class="item form-group hidden">
+											<div class="item form-group hidden" style="display:none;">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="codeNo" >codeNo <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">

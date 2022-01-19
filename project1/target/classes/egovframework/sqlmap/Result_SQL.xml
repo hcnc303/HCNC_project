@@ -48,4 +48,28 @@
 		DELETE FROM hc_Result WHERE p_id=#p_id# AND d_id=#d_id# AND year=#year#
 	</delete>
 	
+	<select id="resultDAO.selectMonthResultList" resultClass="egovMap">
+         SELECT * 
+         FROM(
+         	SELECT ROW_NUMBER() OVER (ORDER BY year desc ) as no
+			, d_name
+			 , year
+			 , SUM(jan) AS total_jan
+			 , SUM(feb) AS total_feb
+			 , SUM(mar) AS total_mar
+			 , SUM(apr) AS total_apr
+			 , SUM(may) AS total_may
+			 , SUM(jun) AS total_jun
+			 , SUM(jul) AS total_jul
+			 , SUM(aug) AS total_aug
+			 , SUM(sep) AS total_sep
+			 , SUM(oct) AS total_oct
+			 , SUM(nov) AS total_nov
+			 , SUM(dec) AS total_dec
+		  FROM hc_result 
+		  where year = '2022'
+		 GROUP BY ROLLUP(d_name, year) 
+		HAVING GROUPING(d_name) = 1 OR GROUPING(year) = 0 
+         )hc_result
+	</select>
 </sqlMap>

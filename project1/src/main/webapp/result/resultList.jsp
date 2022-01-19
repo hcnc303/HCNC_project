@@ -15,22 +15,7 @@
 	display : none;
 }
 </style>
-<script>
-	$(function(){
-		  
-		  var onSampleResized = function(e){  
-		    var table = $(e.currentTarget); //reference to the resized table
-		  };  
-	
-		 $("#datatable-fixed-header").colResizable({
-		    liveDrag:true,
-		    gripInnerHtml:"<div class='grip'></div>", 
-		    draggingClass:"dragging", 
-		    onResize:onSampleResized
-		  });    
-		  
-		});
-</script>
+
 <script>
 	function fn_update(p_id, p_name, d_id, d_name, year) {
 		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;

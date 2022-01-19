@@ -8,11 +8,8 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-		<title>Insert title here</title>
+	<title>Insert title here</title>
 		
-	<style>
-		.hidden {}
-	</style>
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -121,8 +118,7 @@
                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
                       <thead>
                         <tr>
-                          <th class="hidden"></th>
-						  <th>NO</th>
+						  <th style="display:none;">NO</th>
                           <th>대분류 코드</th>
                           <th>소분류 코드</th>
                           <th>소분류명</th>
@@ -134,8 +130,7 @@
                       <tbody>
 	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
 	                        <tr>
-	                          <td class="hidden"></td>
-							  <td>${d.no }</td>
+							  <td style="display:none;" >${d.no }</td>
 	                          <td>${d.masterCd }</td>
 	                          <td>${d.detailCd }</td>
 	                          <td>${d.detailNm }</td>
