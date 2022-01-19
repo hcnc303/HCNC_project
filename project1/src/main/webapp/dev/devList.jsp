@@ -72,7 +72,7 @@
 					<div class="x_panel">
 						<div class="x_title">
 							<h2>
-								사원비율 및 등급비율 <small></small>
+								직원비율 및 등급비율 <small></small>
 							</h2>
 							<ul class="nav navbar-right panel_toolbox">
 								<li><a class="collapse-link"><i
