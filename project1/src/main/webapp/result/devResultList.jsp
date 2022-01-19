@@ -67,7 +67,7 @@
 			<div class="page-title">
 				<div class="title_left">
 					<h3>
-						인력별 공수 관리<small></small>
+						월별 공수 관리<small></small>
 					</h3>
 				</div>
 			</div>
@@ -79,100 +79,118 @@
 					<div class="x_panel">
 						<div class="x_title">
 							<h2>
-								인력별 공수 관리 <small></small>
+								월별 공수 관리 <small></small>
 							</h2>
 							<ul class="nav navbar-right panel_toolbox">
-								<li><a class="collapse-link"><i
-										class="fa fa-chevron-up"></i></a></li>
-								<li class="dropdown"><a href="#" class="dropdown-toggle"
-									data-toggle="dropdown" role="button" aria-expanded="false"><i
-										class="fa fa-wrench"></i></a></li>
+								<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a></li>
 							</ul>
 							<div class="clearfix"></div>
-						</div>
+						</div>						
 						<div class="x_content">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="card-box table-responsive">
-										<p class="text-muted font-13 m-b-30">인력별 공수 리스트 입니다.</p>
-										<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width: 100%">
-											<thead>
-												<tr>
-												 	<th>no</th>
-													<th>이름</th>
-													<th>년도</th>
-													<th>투입율</th>															
-													<th>투입공수</th>
-													<th>1월</th>
-													<th>2월</th>
-													<th>3월</th>
-													<th>4월</th>
-													<th>5월</th>
-													<th>6월</th>
-													<th>7월</th>
-													<th>8월</th>
-													<th>9월</th>
-													<th>10월</th>
-													<th>11월</th>
-													<th>12월</th>
-												</tr>
-											</thead>
-
-											<tbody>
-												<c:forEach var="list" items="${monthList}">
+							<ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
+		                		<li class="nav-item">
+		                			<a class="nav-link active" id="fir-tab" data-toggle="tab" href="#fir" role="tab" aria-controls="fir" aria-selected="true">2022년</a>
+		                		</li>
+		                		<li class="nav-item">
+		                			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+		                		</li>
+		                		<li class="nav-item">
+		                			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+		                		</li>
+	                    	</ul>	
+	                    	                    	
+							<div class="tab-content" id="myTabContent">
+			                	<div class="tab-pane fade show active" id="fir" role="tabpanel" aria-labelledby="fir-tab">
+									<div class="col-sm-12">
+										<div class="card-box table-responsive">
+											<p class="text-muted font-13 m-b-30">2022년 공수 리스트 입니다.</p>
+											<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width: 100%">
+												<thead>
 													<tr>
-														<td>${list.no }</td>
-														<td>${list.dName }</td>
-														<td>${list.year }</td>
-														<td>
-															${Math.round(
-																(list.totalJan + 
-																list.totalFeb + 
-																list.totalMar + 
-																list.totalApr + 
-																list.totalMay + 
-																list.totalJun +
-																list.totalJul +
-																list.totalAug +
-																list.totalSep +
-																list.totalOct +
-																list.totalNov +
-																list.totalDec) / 12 * 100 
-																)}%
-														</td>														
-														<td>
-															${list.totalJan+
-															list.totalFeb+
-															list.totalMar+
-															list.totalApr+
-															list.totalMay+
-															list.totalJun+
-															list.totalJul+
-															list.totalAug+
-															list.totalSep+
-															list.totalOct+
-															list.totalNov+
-															list.totalDec }
-														</td>
-														<td>${list.totalJan }</td>
-														<td>${list.totalFeb }</td>
-														<td>${list.totalMar }</td>
-														<td>${list.totalApr }</td>
-														<td>${list.totalMay }</td>
-														<td>${list.totalJun }</td>
-														<td>${list.totalJul }</td>
-														<td>${list.totalAug }</td>
-														<td>${list.totalSep }</td>
-														<td>${list.totalOct }</td>
-														<td>${list.totalNov }</td>
-														<td>${list.totalDec }</td>
+													 	<th style="display:none;">no</th>
+														<th>이름</th>
+														<th>년도</th>
+														<th>투입율</th>															
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
 													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
+												</thead>
+												<tbody>
+													<c:forEach var="list" items="${monthList}">
+														<tr>
+														<td style="display:none;">${list.no }</td>
+															<td>${list.dName }</td>
+															<td>${list.year }</td>
+															<td>
+																${Math.round(
+																	(list.totalJan + 
+																	list.totalFeb + 
+																	list.totalMar + 
+																	list.totalApr + 
+																	list.totalMay + 
+																	list.totalJun +
+																	list.totalJul +
+																	list.totalAug +
+																	list.totalSep +
+																	list.totalOct +
+																	list.totalNov +
+																	list.totalDec) / 12 * 100 
+																	)}%
+															</td>														
+															<td>
+																${list.totalJan+
+																list.totalFeb+
+																list.totalMar+
+																list.totalApr+
+																list.totalMay+
+																list.totalJun+
+																list.totalJul+
+																list.totalAug+
+																list.totalSep+
+																list.totalOct+
+																list.totalNov+
+																list.totalDec }
+															</td>
+															<td>${list.totalJan }</td>
+															<td>${list.totalFeb }</td>
+															<td>${list.totalMar }</td>
+															<td>${list.totalApr }</td>
+															<td>${list.totalMay }</td>
+															<td>${list.totalJun }</td>
+															<td>${list.totalJul }</td>
+															<td>${list.totalAug }</td>
+															<td>${list.totalSep }</td>
+															<td>${list.totalOct }</td>
+															<td>${list.totalNov }</td>
+															<td>${list.totalDec }</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
 									</div>
-								</div>
-							</div>
+			                    </div>
+			                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			                      Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+			                            booth letterpress, commodo enim craft beer mlkshk aliquip
+			                    </div>
+			                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			                      xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+			                          booth letterpress, commodo enim craft beer mlkshk 
+			                    </div>
+		                   </div>
 						</div>
 					</div>
 				</div>
