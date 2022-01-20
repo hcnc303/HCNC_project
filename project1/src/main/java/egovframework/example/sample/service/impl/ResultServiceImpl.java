@@ -64,6 +64,12 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 		return resultDAO.selectMonthResultList(rvo);
 	}
 
+	@Override
+	public List<?> selectDevSumList(ResultVO rvo) throws Exception {
+		
+		return resultDAO.selectDevSumList(rvo);
+	}
+
 
 
 }

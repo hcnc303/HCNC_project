@@ -19,5 +19,7 @@ public interface ResultService {
 	List<?> selectDevResultList(ResultVO rvo) throws Exception;
 
 	public List<?> selectMonthResultList(ResultVO rvo) throws Exception;
+	
+	List<?> selectDevSumList(ResultVO rvo) throws Exception;
 
 }

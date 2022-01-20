@@ -78,13 +78,13 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_name" >프로젝트 이름 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_name" required="required" class="form-control "name="p_name" value="${vo.p_name }"> 
+													<input type="text" id="p_name" required="required" class="form-control "name="p_name" value="${vo.p_name }" autocomplete="off"> 
 												</div>
 											</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 시작일<span class="required">*</span></label>
 	                                            <div class="col-md-6 col-sm-6">
-	                                                <input class="form-control" type="text" name="p_startdate" id="datepicker1" autocomplete="off" value="${vo.p_startdate}"></div>
+	                                                <input class="form-control" type="text" name="p_startdate" id="datepicker1" autocomplete="off" value="${vo.p_startdate}" ></div>
                                         	</div>
 											<div class="field item form-group">
 	                                            <label class="col-form-label col-md-3 col-sm-3  label-align">프로젝트 종료일<span class="required">*</span></label>
@@ -117,14 +117,14 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_salesman">영업담당자<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_salesman" class="form-control" name="p_salesman" value="${vo.p_salesman }">
+													<input type="text" id="p_salesman" class="form-control" name="p_salesman" value="${vo.p_salesman }" autocomplete="off">
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_tel">연락처<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_tel" class="form-control" name="p_tel" value="${vo.p_tel }">
+													<input type="text" id="p_tel" class="form-control" name="p_tel" value="${vo.p_tel }" autocomplete="off">
 												</div>
 											</div>
 											<div class="item form-group">
@@ -143,7 +143,7 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="p_note">비고<span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="p_note"class="form-control" name="p_note" value="${vo.p_note }">
+													<input type="text" id="p_note"class="form-control" name="p_note" value="${vo.p_note }" autocomplete="off">
 												</div>
 											</div>
 											<div class="ln_solid"></div>

@@ -96,14 +96,18 @@ public class ResultController {
 	@RequestMapping(value="/devResultList.do")
 	public String selectDevList(ResultVO rvo, Model model) throws Exception {
 		List<?> monthList = resultService.selectDevResultList(rvo);
+		List<?> sumList = resultService.selectDevSumList(rvo);
 		model.addAttribute("monthList", monthList);
+		model.addAttribute("sumList",sumList);
 		return "result/devResultList";
 	}
 	
 	@RequestMapping(value="/monthResultList.do")
 	public String selectMonthList(ResultVO rvo, Model model) throws Exception {
 		List<?> monthList = resultService.selectMonthResultList(rvo);
+		List<?> sumList = resultService.selectDevSumList(rvo);
 		model.addAttribute("monthList", monthList);
+		model.addAttribute("sumList",sumList);
 		return "result/monthResultList";
 	}
 }

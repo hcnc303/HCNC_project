@@ -49,51 +49,61 @@
 	</delete>
 	
 	<select id="resultDAO.selectDevResultList" resultClass="egovMap">
-         SELECT * 
-         FROM(
-         	SELECT ROW_NUMBER() OVER (ORDER BY year desc ) as no
-			, d_name
-			 , year
-			 , SUM(jan) AS total_jan
-			 , SUM(feb) AS total_feb
-			 , SUM(mar) AS total_mar
-			 , SUM(apr) AS total_apr
-			 , SUM(may) AS total_may
-			 , SUM(jun) AS total_jun
-			 , SUM(jul) AS total_jul
-			 , SUM(aug) AS total_aug
-			 , SUM(sep) AS total_sep
-			 , SUM(oct) AS total_oct
-			 , SUM(nov) AS total_nov
-			 , SUM(dec) AS total_dec
-		  FROM hc_result 
-		  where year = '2022'
-		 GROUP BY ROLLUP(d_name, year) 
-		HAVING GROUPING(d_name) = 1 OR GROUPING(year) = 0 
-         )hc_result
+		select 
+			distinct d_name,
+			year, 
+			sum(jan) over (partition by d_name, year order by d_name, year) "jan",
+			sum(feb) over (partition by d_name, year order by d_name, year) "feb",
+			sum(mar) over (partition by d_name, year order by d_name, year) "mar",
+			sum(apr) over (partition by d_name, year order by d_name, year) "apr",
+			sum(may) over (partition by d_name, year order by d_name, year) "may",
+			sum(jun) over (partition by d_name, year order by d_name, year) "jun",
+			sum(jul) over (partition by d_name, year order by d_name, year) "jul",
+			sum(aug) over (partition by d_name, year order by d_name, year) "aug",
+			sum(sep) over (partition by d_name, year order by d_name, year) "sep",
+			sum(oct) over (partition by d_name, year order by d_name, year) "oct",
+			sum(nov) over (partition by d_name, year order by d_name, year) "nov",
+			sum(dec) over (partition by d_name, year order by d_name, year) "dec"
+		from hc_result
+		where year = '2022'
+	</select>
+	
+	<select id="resultDAO.selectDevSumList" resultClass="egovMap">
+		select
+			count(distinct d_name) "d_name",
+			sum(jan) "jan",
+			sum(feb) "feb",
+			sum(mar) "mar",
+			sum(apr) "apr",
+			sum(may) "may",
+			sum(jun) "jun",
+			sum(jul) "jul",
+			sum(aug) "aug",
+			sum(sep) "sep",
+			sum(oct) "oct",
+			sum(nov) "nov",
+			sum(dec) "dec"
+		from hc_result
+		where year = '2022'
 	</select>
 	
 	<select id="resultDAO.selectMonthResultList" resultClass="egovMap">
-         SELECT * 
-         FROM(
-         	SELECT ROW_NUMBER() OVER (ORDER BY p_id desc ) as no
-			, p_id
-			 , p_name
-			 , SUM(jan) AS total_jan
-			 , SUM(feb) AS total_feb
-			 , SUM(mar) AS total_mar
-			 , SUM(apr) AS total_apr
-			 , SUM(may) AS total_may
-			 , SUM(jun) AS total_jun
-			 , SUM(jul) AS total_jul
-			 , SUM(aug) AS total_aug
-			 , SUM(sep) AS total_sep
-			 , SUM(oct) AS total_oct
-			 , SUM(nov) AS total_nov
-			 , SUM(dec) AS total_dec
-		  FROM hc_result 
-		 GROUP BY ROLLUP(p_id, p_name) 
-		HAVING GROUPING(p_id) = 1 OR GROUPING(p_name) = 0 
-         )hc_result
+		select
+			distinct p_id,
+			p_name,
+			sum(jan) over (partition by p_name, year order by p_name) "jan",
+			sum(feb) over (partition by p_name, year order by p_name) "feb",
+			sum(mar) over (partition by p_name, year order by p_name) "mar",
+			sum(apr) over (partition by p_name, year order by p_name) "apr",
+			sum(may) over (partition by p_name, year order by p_name) "may",
+			sum(jun) over (partition by p_name, year order by p_name) "jun",
+			sum(jul) over (partition by p_name, year order by p_name) "jul",
+			sum(aug) over (partition by p_name, year order by p_name) "aug",
+			sum(sep) over (partition by p_name, year order by p_name) "sep",
+			sum(oct) over (partition by p_name, year order by p_name) "oct",
+			sum(nov) over (partition by p_name, year order by p_name) "nov",
+			sum(dec) over (partition by p_name, year order by p_name) "dec"
+		from hc_result
+		where year = '2022'
 	</select>
 </sqlMap>
