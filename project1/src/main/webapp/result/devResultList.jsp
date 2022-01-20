@@ -134,7 +134,7 @@
 															<td style="display:none;">${list.no }</td>
 															<td>${list.dName }</td>
 															<td>${list.year }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
 																${Math.round(
 																	(list.jan + 
 																	list.feb + 
@@ -249,7 +249,7 @@
 													</tr>
 													<tr>
 														<th>월가동율</th>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
 															${Math.round((list.jan+
 																list.feb+
 																list.mar+
@@ -263,18 +263,18 @@
 																list.nov+
 																list.dec)/(list.dName*12) * 100 )}%
 														</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jan)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.feb)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.mar)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.apr)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.may)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jun)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jul)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.aug)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.sep)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.oct)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.nov)/list.dName * 100 )}%</td>
-														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.dec)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jan)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.feb)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.mar)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.apr)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.may)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jun)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jul)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.aug)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.sep)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.oct)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.nov)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.dec)/list.dName * 100 )}%</td>
 													</tr>
 												</c:forEach>
 											</table>
