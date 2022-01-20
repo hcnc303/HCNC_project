@@ -21,7 +21,7 @@
 	}
 	function fn_delete(p_id, d_id, year) {
 		if (confirm("정말 삭제하시겠습니까?")) {
-			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year;
+			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year; 
 		}
 	}
 </script>
