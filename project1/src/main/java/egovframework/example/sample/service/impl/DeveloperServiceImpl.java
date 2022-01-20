@@ -21,8 +21,8 @@ public class DeveloperServiceImpl extends EgovAbstractServiceImpl
 	
 	@Override
 	public String insertDev(DeveloperVO vo) throws Exception {
-		//	프로그램 작성
-		return devDAO.insertDev(vo);	// 데이터 저장
+		
+		return devDAO.insertDev(vo);	// 사원 저장
 	}
 
 	@Override

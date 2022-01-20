@@ -67,10 +67,10 @@
 			<div class="page-title">
 				<div class="title_left">
 					<h3>
-						월별 공수 관리<small></small>
+						기술개발부 월별 투입공수<small></small>
 					</h3>
 				</div>
-			</div>
+			</div> <!-- page-title 끝 -->
 
 			<div class="clearfix"></div>
 
@@ -86,7 +86,8 @@
 								<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a></li>
 							</ul>
 							<div class="clearfix"></div>
-						</div>						
+						</div>	<!-- x_title 끝  -->			
+								
 						<div class="x_content">
 							<ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
 		                		<li class="nav-item">
@@ -96,15 +97,15 @@
 		                			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">2023년</a>
 		                		</li>
 		                		<li class="nav-item">
-		                			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+		                			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">2024년</a>
 		                		</li>
 	                    	</ul>	
-	                    	                    	
+                    	                    	
 							<div class="tab-content" id="myTabContent">
 			                	<div class="tab-pane fade show active" id="fir" role="tabpanel" aria-labelledby="fir-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2022년 공수 리스트 입니다.</p>
+											<p class="text-muted font-13 m-b-30">2022년 기술개발부 월별 투입공수 입니다.</p>
 											<table id="datatable-fixed-header" class="table table-striped table-bordered" style="width: 100%">
 												<thead>
 													<tr>
@@ -130,150 +131,180 @@
 												<tbody>
 													<c:forEach var="list" items="${monthList}">
 														<tr>
-														<td style="display:none;">${list.no }</td>
+															<td style="display:none;">${list.no }</td>
 															<td>${list.dName }</td>
 															<td>${list.year }</td>
-															<td>
+															<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">
 																${Math.round(
-																	(list.totalJan + 
-																	list.totalFeb + 
-																	list.totalMar + 
-																	list.totalApr + 
-																	list.totalMay + 
-																	list.totalJun +
-																	list.totalJul +
-																	list.totalAug +
-																	list.totalSep +
-																	list.totalOct +
-																	list.totalNov +
-																	list.totalDec) / 12 * 100 
-																	)}%
+																	(list.jan + 
+																	list.feb + 
+																	list.mar + 
+																	list.apr + 
+																	list.may + 
+																	list.jun +
+																	list.jul +
+																	list.aug +
+																	list.sep +
+																	list.oct +
+																	list.nov +
+																	list.dec) / 12 * 100 
+																)}%
 															</td>														
 															<td>
-																${list.totalJan+
-																list.totalFeb+
-																list.totalMar+
-																list.totalApr+
-																list.totalMay+
-																list.totalJun+
-																list.totalJul+
-																list.totalAug+
-																list.totalSep+
-																list.totalOct+
-																list.totalNov+
-																list.totalDec }
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
 															</td>
-															<td>${list.totalJan }</td>
-															<td>${list.totalFeb }</td>
-															<td>${list.totalMar }</td>
-															<td>${list.totalApr }</td>
-															<td>${list.totalMay }</td>
-															<td>${list.totalJun }</td>
-															<td>${list.totalJul }</td>
-															<td>${list.totalAug }</td>
-															<td>${list.totalSep }</td>
-															<td>${list.totalOct }</td>
-															<td>${list.totalNov }</td>
-															<td>${list.totalDec }</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
-											</table>
+											</table>																				
 										</div>
-									</div>
+			                    	</div>
+			                    	<div class="col-sm-12">
+			                    		<div class="card-box table-responsive">
+											<table id="datatable-fixed" class="table table-striped table-bordered" style="width: 100%">
+												<tr>
+													<th>구분</th>
+													<th>투입공수</th>
+													<th>1월</th>
+													<th>2월</th>
+													<th>3월</th>
+													<th>4월</th>
+													<th>5월</th>
+													<th>6월</th>
+													<th>7월</th>
+													<th>8월</th>
+													<th>9월</th>
+													<th>10월</th>
+													<th>11월</th>
+													<th>12월</th>
+												</tr>
+												<c:forEach var="list" items="${sumList}">
+													<tr>
+														<th>월별투입</th>
+														<td>
+															${list.jan+
+															list.feb+
+															list.mar+
+															list.apr+
+															list.may+
+															list.jun+
+															list.jul+
+															list.aug+
+															list.sep+
+															list.oct+
+															list.nov+
+															list.dec }
+														</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
+													</tr>
+													<tr>
+														<th>인원</th>
+														<td>${list.dName * 12 }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+													</tr>
+													<tr>
+														<th>월가동율</th>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">
+															${Math.round((list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec)/(list.dName*12) * 100 )}%
+														</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jan)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.feb)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.mar)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.apr)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.may)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jun)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.jul)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.aug)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.sep)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.oct)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.nov)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.938); color:red;">${Math.round((list.dec)/list.dName * 100 )}%</td>
+													</tr>
+												</c:forEach>
+											</table>
+			                    		</div>
+			                    	</div>
 			                    </div>
+			                    
 			                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2023년 공수 리스트 입니다.</p>
-											<table id="datatable" class="table table-striped table-bordered" style="width: 100%">
-												<thead>
-													<tr>
-													 	<th style="display:none;">no</th>
-														<th>이름</th>
-														<th>년도</th>
-														<th>투입율</th>															
-														<th>투입공수</th>
-														<th>1월</th>
-														<th>2월</th>
-														<th>3월</th>
-														<th>4월</th>
-														<th>5월</th>
-														<th>6월</th>
-														<th>7월</th>
-														<th>8월</th>
-														<th>9월</th>
-														<th>10월</th>
-														<th>11월</th>
-														<th>12월</th>
-													</tr>
-												</thead>
-												<tbody>
-													<c:forEach var="list" items="${monthList}">
-														<tr>
-														<td style="display:none;">${list.no }</td>
-															<td>${list.dName }</td>
-															<td>${list.year }</td>
-															<td>
-																${Math.round(
-																	(list.totalJan + 
-																	list.totalFeb + 
-																	list.totalMar + 
-																	list.totalApr + 
-																	list.totalMay + 
-																	list.totalJun +
-																	list.totalJul +
-																	list.totalAug +
-																	list.totalSep +
-																	list.totalOct +
-																	list.totalNov +
-																	list.totalDec) / 12 * 100 
-																	)}%
-															</td>														
-															<td>
-																${list.totalJan+
-																list.totalFeb+
-																list.totalMar+
-																list.totalApr+
-																list.totalMay+
-																list.totalJun+
-																list.totalJul+
-																list.totalAug+
-																list.totalSep+
-																list.totalOct+
-																list.totalNov+
-																list.totalDec }
-															</td>
-															<td>${list.totalJan }</td>
-															<td>${list.totalFeb }</td>
-															<td>${list.totalMar }</td>
-															<td>${list.totalApr }</td>
-															<td>${list.totalMay }</td>
-															<td>${list.totalJun }</td>
-															<td>${list.totalJul }</td>
-															<td>${list.totalAug }</td>
-															<td>${list.totalSep }</td>
-															<td>${list.totalOct }</td>
-															<td>${list.totalNov }</td>
-															<td>${list.totalDec }</td>
-														</tr>
-													</c:forEach>
-												</tbody>
-											</table>
+											<p class="text-muted font-13 m-b-30">2023년 공수 리스트 입니다.</p>								
 										</div>
 									</div>
 			                    </div>
+			                    
 			                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-			                      xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
-			                          booth letterpress, commodo enim craft beer mlkshk 
-			                    </div>
-		                   </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+									<div class="col-sm-12">
+										<div class="card-box table-responsive">
+											<p class="text-muted font-13 m-b-30">2024년 공수 리스트 입니다.</p>								
+										</div>
+									</div>
+			                    </div>	
+			                    		                    
+		                   </div> <!-- tab-content 끝 -->			                   
+						</div> <!-- x_content 끝 -->						
+					</div> <!-- x_panel 끝 -->
+				</div> <!-- col-md-12 끝 -->
+			</div> <!-- row 끝 -->
+		</div> <!-- contents 끝 -->
+	</div> <!-- right_col 끝 -->
 	<!-- /page content -->
 
 	<!-- footer content -->

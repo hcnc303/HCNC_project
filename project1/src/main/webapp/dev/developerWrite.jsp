@@ -75,7 +75,7 @@
 									</label>
 									<div class="col-md-6 col-sm-6 ">
 										<input type="text" id="d_id" required="required"
-											class="form-control " name="d_id">
+											class="form-control " name="d_id" autocomplete="off">
 									</div>
 								</div>
 								<div class="item form-group">
@@ -84,7 +84,7 @@
 									</label>
 									<div class="col-md-6 col-sm-6 ">
 										<input type="text" id="d_name" required="required"
-											class="form-control" name="d_name">
+											class="form-control" name="d_name" autocomplete="off">
 									</div>
 								</div>
 								<div class="form-group row">

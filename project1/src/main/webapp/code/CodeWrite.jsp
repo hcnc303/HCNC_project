@@ -63,14 +63,14 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd">
+													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd" autocomplete="off">
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterNm">대분류명 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterNm" required="required" class="form-control" name="masterNm">
+													<input type="text" id="masterNm" required="required" class="form-control" name="masterNm" autocomplete="off">
 												</div>
 											</div>
 											<div class="ln_solid"></div>
@@ -115,14 +115,14 @@
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailCd">소분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd">
+													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd" autocomplete="off">
 												</div>
 											</div>
 											<div class="item form-group">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailNm">소분류명 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="detailNm" required="required" class="form-control" name="detailNm">
+													<input type="text" id="detailNm" required="required" class="form-control" name="detailNm" autocomplete="off">
 												</div>
 											</div>
 											<div class="ln_solid"></div>
