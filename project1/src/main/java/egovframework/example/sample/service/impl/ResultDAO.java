@@ -66,17 +66,46 @@ public class ResultDAO extends EgovAbstractDAO {
 		
 		return list("resultDAO.selectDevResultList", rvo);
 	}
+	
+	public List<?> selectDevResultList2(ResultVO rvo) {
+		
+		return list("resultDAO.selectDevResultList2", rvo);
+	}
 
+	public List<?> selectDevResultList3(ResultVO rvo) {
+		
+		return list("resultDAO.selectDevResultList3", rvo);
+	}
+
+	public List<?> selectResultSumList(ResultVO rvo) {
+		
+		return list("resultDAO.selectResultSumList",rvo);
+	}
+
+	public List<?> selectResultSumList2(ResultVO rvo) {
+		
+		return list("resultDAO.selectResultSumList2",rvo);
+	}
+
+	public List<?> selectResultSumList3(ResultVO rvo) {
+		
+		return list("resultDAO.selectResultSumList3",rvo);
+	}
+	
+	
 	public List<?> selectMonthResultList(ResultVO rvo) {
 		
 		return list("resultDAO.selectMonthResultList", rvo);
 	}
 
-	public List<?> selectDevSumList(ResultVO rvo) {
-		
-		return list("resultDAO.selectDevSumList",rvo);
+	public List<?> selectMonthResultList2(ResultVO rvo) {
+
+		return list("resultDAO.selectMonthResultList2", rvo);
 	}
 
-
+	public List<?> selectMonthResultList3(ResultVO rvo) {
+		
+		return list("resultDAO.selectMonthResultList3", rvo);
+	}
 
 }

@@ -58,16 +58,53 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 		
 		return resultDAO.selectDevResultList(rvo);
 	}
-
+	
 	@Override
-	public List<?> selectMonthResultList(ResultVO rvo) throws Exception {
-		return resultDAO.selectMonthResultList(rvo);
+	public List<?> selectDevResultList2(ResultVO rvo) throws Exception {
+
+		return resultDAO.selectDevResultList2(rvo);
 	}
 
 	@Override
-	public List<?> selectDevSumList(ResultVO rvo) throws Exception {
+	public List<?> selectDevResultList3(ResultVO rvo) throws Exception {
+
+		return resultDAO.selectDevResultList3(rvo);
+	}
+
+
+	@Override
+	public List<?> selectResultSumList(ResultVO rvo) throws Exception {
 		
-		return resultDAO.selectDevSumList(rvo);
+		return resultDAO.selectResultSumList(rvo);
+	}
+
+	@Override
+	public List<?> selectResultSumList2(ResultVO rvo) throws Exception {
+		
+		return resultDAO.selectResultSumList2(rvo);
+	}
+
+	@Override
+	public List<?> selectResultSumList3(ResultVO rvo) throws Exception {
+		
+		return resultDAO.selectResultSumList3(rvo);
+	}
+	
+	@Override
+	public List<?> selectMonthResultList(ResultVO rvo) throws Exception {
+		return resultDAO.selectMonthResultList(rvo);
+	}	
+
+	@Override
+	public List<?> selectMonthResultList2(ResultVO rvo) throws Exception {
+
+		return resultDAO.selectMonthResultList2(rvo);
+	}
+
+	@Override
+	public List<?> selectMonthResultList3(ResultVO rvo) throws Exception {
+
+		return resultDAO.selectMonthResultList3(rvo);
 	}
 
 

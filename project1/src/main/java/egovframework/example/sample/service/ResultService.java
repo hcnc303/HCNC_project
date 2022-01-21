@@ -17,9 +17,17 @@ public interface ResultService {
 	public int updateResult(ResultVO rvo) throws Exception ;
 	
 	List<?> selectDevResultList(ResultVO rvo) throws Exception;
-
-	public List<?> selectMonthResultList(ResultVO rvo) throws Exception;
+	List<?> selectDevResultList2(ResultVO rvo) throws Exception;
+	List<?> selectDevResultList3(ResultVO rvo) throws Exception;
 	
-	List<?> selectDevSumList(ResultVO rvo) throws Exception;
+	List<?> selectResultSumList(ResultVO rvo) throws Exception;
+	List<?> selectResultSumList2(ResultVO rvo) throws Exception;
+	List<?> selectResultSumList3(ResultVO rvo) throws Exception;
+
+	List<?> selectMonthResultList(ResultVO rvo) throws Exception;
+	List<?> selectMonthResultList2(ResultVO rvo) throws Exception;
+	List<?> selectMonthResultList3(ResultVO rvo) throws Exception;
+	
+	
 
 }

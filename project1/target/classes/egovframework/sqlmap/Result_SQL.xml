@@ -68,9 +68,50 @@
 		where year = '2022'
 	</select>
 	
-	<select id="resultDAO.selectDevSumList" resultClass="egovMap">
+	<select id="resultDAO.selectDevResultList2" resultClass="egovMap">
+		select 
+			distinct d_name,
+			year, 
+			sum(jan) over (partition by d_name, year order by d_name, year) "jan",
+			sum(feb) over (partition by d_name, year order by d_name, year) "feb",
+			sum(mar) over (partition by d_name, year order by d_name, year) "mar",
+			sum(apr) over (partition by d_name, year order by d_name, year) "apr",
+			sum(may) over (partition by d_name, year order by d_name, year) "may",
+			sum(jun) over (partition by d_name, year order by d_name, year) "jun",
+			sum(jul) over (partition by d_name, year order by d_name, year) "jul",
+			sum(aug) over (partition by d_name, year order by d_name, year) "aug",
+			sum(sep) over (partition by d_name, year order by d_name, year) "sep",
+			sum(oct) over (partition by d_name, year order by d_name, year) "oct",
+			sum(nov) over (partition by d_name, year order by d_name, year) "nov",
+			sum(dec) over (partition by d_name, year order by d_name, year) "dec"
+		from hc_result
+		where year = '2023'
+	</select>
+	
+	<select id="resultDAO.selectDevResultList3" resultClass="egovMap">
+		select 
+			distinct d_name,
+			year, 
+			sum(jan) over (partition by d_name, year order by d_name, year) "jan",
+			sum(feb) over (partition by d_name, year order by d_name, year) "feb",
+			sum(mar) over (partition by d_name, year order by d_name, year) "mar",
+			sum(apr) over (partition by d_name, year order by d_name, year) "apr",
+			sum(may) over (partition by d_name, year order by d_name, year) "may",
+			sum(jun) over (partition by d_name, year order by d_name, year) "jun",
+			sum(jul) over (partition by d_name, year order by d_name, year) "jul",
+			sum(aug) over (partition by d_name, year order by d_name, year) "aug",
+			sum(sep) over (partition by d_name, year order by d_name, year) "sep",
+			sum(oct) over (partition by d_name, year order by d_name, year) "oct",
+			sum(nov) over (partition by d_name, year order by d_name, year) "nov",
+			sum(dec) over (partition by d_name, year order by d_name, year) "dec"
+		from hc_result
+		where year = '2024'
+	</select>
+	
+	<select id="resultDAO.selectResultSumList" resultClass="egovMap">
 		select
 			count(distinct d_name) "d_name",
+			count(distinct p_id) "p_id",
 			sum(jan) "jan",
 			sum(feb) "feb",
 			sum(mar) "mar",
@@ -85,6 +126,46 @@
 			sum(dec) "dec"
 		from hc_result
 		where year = '2022'
+	</select>
+	
+	<select id="resultDAO.selectResultSumList2" resultClass="egovMap">
+		select
+			count(distinct d_name) "d_name",
+			count(distinct p_id) "p_id",
+			sum(jan) "jan",
+			sum(feb) "feb",
+			sum(mar) "mar",
+			sum(apr) "apr",
+			sum(may) "may",
+			sum(jun) "jun",
+			sum(jul) "jul",
+			sum(aug) "aug",
+			sum(sep) "sep",
+			sum(oct) "oct",
+			sum(nov) "nov",
+			sum(dec) "dec"
+		from hc_result
+		where year = '2023'
+	</select>
+	
+	<select id="resultDAO.selectResultSumList3" resultClass="egovMap">
+		select
+			count(distinct d_name) "d_name",
+			count(distinct p_id) "p_id",
+			sum(jan) "jan",
+			sum(feb) "feb",
+			sum(mar) "mar",
+			sum(apr) "apr",
+			sum(may) "may",
+			sum(jun) "jun",
+			sum(jul) "jul",
+			sum(aug) "aug",
+			sum(sep) "sep",
+			sum(oct) "oct",
+			sum(nov) "nov",
+			sum(dec) "dec"
+		from hc_result
+		where year = '2024'
 	</select>
 	
 	<select id="resultDAO.selectMonthResultList" resultClass="egovMap">
@@ -105,5 +186,45 @@
 			sum(dec) over (partition by p_name, year order by p_name) "dec"
 		from hc_result
 		where year = '2022'
+	</select>
+	
+	<select id="resultDAO.selectMonthResultList2" resultClass="egovMap">
+		select
+			distinct p_id,
+			p_name,
+			sum(jan) over (partition by p_name, year order by p_name) "jan",
+			sum(feb) over (partition by p_name, year order by p_name) "feb",
+			sum(mar) over (partition by p_name, year order by p_name) "mar",
+			sum(apr) over (partition by p_name, year order by p_name) "apr",
+			sum(may) over (partition by p_name, year order by p_name) "may",
+			sum(jun) over (partition by p_name, year order by p_name) "jun",
+			sum(jul) over (partition by p_name, year order by p_name) "jul",
+			sum(aug) over (partition by p_name, year order by p_name) "aug",
+			sum(sep) over (partition by p_name, year order by p_name) "sep",
+			sum(oct) over (partition by p_name, year order by p_name) "oct",
+			sum(nov) over (partition by p_name, year order by p_name) "nov",
+			sum(dec) over (partition by p_name, year order by p_name) "dec"
+		from hc_result
+		where year = '2023'
+	</select>
+	
+	<select id="resultDAO.selectMonthResultList3" resultClass="egovMap">
+		select
+			distinct p_id,
+			p_name,
+			sum(jan) over (partition by p_name, year order by p_name) "jan",
+			sum(feb) over (partition by p_name, year order by p_name) "feb",
+			sum(mar) over (partition by p_name, year order by p_name) "mar",
+			sum(apr) over (partition by p_name, year order by p_name) "apr",
+			sum(may) over (partition by p_name, year order by p_name) "may",
+			sum(jun) over (partition by p_name, year order by p_name) "jun",
+			sum(jul) over (partition by p_name, year order by p_name) "jul",
+			sum(aug) over (partition by p_name, year order by p_name) "aug",
+			sum(sep) over (partition by p_name, year order by p_name) "sep",
+			sum(oct) over (partition by p_name, year order by p_name) "oct",
+			sum(nov) over (partition by p_name, year order by p_name) "nov",
+			sum(dec) over (partition by p_name, year order by p_name) "dec"
+		from hc_result
+		where year = '2024'
 	</select>
 </sqlMap>

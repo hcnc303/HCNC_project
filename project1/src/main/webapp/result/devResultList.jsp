@@ -15,16 +15,7 @@
 	display : none;
 }
 </style>
-<script>
-	function fn_update(p_id, p_name, d_id, d_name, year) {
-		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;
-	}
-	function fn_delete(p_id, d_id, year) {
-		if (confirm("정말 삭제하시겠습니까?")) {
-			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year; 
-		}
-	}
-</script>
+
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -129,7 +120,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach var="list" items="${monthList}">
+													<c:forEach var="list" items="${devList}">
 														<tr>
 															<td style="display:none;">${list.no }</td>
 															<td>${list.dName }</td>
@@ -286,7 +277,180 @@
 			                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2023년 기술개발부 월별 투입공수 입니다.</p>								
+											<p class="text-muted font-13 m-b-30">2023년 기술개발부 월별 투입공수 입니다.</p>	
+											<table id="datatable-keytable" class="table table-striped table-bordered" style="width: 100%">
+												<thead>
+													<tr>
+													 	<th style="display:none;">no</th>
+														<th>이름</th>
+														<th>년도</th>
+														<th>투입율</th>															
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
+													</tr>
+												</thead>
+												<tbody>
+													<c:forEach var="list" items="${devList2}">
+														<tr>
+															<td style="display:none;">${list.no }</td>
+															<td>${list.dName }</td>
+															<td>${list.year }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
+																${Math.round(
+																	(list.jan + 
+																	list.feb + 
+																	list.mar + 
+																	list.apr + 
+																	list.may + 
+																	list.jun +
+																	list.jul +
+																	list.aug +
+																	list.sep +
+																	list.oct +
+																	list.nov +
+																	list.dec) / 12 * 100 
+																)}%
+															</td>														
+															<td>
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
+															</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>																				
+										</div>
+			                    	</div>
+			                    	<div class="col-sm-12">
+			                    		<div class="card-box table-responsive">
+			                    		<br><br>
+											<table id="datatable-fixed" class="table table-striped table-bordered" style="width: 100%">
+												<tr>
+													<th>구분</th>
+													<th>투입공수</th>
+													<th>1월</th>
+													<th>2월</th>
+													<th>3월</th>
+													<th>4월</th>
+													<th>5월</th>
+													<th>6월</th>
+													<th>7월</th>
+													<th>8월</th>
+													<th>9월</th>
+													<th>10월</th>
+													<th>11월</th>
+													<th>12월</th>
+												</tr>
+												<c:forEach var="list" items="${sumList2}">
+													<tr>
+														<th>월별투입</th>
+														<td>
+															${list.jan+
+															list.feb+
+															list.mar+
+															list.apr+
+															list.may+
+															list.jun+
+															list.jul+
+															list.aug+
+															list.sep+
+															list.oct+
+															list.nov+
+															list.dec }
+														</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
+													</tr>
+													<tr>
+														<th>인원</th>
+														<td>${list.dName * 12 }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+													</tr>
+													<tr>
+														<th>월가동율</th>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
+															${Math.round((list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec)/(list.dName*12) * 100 )}%
+														</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jan)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.feb)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.mar)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.apr)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.may)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jun)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jul)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.aug)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.sep)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.oct)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.nov)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.dec)/list.dName * 100 )}%</td>
+													</tr>
+												</c:forEach>
+											</table>							
 										</div>
 									</div>
 			                    </div>
@@ -294,7 +458,180 @@
 			                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2024년 기술개발부 월별 투입공수 입니다.</p>								
+											<p class="text-muted font-13 m-b-30">2024년 기술개발부 월별 투입공수 입니다.</p>	
+											<table id="datatable" class="table table-striped table-bordered dataTable no-footer" style="width: 100%">
+												<thead>
+													<tr>
+													 	<th style="display:none;">no</th>
+														<th>이름</th>
+														<th>년도</th>
+														<th>투입율</th>															
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
+													</tr>
+												</thead>
+												<tbody>
+													<c:forEach var="list" items="${devList3}">
+														<tr>
+															<td style="display:none;">${list.no }</td>
+															<td>${list.dName }</td>
+															<td>${list.year }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
+																${Math.round(
+																	(list.jan + 
+																	list.feb + 
+																	list.mar + 
+																	list.apr + 
+																	list.may + 
+																	list.jun +
+																	list.jul +
+																	list.aug +
+																	list.sep +
+																	list.oct +
+																	list.nov +
+																	list.dec) / 12 * 100 
+																)}%
+															</td>														
+															<td>
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
+															</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>																				
+										</div>
+			                    	</div>
+			                    	<div class="col-sm-12">
+			                    		<div class="card-box table-responsive">
+			                    		<br><br>
+											<table id="datatable-fixed" class="table table-striped table-bordered" style="width: 100%">
+												<tr>
+													<th>구분</th>
+													<th>투입공수</th>
+													<th>1월</th>
+													<th>2월</th>
+													<th>3월</th>
+													<th>4월</th>
+													<th>5월</th>
+													<th>6월</th>
+													<th>7월</th>
+													<th>8월</th>
+													<th>9월</th>
+													<th>10월</th>
+													<th>11월</th>
+													<th>12월</th>
+												</tr>
+												<c:forEach var="list" items="${sumList3}">
+													<tr>
+														<th>월별투입</th>
+														<td>
+															${list.jan+
+															list.feb+
+															list.mar+
+															list.apr+
+															list.may+
+															list.jun+
+															list.jul+
+															list.aug+
+															list.sep+
+															list.oct+
+															list.nov+
+															list.dec }
+														</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
+													</tr>
+													<tr>
+														<th>인원</th>
+														<td>${list.dName * 12 }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+														<td>${list.dName }</td>
+													</tr>
+													<tr>
+														<th>월가동율</th>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">
+															${Math.round((list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec)/(list.dName*12) * 100 )}%
+														</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jan)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.feb)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.mar)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.apr)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.may)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jun)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.jul)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.aug)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.sep)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.oct)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.nov)/list.dName * 100 )}%</td>
+														<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${Math.round((list.dec)/list.dName * 100 )}%</td>
+													</tr>
+												</c:forEach>
+											</table>							
 										</div>
 									</div>
 			                    </div>	

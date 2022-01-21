@@ -131,7 +131,7 @@
 											style="width: 100%">
 											<thead>
 												<tr>
-													<th>no</th>
+													<th style="display: none;">no</th>
 													<th>사번</th>
 													<th>개발자이름</th>
 													<th>직급</th>
@@ -145,7 +145,7 @@
 												<c:forEach var="result" items="${resultList}"
 													varStatus="status">
 													<tr>
-														<td>${result.dNo}</td>
+														<td style="display: none;">${result.dNo}</td>
 														<td>${result.dId}</td>
 														<td>${result.dName}</td>
 														<td>${result.dJobgrade}</td>

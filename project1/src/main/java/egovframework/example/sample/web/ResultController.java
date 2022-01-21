@@ -95,19 +95,41 @@ public class ResultController {
 	
 	@RequestMapping(value="/devResultList.do")
 	public String selectDevList(ResultVO rvo, Model model) throws Exception {
-		List<?> monthList = resultService.selectDevResultList(rvo);
-		List<?> sumList = resultService.selectDevSumList(rvo);
-		model.addAttribute("monthList", monthList);
+		List<?> devList = resultService.selectDevResultList(rvo);
+		List<?> devList2 = resultService.selectDevResultList2(rvo);
+		List<?> devList3 = resultService.selectDevResultList3(rvo);
+		
+		List<?> sumList = resultService.selectResultSumList(rvo);
+		List<?> sumList2 = resultService.selectResultSumList2(rvo);
+		List<?> sumList3 = resultService.selectResultSumList3(rvo);
+		
+		model.addAttribute("devList", devList);
+		model.addAttribute("devList2", devList2);
+		model.addAttribute("devList3", devList3);
+		
 		model.addAttribute("sumList",sumList);
+		model.addAttribute("sumList2",sumList2);
+		model.addAttribute("sumList3",sumList3);
 		return "result/devResultList";
 	}
 	
 	@RequestMapping(value="/monthResultList.do")
 	public String selectMonthList(ResultVO rvo, Model model) throws Exception {
 		List<?> monthList = resultService.selectMonthResultList(rvo);
-		List<?> sumList = resultService.selectDevSumList(rvo);
+		List<?> monthList2 = resultService.selectMonthResultList2(rvo);
+		List<?> monthList3= resultService.selectMonthResultList3(rvo);
+		
+		List<?> sumList = resultService.selectResultSumList(rvo);
+		List<?> sumList2 = resultService.selectResultSumList2(rvo);
+		List<?> sumList3 = resultService.selectResultSumList3(rvo);
+		
 		model.addAttribute("monthList", monthList);
+		model.addAttribute("monthList2", monthList2);
+		model.addAttribute("monthList3", monthList3);
+		
 		model.addAttribute("sumList",sumList);
+		model.addAttribute("sumList2",sumList2);
+		model.addAttribute("sumList3",sumList3);
 		return "result/monthResultList";
 	}
 }
