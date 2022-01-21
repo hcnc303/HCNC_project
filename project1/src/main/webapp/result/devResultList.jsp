@@ -15,7 +15,16 @@
 	display : none;
 }
 </style>
-
+<script>
+	function fn_update(p_id, p_name, d_id, d_name, year) {
+		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;
+	}
+	function fn_delete(p_id, d_id, year) {
+		if (confirm("정말 삭제하시겠습니까?")) {
+			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year; 
+		}
+	}
+</script>
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -141,19 +150,32 @@
 																	list.dec) / 12 * 100 
 																)}%
 															</td>														
-															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-															<td>${String.format("%.1f", list.jan) }</td>
-															<td>${String.format("%.1f", list.feb) }</td>
-															<td>${String.format("%.1f", list.mar) }</td>
-															<td>${String.format("%.1f", list.apr) }</td>
-															<td>${String.format("%.1f", list.may) }</td>
-															<td>${String.format("%.1f", list.jun) }</td>
-															<td>${String.format("%.1f", list.jul) }</td>
-															<td>${String.format("%.1f", list.aug) }</td>
-															<td>${String.format("%.1f", list.sep) }</td>
-															<td>${String.format("%.1f", list.oct) }</td>
-															<td>${String.format("%.1f", list.nov) }</td>
-															<td>${String.format("%.1f", list.dec) }</td>
+															<td>
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
+															</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -183,19 +205,32 @@
 												<c:forEach var="list" items="${sumList}">
 													<tr>
 														<th>월별투입</th>
-														<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-														<td>${String.format("%.1f", list.jan) }</td>
-														<td>${String.format("%.1f", list.feb) }</td>
-														<td>${String.format("%.1f", list.mar) }</td>
-														<td>${String.format("%.1f", list.apr) }</td>
-														<td>${String.format("%.1f", list.may) }</td>
-														<td>${String.format("%.1f", list.jun) }</td>
-														<td>${String.format("%.1f", list.jul) }</td>
-														<td>${String.format("%.1f", list.aug) }</td>
-														<td>${String.format("%.1f", list.sep) }</td>
-														<td>${String.format("%.1f", list.oct) }</td>
-														<td>${String.format("%.1f", list.nov) }</td>
-														<td>${String.format("%.1f", list.dec) }</td>
+														<td>
+															${list.jan+
+															list.feb+
+															list.mar+
+															list.apr+
+															list.may+
+															list.jun+
+															list.jul+
+															list.aug+
+															list.sep+
+															list.oct+
+															list.nov+
+															list.dec }
+														</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
 													</tr>
 													<tr>
 														<th>인원</th>
@@ -296,19 +331,32 @@
 																	list.dec) / 12 * 100 
 																)}%
 															</td>														
-															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-															<td>${String.format("%.1f", list.jan) }</td>
-															<td>${String.format("%.1f", list.feb) }</td>
-															<td>${String.format("%.1f", list.mar) }</td>
-															<td>${String.format("%.1f", list.apr) }</td>
-															<td>${String.format("%.1f", list.may) }</td>
-															<td>${String.format("%.1f", list.jun) }</td>
-															<td>${String.format("%.1f", list.jul) }</td>
-															<td>${String.format("%.1f", list.aug) }</td>
-															<td>${String.format("%.1f", list.sep) }</td>
-															<td>${String.format("%.1f", list.oct) }</td>
-															<td>${String.format("%.1f", list.nov) }</td>
-															<td>${String.format("%.1f", list.dec) }</td>
+															<td>
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
+															</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -338,19 +386,32 @@
 												<c:forEach var="list" items="${sumList2}">
 													<tr>
 														<th>월별투입</th>
-														<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-														<td>${String.format("%.1f", list.jan) }</td>
-														<td>${String.format("%.1f", list.feb) }</td>
-														<td>${String.format("%.1f", list.mar) }</td>
-														<td>${String.format("%.1f", list.apr) }</td>
-														<td>${String.format("%.1f", list.may) }</td>
-														<td>${String.format("%.1f", list.jun) }</td>
-														<td>${String.format("%.1f", list.jul) }</td>
-														<td>${String.format("%.1f", list.aug) }</td>
-														<td>${String.format("%.1f", list.sep) }</td>
-														<td>${String.format("%.1f", list.oct) }</td>
-														<td>${String.format("%.1f", list.nov) }</td>
-														<td>${String.format("%.1f", list.dec) }</td>
+														<td>
+															${list.jan+
+															list.feb+
+															list.mar+
+															list.apr+
+															list.may+
+															list.jun+
+															list.jul+
+															list.aug+
+															list.sep+
+															list.oct+
+															list.nov+
+															list.dec }
+														</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
 													</tr>
 													<tr>
 														<th>인원</th>
@@ -451,19 +512,32 @@
 																	list.dec) / 12 * 100 
 																)}%
 															</td>														
-															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-															<td>${String.format("%.1f", list.jan) }</td>
-															<td>${String.format("%.1f", list.feb) }</td>
-															<td>${String.format("%.1f", list.mar) }</td>
-															<td>${String.format("%.1f", list.apr) }</td>
-															<td>${String.format("%.1f", list.may) }</td>
-															<td>${String.format("%.1f", list.jun) }</td>
-															<td>${String.format("%.1f", list.jul) }</td>
-															<td>${String.format("%.1f", list.aug) }</td>
-															<td>${String.format("%.1f", list.sep) }</td>
-															<td>${String.format("%.1f", list.oct) }</td>
-															<td>${String.format("%.1f", list.nov) }</td>
-															<td>${String.format("%.1f", list.dec) }</td>
+															<td>
+																${list.jan+
+																list.feb+
+																list.mar+
+																list.apr+
+																list.may+
+																list.jun+
+																list.jul+
+																list.aug+
+																list.sep+
+																list.oct+
+																list.nov+
+																list.dec }
+															</td>
+															<td>${list.jan }</td>
+															<td>${list.feb }</td>
+															<td>${list.mar }</td>
+															<td>${list.apr }</td>
+															<td>${list.may }</td>
+															<td>${list.jun }</td>
+															<td>${list.jul }</td>
+															<td>${list.aug }</td>
+															<td>${list.sep }</td>
+															<td>${list.oct }</td>
+															<td>${list.nov }</td>
+															<td>${list.dec }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -507,18 +581,18 @@
 															list.nov+
 															list.dec }
 														</td>
-														<td>${String.format("%.1f", list.jan) }</td>
-														<td>${String.format("%.1f", list.feb) }</td>
-														<td>${String.format("%.1f", list.mar) }</td>
-														<td>${String.format("%.1f", list.apr) }</td>
-														<td>${String.format("%.1f", list.may) }</td>
-														<td>${String.format("%.1f", list.jun) }</td>
-														<td>${String.format("%.1f", list.jul) }</td>
-														<td>${String.format("%.1f", list.aug) }</td>
-														<td>${String.format("%.1f", list.sep) }</td>
-														<td>${String.format("%.1f", list.oct) }</td>
-														<td>${String.format("%.1f", list.nov) }</td>
-														<td>${String.format("%.1f", list.dec) }</td>
+														<td>${list.jan }</td>
+														<td>${list.feb }</td>
+														<td>${list.mar }</td>
+														<td>${list.apr }</td>
+														<td>${list.may }</td>
+														<td>${list.jun }</td>
+														<td>${list.jul }</td>
+														<td>${list.aug }</td>
+														<td>${list.sep }</td>
+														<td>${list.oct }</td>
+														<td>${list.nov }</td>
+														<td>${list.dec }</td>
 													</tr>
 													<tr>
 														<th>인원</th>
