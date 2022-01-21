@@ -184,6 +184,7 @@
 			                    	</div>
 			                    	<div class="col-sm-12">
 			                    		<div class="card-box table-responsive">
+			                    		<br><br>
 											<table id="datatable-fixed" class="table table-striped table-bordered" style="width: 100%">
 												<tr>
 													<th>구분</th>
@@ -285,7 +286,7 @@
 			                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2023년 공수 리스트 입니다.</p>								
+											<p class="text-muted font-13 m-b-30">2023년 기술개발부 월별 투입공수 입니다.</p>								
 										</div>
 									</div>
 			                    </div>
@@ -293,7 +294,7 @@
 			                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-											<p class="text-muted font-13 m-b-30">2024년 공수 리스트 입니다.</p>								
+											<p class="text-muted font-13 m-b-30">2024년 기술개발부 월별 투입공수 입니다.</p>								
 										</div>
 									</div>
 			                    </div>	
