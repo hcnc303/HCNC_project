@@ -122,32 +122,19 @@
 														<tr>
 															<td>${list.pId }</td>
 															<td>${list.pName }</td>												
-															<td>
-																${list.jan+
-																list.feb+
-																list.mar+
-																list.apr+
-																list.may+
-																list.jun+
-																list.jul+
-																list.aug+
-																list.sep+
-																list.oct+
-																list.nov+
-																list.dec }
-															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${Math.round(list.jan*10)/10}</td>
+															<td>${Math.round(list.feb*10)/10}</td>
+															<td>${Math.round(list.mar*10)/10}</td>
+															<td>${Math.round(list.apr*10)/10}</td>
+															<td>${Math.round(list.may*10)/10}</td>
+															<td>${Math.round(list.jun*10)/10}</td>
+															<td>${Math.round(list.jul*10)/10}</td>
+															<td>${Math.round(list.aug*10)/10}</td>
+															<td>${Math.round(list.sep*10)/10}</td>
+															<td>${Math.round(list.oct*10)/10}</td>
+															<td>${Math.round(list.nov*10)/10}</td>
+															<td>${Math.round(list.dec*10)/10}</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -178,21 +165,19 @@
 													<c:forEach var="list" items="${sumList}">
 														<tr style="background-color:rgba(255, 253, 124, 0.3);">
 															<th>투입공수 평균</th>
-															<td>
-																${Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)*10/12)/10}
-															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${String.format("%.1f", list.jan) }</td>
+															<td>${String.format("%.1f", list.feb) }</td>
+															<td>${String.format("%.1f", list.mar) }</td>
+															<td>${String.format("%.1f", list.apr) }</td>
+															<td>${String.format("%.1f", list.may) }</td>
+															<td>${String.format("%.1f", list.jun) }</td>
+															<td>${String.format("%.1f", list.jul) }</td>
+															<td>${String.format("%.1f", list.aug) }</td>
+															<td>${String.format("%.1f", list.sep) }</td>
+															<td>${String.format("%.1f", list.oct) }</td>
+															<td>${String.format("%.1f", list.nov) }</td>
+															<td>${String.format("%.1f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>개발인원</th>
@@ -213,18 +198,18 @@
 														<tr>
 															<th>부족 인원</th>
 															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)/12) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.jan) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.feb) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.mar) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.apr) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.may) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.jun) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.jul) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.aug) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.sep) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.oct) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.nov) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round(list.dec) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jan) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.feb) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.mar) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.apr) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.may) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jun) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jul) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.aug) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.sep) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.oct) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.nov) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>가동율</th>
@@ -280,32 +265,19 @@
 														<tr>
 															<td>${list.pId }</td>
 															<td>${list.pName }</td>												
-															<td>
-																${list.jan+
-																list.feb+
-																list.mar+
-																list.apr+
-																list.may+
-																list.jun+
-																list.jul+
-																list.aug+
-																list.sep+
-																list.oct+
-																list.nov+
-																list.dec }
-															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${String.format("%.1f", list.jan) }</td>
+															<td>${String.format("%.1f", list.feb) }</td>
+															<td>${String.format("%.1f", list.mar) }</td>
+															<td>${String.format("%.1f", list.apr) }</td>
+															<td>${String.format("%.1f", list.may) }</td>
+															<td>${String.format("%.1f", list.jun) }</td>
+															<td>${String.format("%.1f", list.jul) }</td>
+															<td>${String.format("%.1f", list.aug) }</td>
+															<td>${String.format("%.1f", list.sep) }</td>
+															<td>${String.format("%.1f", list.oct) }</td>
+															<td>${String.format("%.1f", list.nov) }</td>
+															<td>${String.format("%.1f", list.dec) }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -339,18 +311,18 @@
 															<td>
 																${Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)*10/12)/10}
 															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${String.format("%.1f", list.jan) }</td>
+															<td>${String.format("%.1f", list.feb) }</td>
+															<td>${String.format("%.1f", list.mar) }</td>
+															<td>${String.format("%.1f", list.apr) }</td>
+															<td>${String.format("%.1f", list.may) }</td>
+															<td>${String.format("%.1f", list.jun) }</td>
+															<td>${String.format("%.1f", list.jul) }</td>
+															<td>${String.format("%.1f", list.aug) }</td>
+															<td>${String.format("%.1f", list.sep) }</td>
+															<td>${String.format("%.1f", list.oct) }</td>
+															<td>${String.format("%.1f", list.nov) }</td>
+															<td>${String.format("%.1f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>개발인원</th>
@@ -371,18 +343,18 @@
 														<tr>
 															<th>부족 인원</th>
 															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)/12) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jan }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.feb }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.mar }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.apr }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.may }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jun }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jul }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.aug }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.sep }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.oct }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.nov }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.dec }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jan) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.feb) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.mar) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.apr) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.may) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jun) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jul) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.aug) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.sep) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.oct) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.nov) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>가동율</th>
@@ -438,32 +410,19 @@
 														<tr>
 															<td>${list.pId }</td>
 															<td>${list.pName }</td>												
-															<td>
-																${list.jan+
-																list.feb+
-																list.mar+
-																list.apr+
-																list.may+
-																list.jun+
-																list.jul+
-																list.aug+
-																list.sep+
-																list.oct+
-																list.nov+
-																list.dec }
-															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${String.format("%.1f", list.jan) }</td>
+															<td>${String.format("%.1f", list.feb) }</td>
+															<td>${String.format("%.1f", list.mar) }</td>
+															<td>${String.format("%.1f", list.apr) }</td>
+															<td>${String.format("%.1f", list.may) }</td>
+															<td>${String.format("%.1f", list.jun) }</td>
+															<td>${String.format("%.1f", list.jul) }</td>
+															<td>${String.format("%.1f", list.aug) }</td>
+															<td>${String.format("%.1f", list.sep) }</td>
+															<td>${String.format("%.1f", list.oct) }</td>
+															<td>${String.format("%.1f", list.nov) }</td>
+															<td>${String.format("%.1f", list.dec) }</td>
 														</tr>
 													</c:forEach>
 												</tbody>
@@ -497,18 +456,18 @@
 															<td>
 																${Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)*10/12)/10}
 															</td>
-															<td>${list.jan }</td>
-															<td>${list.feb }</td>
-															<td>${list.mar }</td>
-															<td>${list.apr }</td>
-															<td>${list.may }</td>
-															<td>${list.jun }</td>
-															<td>${list.jul }</td>
-															<td>${list.aug }</td>
-															<td>${list.sep }</td>
-															<td>${list.oct }</td>
-															<td>${list.nov }</td>
-															<td>${list.dec }</td>
+															<td>${String.format("%.1f", list.jan) }</td>
+															<td>${String.format("%.1f", list.feb) }</td>
+															<td>${String.format("%.1f", list.mar) }</td>
+															<td>${String.format("%.1f", list.apr) }</td>
+															<td>${String.format("%.1f", list.may) }</td>
+															<td>${String.format("%.1f", list.jun) }</td>
+															<td>${String.format("%.1f", list.jul) }</td>
+															<td>${String.format("%.1f", list.aug) }</td>
+															<td>${String.format("%.1f", list.sep) }</td>
+															<td>${String.format("%.1f", list.oct) }</td>
+															<td>${String.format("%.1f", list.nov) }</td>
+															<td>${String.format("%.1f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>개발인원</th>
@@ -529,18 +488,18 @@
 														<tr>
 															<th>부족 인원</th>
 															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - Math.round((list.jan+list.feb+list.mar+list.apr+list.may+list.jun+list.jul+list.aug+list.sep+list.oct+list.nov+list.dec)/12) }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jan }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.feb }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.mar }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.apr }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.may }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jun }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.jul }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.aug }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.sep }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.oct }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.nov }</td>
-															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - list.dec }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jan) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.feb) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.mar) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.apr) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.may) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jun) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.jul) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.aug) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.sep) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.oct) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.nov) }</td>
+															<td style="background-color: rgba(255, 158, 158, 0.3); color:red;">${list.dName - String.format("%.0f", list.dec) }</td>
 														</tr>
 														<tr>
 															<th>가동율</th>

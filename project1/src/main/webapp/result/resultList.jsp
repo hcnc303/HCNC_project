@@ -120,19 +120,19 @@
 														<td>${list.dName }</td>
 														<td>${list.dJobgrade }</td>
 														<td>${list.year }년</td>
-														<td>${list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec}</td>
-														<td>${list.jan }</td>
-														<td>${list.feb }</td>
-														<td>${list.mar }</td>
-														<td>${list.apr }</td>
-														<td>${list.may }</td>
-														<td>${list.jun }</td>
-														<td>${list.jul }</td>
-														<td>${list.aug }</td>
-														<td>${list.sep }</td>
-														<td>${list.oct }</td>
-														<td>${list.nov }</td>
-														<td>${list.dec }</td>
+														<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+														<td>${Math.round(list.jan*10)/10}</td>
+														<td>${Math.round(list.feb*10)/10}</td>
+														<td>${Math.round(list.mar*10)/10}</td>
+														<td>${Math.round(list.apr*10)/10}</td>
+														<td>${Math.round(list.may*10)/10}</td>
+														<td>${Math.round(list.jun*10)/10}</td>
+														<td>${Math.round(list.jul*10)/10}</td>
+														<td>${Math.round(list.aug*10)/10}</td>
+														<td>${Math.round(list.sep*10)/10}</td>
+														<td>${Math.round(list.oct*10)/10}</td>
+														<td>${Math.round(list.nov*10)/10}</td>
+														<td>${Math.round(list.dec*10)/10}</td>
 														<td>
 															<button type="button" class="btn btn-round btn-primary"
 																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
