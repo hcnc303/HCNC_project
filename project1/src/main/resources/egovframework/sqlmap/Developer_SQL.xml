@@ -76,22 +76,22 @@
 		where d_jobgrade = '이사' and d_type = '정직원'
 	</select>
 	
-	<select id="devDAO.selcetTier1List" resultClass="java.lang.Integer">
+	<select id="devDAO.selectTier1List" resultClass="java.lang.Integer">
 		select count(*) from hc_developer
 		where d_tier = '초급' and d_type = '정직원'
 	</select>
 	
-	<select id="devDAO.selcetTier2List" resultClass="java.lang.Integer">
+	<select id="devDAO.selectTier2List" resultClass="java.lang.Integer">
 		select count(*) from hc_developer
 		where d_tier = '중급' and d_type = '정직원'
 	</select>	
 	
-	<select id="devDAO.selcetTier3List" resultClass="java.lang.Integer">
+	<select id="devDAO.selectTier3List" resultClass="java.lang.Integer">
 		select count(*) from hc_developer
 		where d_tier = '고급' and d_type = '정직원'
 	</select>
 	
-	<select id="devDAO.selcetTier4List" resultClass="java.lang.Integer">
+	<select id="devDAO.selectTier4List" resultClass="java.lang.Integer">
 		select count(*) from hc_developer
 		where d_tier = '특급' and d_type = '정직원'
 	</select>	

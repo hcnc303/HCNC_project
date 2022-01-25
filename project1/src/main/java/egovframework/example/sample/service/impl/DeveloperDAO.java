@@ -67,20 +67,20 @@ public class DeveloperDAO extends EgovAbstractDAO {
 	}
 	
 
-	public List<?> selcetTier1List(DeveloperVO vo) {
-		return list("devDAO.selcetTier1List",vo);
+	public List<?> selectTier1List(DeveloperVO vo) {
+		return list("devDAO.selectTier1List",vo);
 	}
 
-	public List<?> selcetTier2List(DeveloperVO vo) {
-		return list("devDAO.selcetTier2List",vo);
+	public List<?> selectTier2List(DeveloperVO vo) {
+		return list("devDAO.selectTier2List",vo);
 	}
 
-	public List<?> selcetTier3List(DeveloperVO vo) {
-		return list("devDAO.selcetTier3List",vo);
+	public List<?> selectTier3List(DeveloperVO vo) {
+		return list("devDAO.selectTier3List",vo);
 	}
 
-	public List<?> selcetTier4List(DeveloperVO vo) {
-		return list("devDAO.selcetTier4List",vo);
+	public List<?> selectTier4List(DeveloperVO vo) {
+		return list("devDAO.selectTier4List",vo);
 	}
 
 

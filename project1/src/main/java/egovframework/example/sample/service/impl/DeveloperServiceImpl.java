@@ -87,22 +87,22 @@ public class DeveloperServiceImpl extends EgovAbstractServiceImpl
 	}
 
 	@Override
-	public List<?> selcetTier1List(DeveloperVO vo) throws Exception {
-		return devDAO.selcetTier1List(vo); 
+	public List<?> selectTier1List(DeveloperVO vo) throws Exception {
+		return devDAO.selectTier1List(vo); 
 	}
 
 	@Override
-	public List<?> selcetTier2List(DeveloperVO vo) throws Exception {
-		return devDAO.selcetTier2List(vo); 
+	public List<?> selectTier2List(DeveloperVO vo) throws Exception {
+		return devDAO.selectTier2List(vo); 
 	}
 
 	@Override
-	public List<?> selcetTier3List(DeveloperVO vo) throws Exception {
-		return devDAO.selcetTier3List(vo);
+	public List<?> selectTier3List(DeveloperVO vo) throws Exception {
+		return devDAO.selectTier3List(vo);
 	}
 
 	@Override
-	public List<?> selcetTier4List(DeveloperVO vo) throws Exception {
-		return devDAO.selcetTier4List(vo);
+	public List<?> selectTier4List(DeveloperVO vo) throws Exception {
+		return devDAO.selectTier4List(vo);
 	}
 }

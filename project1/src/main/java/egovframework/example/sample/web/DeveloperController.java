@@ -68,10 +68,10 @@ public class DeveloperController {
 		List<?> list5 = devService.selectGrade5List(vo);
 		List<?> list6 = devService.selectGrade6List(vo);
 		
-		List<?> tierlist1 = devService.selcetTier1List(vo);
-		List<?> tierlist2 = devService.selcetTier2List(vo);
-		List<?> tierlist3 = devService.selcetTier3List(vo);
-		List<?> tierlist4 = devService.selcetTier4List(vo);
+		List<?> tierlist1 = devService.selectTier1List(vo);
+		List<?> tierlist2 = devService.selectTier2List(vo);
+		List<?> tierlist3 = devService.selectTier3List(vo);
+		List<?> tierlist4 = devService.selectTier4List(vo);
 			
 		model.addAttribute("resultList",list);
 		model.addAttribute("list1",list1);
