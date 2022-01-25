@@ -55,7 +55,7 @@
 	</update>
 	
 	<delete id="inputDAO.deleteInput">
-		DELETE FROM hc_InputWorkers WHERE d_id=#d_id#
+		DELETE FROM hc_InputWorkers where p_id = #p_id# and d_id = #d_id#
 	</delete>
 </sqlMap>
 

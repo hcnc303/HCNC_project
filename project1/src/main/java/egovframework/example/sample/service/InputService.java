@@ -22,7 +22,7 @@ public interface InputService {
 	
 	public int updateInput(InputVO vo) throws Exception;
 	
-	public int deleteInput(String d_id) throws Exception;
+	public int deleteInput(String p_id, String d_id) throws Exception;
 }
 
 

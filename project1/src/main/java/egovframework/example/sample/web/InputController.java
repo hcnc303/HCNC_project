@@ -144,9 +144,9 @@ public class InputController {
 		
 	
 	@RequestMapping(value="/inputDelete.do")
-	public String deleteDev(String d_id) throws Exception {
+	public String deleteDev(String p_id, String d_id) throws Exception {
 		
-		int result = inputService.deleteInput(d_id);
+		int result = inputService.deleteInput(p_id, d_id);
 		if(result == 1) {
 			System.out.println("삭제완료");
 		} else {

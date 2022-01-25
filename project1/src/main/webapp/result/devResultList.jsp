@@ -15,16 +15,7 @@
 	display : none;
 }
 </style>
-<script>
-	function fn_update(p_id, p_name, d_id, d_name, year) {
-		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;
-	}
-	function fn_delete(p_id, d_id, year) {
-		if (confirm("정말 삭제하시겠습니까?")) {
-			location = "resultDelete.do?p_id=" + p_id + "&d_id=" + d_id+ "&year=" + year; 
-		}
-	}
-</script>
+
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="/vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -94,12 +85,12 @@
 		                			<a class="nav-link active" id="fir-tab" data-toggle="tab" href="#fir" role="tab" aria-controls="fir" aria-selected="true">2022년</a>
 		                		</li>
 		                		<li class="nav-item">
-		                			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">2023년</a>
+		                			<a class="nav-link" id="sec-tab" data-toggle="tab" href="#sec" role="tab" aria-controls="sec" aria-selected="false">2023년</a>
 		                		</li>
 		                		<li class="nav-item">
-		                			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">2024년</a>
+		                			<a class="nav-link" id="thi-tab" data-toggle="tab" href="#thi" role="tab" aria-controls="thi" aria-selected="false">2024년</a>
 		                		</li>
-	                    	</ul>	
+	                    	</ul>
                     	                    	
 							<div class="tab-content" id="myTabContent">
 			                	<div class="tab-pane fade show active" id="fir" role="tabpanel" aria-labelledby="fir-tab">
@@ -283,7 +274,7 @@
 			                    	</div>
 			                    </div>
 			                    
-			                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			                    <div class="tab-pane fade" id="sec" role="tabpanel" aria-labelledby="sec-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
 											<p class="text-muted font-13 m-b-30">2023년 기술개발부 월별 투입공수 입니다.</p>	
@@ -464,7 +455,7 @@
 									</div>
 			                    </div>
 			                    
-			                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			                    <div class="tab-pane fade" id="thi" role="tabpanel" aria-labelledby="thi-tab">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
 											<p class="text-muted font-13 m-b-30">2024년 기술개발부 월별 투입공수 입니다.</p>	
@@ -700,7 +691,6 @@
 
 	<!-- Custom Theme Scripts -->
 	<script src="/build/js/custom.min.js"></script>
-	
 
 </body>
 </html>

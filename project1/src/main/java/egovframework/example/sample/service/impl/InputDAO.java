@@ -61,8 +61,12 @@ public class InputDAO extends EgovAbstractDAO{
 		return (int) update("inputDAO.updateInput",vo);
 	}
 
-	public int deleteInput(String d_id) {
-		return (int) delete("inputDAO.deleteInput",d_id);
+	public int deleteInput(String p_id, String d_id) {
+		
+		Map map = new HashMap();
+		map.put("p_id", p_id);
+		map.put("d_id", d_id);
+		return (int) delete("inputDAO.deleteInput",map);
 	}
 
 

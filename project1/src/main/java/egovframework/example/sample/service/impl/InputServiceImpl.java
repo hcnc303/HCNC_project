@@ -70,8 +70,8 @@ public class InputServiceImpl extends EgovAbstractServiceImpl implements InputSe
 	}
 
 	@Override
-	public int deleteInput(String d_id) throws Exception {
-		return inputDAO.deleteInput(d_id);
+	public int deleteInput(String p_id, String d_id) throws Exception {
+		return inputDAO.deleteInput(p_id, d_id);
 	}
 
 
