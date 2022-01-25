@@ -93,7 +93,7 @@
 											<div class="form-group row">
 												<label class="col-form-label col-md-3 col-sm-3 label-align" for="i_role">역할 <span class="required">*</span></label>
 												<div class="col-md-6 col-sm-6 ">
-													<select class="form-control cate3" id="i_role"  name="i_role">
+					   								<select class="form-control cate3" id="i_role"  name="i_role">
 			                                        	<option <c:out value="${vo.i_role == '개발자'?'selected':''}" />>개발자</option>
 														<option <c:out value="${vo.i_role == 'PL'?'selected':''}" />>PL</option>
 														<option <c:out value="${vo.i_role == 'PM'?'selected':''}" />>PM</option>

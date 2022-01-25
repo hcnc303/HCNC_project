@@ -11,6 +11,8 @@ public interface ResultService {
 	public String insertResult(ResultVO rvo) throws Exception;
 	
 	List<?> selectResultList(ResultVO rvo) throws Exception;
+	List<?> selectResultList2(ResultVO rvo) throws Exception;
+	List<?> selectResultList3(ResultVO rvo) throws Exception;
 
 	public int deleteResult(String p_id, String d_id, String year) throws Exception;
 	

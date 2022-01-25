@@ -40,6 +40,18 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 
 		return resultDAO.selectResultList(rvo);
 	}
+	
+	@Override
+	public List<?> selectResultList2(ResultVO rvo) throws Exception {
+	
+		return resultDAO.selectResultList2(rvo);
+	}
+
+	@Override
+	public List<?> selectResultList3(ResultVO rvo) throws Exception {
+		
+		return resultDAO.selectResultList3(rvo);
+	}	
 
 	@Override
 	public int deleteResult(String p_id, String d_id, String year) {
@@ -106,6 +118,8 @@ public class ResultServiceImpl extends EgovAbstractServiceImpl implements Result
 
 		return resultDAO.selectMonthResultList3(rvo);
 	}
+
+
 
 
 

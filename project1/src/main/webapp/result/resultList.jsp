@@ -80,71 +80,216 @@
 							<div class="clearfix"></div>
 						</div>
 						<div class="x_content">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="card-box table-responsive">
-										<p class="text-muted font-13 m-b-30">프로젝트별 공수 리스트 입니다.</p>
-										<table id="datatable-fixed-header" class="table-bordered" style="width: 100%">
-											<thead style="font-size:12px">
-												<tr>
-													<th>코드</th>
-													<th>프로젝트명</th>
-													<th class="hidden">사번</th>
-													<th>이름</th>
-													<th>직급</th>
-													<th>년도</th>
-													<th>투입공수</th>
-													<th>1월</th>
-													<th>2월</th>
-													<th>3월</th>
-													<th>4월</th>
-													<th>5월</th>
-													<th>6월</th>
-													<th>7월</th>
-													<th>8월</th>
-													<th>9월</th>
-													<th>10월</th>
-													<th>11월</th>
-													<th>12월</th>
-													<th>구분</th>
-												</tr>
-											</thead>
-
-											<tbody>
-												<c:forEach var="list" items="${resultList}"
-													varStatus="status">
+							<ul class="nav nav-tabs bar_tabs" id="myTab" role="tablist">
+		                		<li class="nav-item">
+		                			<a class="nav-link active" id="fir-tab" data-toggle="tab" href="#fir" role="tab" aria-controls="fir" aria-selected="true">2022년</a>
+		                		</li>
+		                		<li class="nav-item">
+		                			<a class="nav-link" id="sec-tab" data-toggle="tab" href="#sec" role="tab" aria-controls="sec" aria-selected="false">2023년</a>
+		                		</li>
+		                		<li class="nav-item">
+		                			<a class="nav-link" id="thi-tab" data-toggle="tab" href="#thi" role="tab" aria-controls="thi" aria-selected="false">2024년</a>
+		                		</li>
+	                    	</ul>
+	                    	<div class="tab-content" id="myTabContent">
+	                    		<div class="tab-pane fade show active" id="fir" role="tabpanel" aria-labelledby="fir-tab">
+									<div class="col-sm-12">
+										<div class="card-box table-responsive">
+											<p class="text-muted font-13 m-b-30">2022년 프로젝트별 공수 리스트 입니다.</p>
+											<table id="datatable-fixed-header" class="table-bordered" style="width: 100%">
+												<thead style="font-size:12px">
 													<tr>
-														<td>${list.pId }</td>
-														<td>${list.pName }</td>
-														<td class="hidden">${list.dId }</td>
-														<td>${list.dName }</td>
-														<td>${list.dJobgrade }</td>
-														<td>${list.year }년</td>
-														<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
-														<td>${Math.round(list.jan*10)/10}</td>
-														<td>${Math.round(list.feb*10)/10}</td>
-														<td>${Math.round(list.mar*10)/10}</td>
-														<td>${Math.round(list.apr*10)/10}</td>
-														<td>${Math.round(list.may*10)/10}</td>
-														<td>${Math.round(list.jun*10)/10}</td>
-														<td>${Math.round(list.jul*10)/10}</td>
-														<td>${Math.round(list.aug*10)/10}</td>
-														<td>${Math.round(list.sep*10)/10}</td>
-														<td>${Math.round(list.oct*10)/10}</td>
-														<td>${Math.round(list.nov*10)/10}</td>
-														<td>${Math.round(list.dec*10)/10}</td>
-														<td>
-															<button type="button" class="btn btn-round btn-primary"
-																onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
-															<button type="button" class="btn btn-round btn-danger"
-																onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
-														</td>
+														<th>코드</th>
+														<th>프로젝트명</th>
+														<th class="hidden">사번</th>
+														<th>이름</th>
+														<th>직급</th>
+														<th>년도</th>
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
+														<th>구분</th>
 													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
+												</thead>
+	
+												<tbody>
+													<c:forEach var="list" items="${resultList}"
+														varStatus="status">
+														<tr>
+															<td>${list.pId }</td>
+															<td>${list.pName }</td>
+															<td class="hidden">${list.dId }</td>
+															<td>${list.dName }</td>
+															<td>${list.dJobgrade }</td>
+															<td>${list.year }년</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${Math.round(list.jan*10)/10}</td>
+															<td>${Math.round(list.feb*10)/10}</td>
+															<td>${Math.round(list.mar*10)/10}</td>
+															<td>${Math.round(list.apr*10)/10}</td>
+															<td>${Math.round(list.may*10)/10}</td>
+															<td>${Math.round(list.jun*10)/10}</td>
+															<td>${Math.round(list.jul*10)/10}</td>
+															<td>${Math.round(list.aug*10)/10}</td>
+															<td>${Math.round(list.sep*10)/10}</td>
+															<td>${Math.round(list.oct*10)/10}</td>
+															<td>${Math.round(list.nov*10)/10}</td>
+															<td>${Math.round(list.dec*10)/10}</td>
+															<td>
+																<button type="button" class="btn btn-round btn-primary"
+																	onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
+																<button type="button" class="btn btn-round btn-danger"
+																	onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
+															</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
 									</div>
-								</div>
+	                    		</div>
+	                    		<div class="tab-pane fade" id="sec" role="tabpanel" aria-labelledby="sec-tab">
+									<div class="col-sm-12">
+										<div class="card-box table-responsive">
+											<p class="text-muted font-13 m-b-30">2023년 프로젝트별 공수 리스트 입니다.</p>
+											<table id="datatable-keytable" class="table-bordered" style="width: 100%">
+												<thead style="font-size:12px">
+													<tr>
+														<th>코드</th>
+														<th>프로젝트명</th>
+														<th class="hidden">사번</th>
+														<th>이름</th>
+														<th>직급</th>
+														<th>년도</th>
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
+														<th>구분</th>
+													</tr>
+												</thead>
+	
+												<tbody>
+													<c:forEach var="list" items="${resultList2}"
+														varStatus="status">
+														<tr>
+															<td>${list.pId }</td>
+															<td>${list.pName }</td>
+															<td class="hidden">${list.dId }</td>
+															<td>${list.dName }</td>
+															<td>${list.dJobgrade }</td>
+															<td>${list.year }년</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${Math.round(list.jan*10)/10}</td>
+															<td>${Math.round(list.feb*10)/10}</td>
+															<td>${Math.round(list.mar*10)/10}</td>
+															<td>${Math.round(list.apr*10)/10}</td>
+															<td>${Math.round(list.may*10)/10}</td>
+															<td>${Math.round(list.jun*10)/10}</td>
+															<td>${Math.round(list.jul*10)/10}</td>
+															<td>${Math.round(list.aug*10)/10}</td>
+															<td>${Math.round(list.sep*10)/10}</td>
+															<td>${Math.round(list.oct*10)/10}</td>
+															<td>${Math.round(list.nov*10)/10}</td>
+															<td>${Math.round(list.dec*10)/10}</td>
+															<td>
+																<button type="button" class="btn btn-round btn-primary"
+																	onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
+																<button type="button" class="btn btn-round btn-danger"
+																	onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
+															</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
+									</div>
+	                    		</div>
+	                    		<div class="tab-pane fade" id="thi" role="tabpanel" aria-labelledby="thi-tab">
+									<div class="col-sm-12">
+										<div class="card-box table-responsive">
+											<p class="text-muted font-13 m-b-30">2024년 프로젝트별 공수 리스트 입니다.</p>
+											<table id="datatable" class="table-bordered" style="width: 100%">
+												<thead style="font-size:12px">
+													<tr>
+														<th>코드</th>
+														<th>프로젝트명</th>
+														<th class="hidden">사번</th>
+														<th>이름</th>
+														<th>직급</th>
+														<th>년도</th>
+														<th>투입공수</th>
+														<th>1월</th>
+														<th>2월</th>
+														<th>3월</th>
+														<th>4월</th>
+														<th>5월</th>
+														<th>6월</th>
+														<th>7월</th>
+														<th>8월</th>
+														<th>9월</th>
+														<th>10월</th>
+														<th>11월</th>
+														<th>12월</th>
+														<th>구분</th>
+													</tr>
+												</thead>
+	
+												<tbody>
+													<c:forEach var="list" items="${resultList3}"
+														varStatus="status">
+														<tr>
+															<td>${list.pId }</td>
+															<td>${list.pName }</td>
+															<td class="hidden">${list.dId }</td>
+															<td>${list.dName }</td>
+															<td>${list.dJobgrade }</td>
+															<td>${list.year }년</td>
+															<td>${Math.round((list.jan + list.feb + list.mar + list.apr + list.may + list.jun + list.jul + list.aug + list.sep + list.oct + list.nov + list.dec)*10)/10}</td>
+															<td>${Math.round(list.jan*10)/10}</td>
+															<td>${Math.round(list.feb*10)/10}</td>
+															<td>${Math.round(list.mar*10)/10}</td>
+															<td>${Math.round(list.apr*10)/10}</td>
+															<td>${Math.round(list.may*10)/10}</td>
+															<td>${Math.round(list.jun*10)/10}</td>
+															<td>${Math.round(list.jul*10)/10}</td>
+															<td>${Math.round(list.aug*10)/10}</td>
+															<td>${Math.round(list.sep*10)/10}</td>
+															<td>${Math.round(list.oct*10)/10}</td>
+															<td>${Math.round(list.nov*10)/10}</td>
+															<td>${Math.round(list.dec*10)/10}</td>
+															<td>
+																<button type="button" class="btn btn-round btn-primary"
+																	onclick="fn_update('${list.pId}','${list.pName}', '${list.dId}','${list.dName}','${list.year}')">수정</button>
+																<button type="button" class="btn btn-round btn-danger"
+																	onclick="fn_delete('${list.pId}', '${list.dId}', '${list.year}')">삭제</button>
+															</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
+									</div>
+	                    		</div>
 							</div>
 						</div>
 					</div>

@@ -72,9 +72,13 @@ public class ResultController {
 	@RequestMapping(value="/resultList.do") 
 	public String selectResultList(ResultVO rvo, Model model) throws Exception {
 		
-		List<?> list = resultService.selectResultList(rvo);
+		List<?> list = resultService.selectResultList(rvo);		
+		List<?> list2 = resultService.selectResultList2(rvo);
+		List<?> list3 = resultService.selectResultList3(rvo);
 		
 		model.addAttribute("resultList",list);
+		model.addAttribute("resultList2",list2);
+		model.addAttribute("resultList3",list3);
 		
 		return "result/resultList";
 		

@@ -46,6 +46,16 @@ public class ResultDAO extends EgovAbstractDAO {
 
 		return list("resultDAO.selectResultList", rvo);
 	}
+	
+	public List<?> selectResultList2(ResultVO rvo) {
+
+		return list("resultDAO.selectResultList2", rvo);
+	}
+
+	public List<?> selectResultList3(ResultVO rvo) {
+
+		return list("resultDAO.selectResultList3", rvo);
+	}	
 
 	public int deleteResult(String p_id, String d_id, String year) {
 		
@@ -107,5 +117,7 @@ public class ResultDAO extends EgovAbstractDAO {
 		
 		return list("resultDAO.selectMonthResultList3", rvo);
 	}
+
+
 
 }
