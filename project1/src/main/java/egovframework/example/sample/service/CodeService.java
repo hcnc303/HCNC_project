@@ -18,7 +18,7 @@ public interface CodeService {
 	
 	public int selectCodesCount(MasterCodeVO mvo) throws Exception;
 	
-	public DetailCodeVO selectCodesDetail(String detailNm) throws Exception;
+	public DetailCodeVO selectCodesDetail(String detailCd, String detailNm) throws Exception;
 	
 	public int updateCodes(DetailCodeVO vo) throws Exception;
 	

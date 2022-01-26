@@ -18,7 +18,7 @@
 
 <script>
 	function fn_update(p_id, p_name, d_id, d_name, year) {
-		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name" + p_name + "&d_id=" + d_id + "&d_name" + d_name + "&year=" + year;
+		location = "resultModifyWrite.do?p_id=" + p_id + "&p_name=" + p_name + "&d_id=" + d_id + "&d_name=" + d_name + "&year=" + year;
 	}
 	function fn_delete(p_id, d_id, year) {
 		if (confirm("정말 삭제하시겠습니까?")) {

@@ -62,7 +62,7 @@
 	</select>
 	
 	<select id="codeDAO.selectCodesDetail" resultClass="DetailCodeVO">
-		SELECT dtNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE detailNm = #detailNm#
+		SELECT dtNo, masterCd, detailCd, detailNm FROM hc_dtcode WHERE	detailCd = #detailCd# and detailNm = #detailNm#
 	</select>
 	
 	<update id = "codeDAO.updateCodes">

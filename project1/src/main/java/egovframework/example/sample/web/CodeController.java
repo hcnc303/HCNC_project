@@ -91,9 +91,8 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value="/codeModifyWrite.do")
-	public String selectCodesDetail(String detailNm, Model model) throws Exception {
-		DetailCodeVO vo = codeService.selectCodesDetail(detailNm);
-		System.out.println("detail======>"+vo);
+	public String selectCodesDetail(String detailCd, String detailNm, Model model) throws Exception {
+		DetailCodeVO vo = codeService.selectCodesDetail(detailCd, detailNm);
 		model.addAttribute("vo",vo);
 		
 		return "code/codeModifyWrite";

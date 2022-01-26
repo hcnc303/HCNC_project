@@ -1,6 +1,8 @@
 package egovframework.example.sample.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -45,9 +47,12 @@ public class CodeDAO extends EgovAbstractDAO {
 		
 	}
 
-	public DetailCodeVO selectCodesDetail(String detailNm) {
+	public DetailCodeVO selectCodesDetail(String detailCd, String detailNm) {
+		Map map = new HashMap();
+		map.put("detailCd", detailCd);
+		map.put("detailNm", detailNm);
 
-		return (DetailCodeVO) select("codeDAO.selectCodesDetail",detailNm);
+		return (DetailCodeVO) select("codeDAO.selectCodesDetail",map);
 	}
 
 	public int updateCodes(DetailCodeVO vo) {

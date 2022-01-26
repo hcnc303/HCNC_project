@@ -54,9 +54,9 @@ public class CodeServiceImpl extends EgovAbstractServiceImpl implements CodeServ
 	}
 
 	@Override
-	public DetailCodeVO selectCodesDetail(String detailNm) throws Exception {
+	public DetailCodeVO selectCodesDetail(String detailCd, String detailNm) throws Exception {
 
-		return codeDAO.selectCodesDetail(detailNm);
+		return codeDAO.selectCodesDetail(detailCd, detailNm);
 	}
 
 	@Override

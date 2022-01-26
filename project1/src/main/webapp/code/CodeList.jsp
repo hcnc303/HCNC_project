@@ -31,8 +31,8 @@
     <link href="/build/css/custom.min.css" rel="stylesheet">
     
     <script>
-    	function fn_update(detailNm) {
-    		location = "codeModifyWrite.do?detailNm="+detailNm;
+    	function fn_update(detailCd,detailNm) {
+    		location = "codeModifyWrite.do?detailCd="+detailCd+"&detailNm="+detailNm;
     	}
     </script>
   </head>
@@ -134,7 +134,7 @@
 	                          <td>${d.masterCd }</td>
 	                          <td>${d.detailCd }</td>
 	                          <td>${d.detailNm }</td>
-	                          <td><button type="button" class="btn btn-round btn-primary" onclick="fn_update('${d.detailNm}')">수정</button></td>
+	                          <td><button type="button" class="btn btn-round btn-primary" onclick="fn_update('${d.detailCd }','${d.detailNm}')">수정</button></td>
 	                        </tr>
 	                    </c:forEach>
 
