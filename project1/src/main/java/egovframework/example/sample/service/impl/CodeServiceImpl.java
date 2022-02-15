@@ -7,8 +7,8 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import egovframework.example.sample.service.CodeService;
-import egovframework.example.sample.service.DetailCodeVO;
-import egovframework.example.sample.service.MasterCodeVO;
+import egovframework.example.sample.service.CodeVO;
+
 import egovframework.example.sample.service.MsCateVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
@@ -18,57 +18,17 @@ public class CodeServiceImpl extends EgovAbstractServiceImpl implements CodeServ
 	private CodeDAO codeDAO;
 
 	@Override
-	public String insertMsCode(MasterCodeVO mvo) throws Exception {
-		
-		return codeDAO.insertMsCode(mvo);
+	public String insertCode(CodeVO cvo) throws Exception {
+
+		return codeDAO.insertCode(cvo);
 	}
 
 	@Override
-	public String insertDtCode(DetailCodeVO dvo) throws Exception {
-		
-		return codeDAO.insertDtCode(dvo);
+	public List<?> selectCodeList(CodeVO cvo) throws Exception {
+		// TODO Auto-generated method stub
+		return codeDAO.selectCodeList(cvo);
 	}
 
-	@Override
-	public List<?> selectCodesList(MasterCodeVO mvo) throws Exception {
 
-		return codeDAO.selectCodesList(mvo);
-	}
-	
-	@Override
-	public List<?> selectMsCodeList(MasterCodeVO mvo) throws Exception {
-
-		return codeDAO.selectMsCodeList(mvo);
-	}	
-	
-	@Override
-	public List<?> selectDtCodeList(DetailCodeVO dvo) throws Exception {
-		
-		return codeDAO.selectDtCodeList(dvo);
-	}	
-
-	@Override
-	public int selectCodesCount(MasterCodeVO mvo) throws Exception {
-		
-		return codeDAO.selectCodesCount(mvo);
-	}
-
-	@Override
-	public DetailCodeVO selectCodesDetail(String detailCd, String detailNm) throws Exception {
-
-		return codeDAO.selectCodesDetail(detailCd, detailNm);
-	}
-
-	@Override
-	public int updateCodes(DetailCodeVO vo) throws Exception {
-
-		return codeDAO.updateCodes(vo);
-	}
-
-	@Override
-	public List<?> selectMsCateList(MsCateVO vo) throws Exception {
-
-		return codeDAO.selectMsCateList(vo);
-	}
 
 }

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import egovframework.example.sample.service.CodeService;
-import egovframework.example.sample.service.DetailCodeVO;
-import egovframework.example.sample.service.MasterCodeVO;
+import egovframework.example.sample.service.CodeVO;
+import egovframework.example.sample.service.DeveloperVO;
 import egovframework.example.sample.service.MsCateVO;
 
 @Controller
@@ -26,84 +26,47 @@ public class CodeController {
 	private CodeService codeService;
 	
 	@RequestMapping(value="/codeWrite.do")
-	public String MscodeWrite(MsCateVO vo, Model model) throws Exception {
-		ObjectMapper objm = new ObjectMapper();
-		
-		List MsList = codeService.selectMsCateList(vo);
-		
-		String MsCateList = objm.writeValueAsString(MsList);
-		
-		model.addAttribute("MsCateList",MsCateList);
+	public String CodeWrite() throws Exception {
 		
 		return "code/CodeWrite";
 	}
 	
-	
-	@RequestMapping(value="/MsCodeWriteSave.do")
-	public String insertCode(MasterCodeVO mvo) throws Exception{
+	@RequestMapping(value="CodeWriteSave.do")
+	public String insertCode(CodeVO cvo) throws Exception {
 		
-		String result = codeService.insertMsCode(mvo);
+		String code = codeService.insertCode(cvo);
 		
-
-		
-		if( result == null) {
+		if(code == null) {	// ok
 			System.out.println("저장완료");
+		} else {
+			System.out.println("저장실패");
 		}
 		
-		
-		return "redirect:codeWrite.do";
-		
+		return "redirect:codeList.do";
 	}
 	
-	@RequestMapping(value="/DtCodeWriteSave.do")
-	public String insertCode(DetailCodeVO dvo) throws Exception{
-		 
-		String result = codeService.insertDtCode(dvo);
-
-		
-		if( result == null) {
-			System.out.println("저장완료");
-		}
-		
-		return "redirect:codeWrite.do";
-	}
 	
 	@RequestMapping(value="/codeList.do",method = {RequestMethod.GET, RequestMethod.POST})
-	public String selectCodesList(Model model, MasterCodeVO mvo, DetailCodeVO dvo) throws Exception {
+	public String selectCodesList(CodeVO cvo, ModelMap model) throws Exception {
+		List<?> codeList = codeService.selectCodeList(cvo);
 		
-		
-		List<?> list = codeService.selectCodesList(mvo);
-		List<?> msList = codeService.selectMsCodeList(mvo);
-		List<?> dtList = codeService.selectDtCodeList(dvo);
-		
+		model.addAttribute("codeList", codeList);
 
 		
-		
-		model.addAttribute("resultList",list);
-		model.addAttribute("resultMsList",msList);
-		model.addAttribute("resultDtList",dtList);
-
-		//System.out.println("list =====> " + list);
-
-
 		return "code/CodeList"; 
 		
 	}
 	
 	@RequestMapping(value="/codeModifyWrite.do")
-	public String selectCodesDetail(String detailCd, String detailNm, Model model) throws Exception {
-		DetailCodeVO vo = codeService.selectCodesDetail(detailCd, detailNm);
-		model.addAttribute("vo",vo);
+	public String selectCodesDetail() throws Exception {
 		
 		return "code/codeModifyWrite";
 		
 	}
 	
 	@RequestMapping(value="/codeModifySave.do")
-	public String updateCodes(DetailCodeVO vo) throws Exception {
-		
-		int result = codeService.updateCodes(vo);
-		
+	public String updateCodes() throws Exception {
+				
 		return "redirect:/codeList.do";
 	}
 	

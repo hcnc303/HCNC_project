@@ -39,7 +39,6 @@
 							<div class="title_left">
 								<h3>코드 작성</h3>
 							</div>
-
 						</div>
 						<div class="clearfix"></div>
 						<div class="row">
@@ -58,25 +57,24 @@
 									</div>
 									<div class="x_content">
 										<br />
-										<form id="demo-form2" name="frm" method="post" action="MsCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
+										<form id="demo-form2" name="frm" method="post" action="CodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd" >대분류 코드 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="type_code" >대분류 코드 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterCd" required="required" class="form-control "name="masterCd" autocomplete="off">
+													<input type="text" id="type_code" required="required" class="form-control "name="type_code" autocomplete="off">
 												</div>
 											</div>
 											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterNm">대분류명 <span class="required">*</span>
+												<label class="col-form-label col-md-3 col-sm-3 label-align" for="type_cont">대분류명 <span class="required">*</span>
 												</label>
 												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="masterNm" required="required" class="form-control" name="masterNm" autocomplete="off">
+													<input type="text" id="type_cont" required="required" class="form-control" name="type_cont" autocomplete="off">
 												</div>
 											</div>
 											<div class="ln_solid"></div>
 											<div class="item form-group">
 												<div class="col-md-6 col-sm-6 offset-md-3">
-													<button class="btn btn-danger" type="button">취소</button>
 													<button class="btn btn-primary" type="reset">초기화</button>
 													<button type="submit" class="btn btn-success">저장</button>
 												</div>
@@ -85,60 +83,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 col-sm-12 ">
-								<div class="x_panel">
-									<div class="x_title">
-										<h2>소분류 코드 작성 <small></small></h2>
-										<ul class="nav navbar-right panel_toolbox">
-											<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-											</li>
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-											</li>
-										</ul>
-										<div class="clearfix"></div>
-									</div>
-									<div class="x_content">
-										<br />
-										<form id="demo-form2" name="frm" method="post" action="DtCodeWriteSave.do" data-parsley-validate class="form-horizontal form-label-left">
-											<div class="form-group row">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="masterCd">대분류 코드 <span class="required">*</span></label>
-												<div class="col-md-6 col-sm-6 ">
-													<select class="form-control cate1" id="masterCd"  name="masterCd">
-														<option selected value="none">대분류를 선택해주세요.</option>
-													</select>
-												</div>
-											</div>
-											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailCd">소분류 코드 <span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="detailCd" required="required" class="form-control" name="detailCd" autocomplete="off">
-												</div>
-											</div>
-											<div class="item form-group">
-												<label class="col-form-label col-md-3 col-sm-3 label-align" for="detailNm">소분류명 <span class="required">*</span>
-												</label>
-												<div class="col-md-6 col-sm-6 ">
-													<input type="text" id="detailNm" required="required" class="form-control" name="detailNm" autocomplete="off">
-												</div>
-											</div>
-											<div class="ln_solid"></div>
-											<div class="item form-group">
-												<div class="col-md-6 col-sm-6 offset-md-3">
-													<button class="btn btn-danger" type="button">취소</button>
-													<button class="btn btn-primary" type="reset">초기화</button>
-													<button type="submit" class="btn btn-success">저장</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-	
+						</div>							
 					</div>
 				</div>
 				<!-- /page content -->

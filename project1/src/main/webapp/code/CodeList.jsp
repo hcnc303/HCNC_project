@@ -29,12 +29,6 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-    
-    <script>
-    	function fn_update(detailCd,detailNm) {
-    		location = "codeModifyWrite.do?detailCd="+detailCd+"&detailNm="+detailNm;
-    	}
-    </script>
   </head>
 
   <body class="nav-md">
@@ -69,134 +63,30 @@
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	대분류 코드 리스트 입니다. <code></code>
-                    </p>
+                    <p class="text-muted font-13 m-b-30">대분류 코드 리스트 입니다. <code></code></p>
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>대분류 코드</th>
-                          <th>대분류 코드명</th>
+                          <th>코드</th>
+                          <th>코드명</th>
                         </tr>
                       </thead>
                       <tbody>
-	                      <c:forEach var="m" items="${resultMsList}" varStatus="status">
-	                        <tr>
-	                          <td>${m.masterCd }</td>
-	                          <td>${m.masterNm }</td>
-	                        </tr>
-	                      </c:forEach>   
+							<c:forEach var="code" items="${codeList }" varStatus="status">
+								<tr>
+									<td>${code.typeCode }</td>
+									<td>${code.typeCont }</td>
+								</tr>
+							</c:forEach>				
                       </tbody>
                     </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
+                  	</div>
+                   </div>
+              	  </div>
+            	 </div>
                 </div>
               </div>
 
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>소분류 코드 리스트</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	소분류 코드 리스트 입니다. <code></code>
-                    </p>
-                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action" style="width:100%">
-                      <thead>
-                        <tr>
-						  <th style="display:none;">NO</th>
-                          <th>대분류 코드</th>
-                          <th>소분류 코드</th>
-                          <th>소분류명</th>
-                          <th>구분</th>
-                        </tr>
-                      </thead>
-
-
-                      <tbody>
-	                    <c:forEach var="d" items="${resultDtList}" varStatus="status">
-	                        <tr>
-							  <td style="display:none;" >${d.no }</td>
-	                          <td>${d.masterCd }</td>
-	                          <td>${d.detailCd }</td>
-	                          <td>${d.detailNm }</td>
-	                          <td><button type="button" class="btn btn-round btn-primary" onclick="fn_update('${d.detailCd }','${d.detailNm}')">수정</button></td>
-	                        </tr>
-	                    </c:forEach>
-
-                      </tbody>
-                    </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
-                </div>
-              </div>
-
-
-
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>코드 리스트 <small></small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      	전체 코드 리스트 입니다.
-                    </p>
-                    <table id="datatable-fixed-header" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-							<th>대분류 코드</th>
-							<th>대분류 코드명</th>
-							<th>소분류 코드</th>
-							<th>소분류 코드명</th>
-                        </tr>
-                      </thead>
-
-
-                      <tbody>
-						<c:forEach var="a" items="${resultList}" varStatus="status">
-							<tr>
-								<td>${a.masterCd}</td>
-								<td>${a.masterNm}</td>
-								<td>${a.detailCd}</td>
-								<td>${a.detailNm}</td>
-							</tr>
-						</c:forEach>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
