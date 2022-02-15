@@ -63,7 +63,7 @@
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">대분류 코드 리스트 입니다. <code></code></p>
+                    <p class="text-muted font-13 m-b-30">코드 리스트 입니다. <code></code></p>
                     <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
