@@ -38,8 +38,8 @@ a{
             </colgroup>
             <thead>
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
+                    <th>구분</th>
+                    <th>내용</th>
                     <th>관리</th>
                 </tr>
             </thead>
