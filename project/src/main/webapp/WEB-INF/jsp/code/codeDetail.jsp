@@ -33,8 +33,12 @@
         <form action="updateCode.do" id="viewForm" method="post" encType="multiplart/form-data">
             <table class="table table-bordered">
                 <tbody>
+                	<tr>
+                        <th>코드번호1</th>
+                        <td><input type="text" value="${vo.type_no}" name="type_code" class="form-control" /></td>
+                    </tr>
                     <tr>
-                        <th>구분</th>
+                        <th>코드번호2</th>
                         <td><input type="text" value="${vo.type_code}" name="type_code" class="form-control" /></td>
                     </tr>
                     <tr>

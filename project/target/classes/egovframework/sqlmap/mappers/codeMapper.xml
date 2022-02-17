@@ -12,7 +12,7 @@
     <!-- 코드 상세보기 -->
     <select id="selectDetail" parameterType="Integer" resultType="egovframework.example.hcnc.vo.CodeVo">
         SELECT * FROM code
-        WHERE type_code = #{type_code}
+        WHERE type_no = #{type_no}
     </select>
     
     <!-- 코드 삽입 -->
@@ -25,7 +25,7 @@
     <update id="updateCode" parameterType="egovframework.example.hcnc.vo.CodeVo">
         UPDATE code SET
         type_code = #{type_code}, type_cont = #{type_cont}
-        WHERE type_code = #{type_code}
+        WHERE type_no = #{type_no}
     </update>
     
     <!-- 코드 삭제 -->
