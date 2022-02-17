@@ -31,15 +31,14 @@ a {
         <table class="table table-hover table-striped text-center"
             style="border: 1px solid;">
             <colgroup>
-                <col width="10%" />
-                <col width="10%" />
+                <col width="20%" />
                 <col width="20%" />
                 <col width="40%" />
                 <col width="20%" />
-            </colgroup>
+            </colgroup> 
             <thead>
                 <tr>
-                    <th>번호</th>
+                    <th style="display:none">번호</th>
                     <th>년도</th>
                     <th>구분</th>
                     <th>제목</th>                  
@@ -50,9 +49,9 @@ a {
             <tbody>
                 <c:forEach items="${list }" var="result">
                     <tr>
-                        <td>${result.no}</td>
+                        <td style="display:none">${result.no}</td>
                         <td>${result.year}</td>
-                        <td>${result.type}</td>
+                        <td>${result.typeCont}</td>
                         <td><a href="treeDetail.do?no=${result.no}">${result.title}</a></td>
                         <td>${result.edate}</td>
                     </tr>
@@ -95,7 +94,7 @@ a {
             <div class="w100" style="padding-right: 10px">
                 <select class="form-control form-control-sm" name="searchType" id="searchType">
                     <option value="year">년도</option>
-                    <option value="type">구분</option>
+                    <option value="type_cont">구분</option>
                     <option value="title">제목</option>
                 </select>
             </div>

@@ -4,14 +4,15 @@
 <mapper namespace="egovframework.example.hcnc.service.TreeMapper">
 
 	<!-- 게시글 목록 조회 -->
-	<select id="selectTree" resultType="egovframework.example.hcnc.vo.TreeVO">
-		select * from tree
+	<select id="selectTree" resultType="egovMap">
+		select NO, YEAR,type_cont,title,cont,edate,fileName
+		FROM tree JOIN code ON tree.type = code.type_code
 		<where>
 			<if test="searchType=='year' and keyword != null and keyword != ''">
 				and year like concat ('%',#{keyword},'%')
 			</if>
-			<if test="searchType=='type' and keyword != null and keyword != ''">
-				and type like concat ('%',#{keyword},'%')
+			<if test="searchType=='type_cont' and keyword != null and keyword != ''">
+				and type_cont like concat ('%',#{keyword},'%')
 			</if>
 			<if test="searchType=='title' and keyword != null and keyword != ''">
 				and title like concat ('%',#{keyword},'%')
@@ -42,20 +43,20 @@
 	
 	<!-- 게시글 상세보기 -->
 	<select id="selectDetail" parameterType="Integer" resultType="egovframework.example.hcnc.vo.TreeVO">
-		select * from tree
-		where no=#{no}
+		select * FROM tree JOIN code ON tree.type = code.type_code
+		where tree.no=#{no}
 	</select>
 	
 	<!-- 게시글 삽입 -->
 	<insert id="insertTree" parameterType="egovframework.example.hcnc.vo.TreeVO">
-		insert into tree(type, title, cont, edate)
-		values(#{type}, #{title}, #{cont}, now())
+		insert into tree(type, title, cont, edate, fileName)
+		values(#{type}, #{title}, #{cont}, now(), #{fileName})
 	</insert>
 	
 	<!-- 게시글 수정 -->
 	<update id="updateTree" parameterType="egovframework.example.hcnc.vo.TreeVO">
 		update tree set
-		type=#{type}, title=#{title}, cont=#{cont}
+		type=#{type}, title=#{title}, cont=#{cont}, fileName=#{fileName}
 		where no=#{no}
 	</update>
 	

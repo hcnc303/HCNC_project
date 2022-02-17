@@ -1,5 +1,7 @@
 package egovframework.example.hcnc.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class TreeVO {
 	private int no;
 	private String year;
@@ -7,7 +9,24 @@ public class TreeVO {
 	private String title;
 	private String cont;
 	private String edate;
+	private String fileName;
+	private MultipartFile uploadFile;
 	
+	private CodeVo codeVO;
+
+	
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 	public int getNo() {
 		return no;
 	}
@@ -43,5 +62,11 @@ public class TreeVO {
 	}
 	public void setEdate(String edate) {
 		this.edate = edate;
+	}
+	public CodeVo getCodeVO() {
+		return codeVO;
+	}
+	public void setCodeVO(CodeVo codeVO) {
+		this.codeVO = codeVO;
 	}
 }
