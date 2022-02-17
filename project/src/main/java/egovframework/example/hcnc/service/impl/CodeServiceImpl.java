@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import egovframework.example.hcnc.dao.CodeDao;
 import egovframework.example.hcnc.service.CodeService;
 import egovframework.example.hcnc.vo.CodeVo;
+import egovframework.example.hcnc.vo.Search;
 
 @Service
 public class CodeServiceImpl implements CodeService{
@@ -16,9 +17,9 @@ public class CodeServiceImpl implements CodeService{
 	private CodeDao codeDao;
 	
 	@Override
-	public List<CodeVo> selectCode(CodeVo codeVo) throws Exception {
+	public List<CodeVo> selectCode(Search search) throws Exception {
 		
-		return codeDao.selectCode(codeVo);
+		return codeDao.selectCode(search);
 	}
 
 	@Override
@@ -44,6 +45,12 @@ public class CodeServiceImpl implements CodeService{
 		
 		codeDao.deleteCode(type_no);
 		
+	}
+
+	@Override
+	public int getBoardListCnt(Search search) throws Exception {
+		
+		return codeDao.getBoardListCnt(search);
 	}
 
 }

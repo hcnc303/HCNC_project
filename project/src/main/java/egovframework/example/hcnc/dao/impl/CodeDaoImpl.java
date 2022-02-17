@@ -8,7 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import egovframework.example.hcnc.dao.CodeDao;
 import egovframework.example.hcnc.service.CodeMapper;
+import egovframework.example.hcnc.service.TreeMapper;
 import egovframework.example.hcnc.vo.CodeVo;
+import egovframework.example.hcnc.vo.Search;
 
 @Repository
 public class CodeDaoImpl implements CodeDao {
@@ -17,10 +19,10 @@ public class CodeDaoImpl implements CodeDao {
     private SqlSession sqlSession;
 
 	@Override
-	public List<CodeVo> selectCode(CodeVo codeVo) throws Exception {
+	public List<CodeVo> selectCode(Search search) throws Exception {
 		
 		CodeMapper mapper = sqlSession.getMapper(CodeMapper.class);
-        return mapper.selectCode(codeVo);
+        return mapper.selectCode(search);
 	}
 
 	@Override
@@ -49,6 +51,12 @@ public class CodeDaoImpl implements CodeDao {
 		CodeMapper mapper = sqlSession.getMapper(CodeMapper.class);
         mapper.deleteCode(type_no);
 		
+	}
+
+	@Override
+	public int getBoardListCnt(Search search) throws Exception {
+		CodeMapper mapper = sqlSession.getMapper(CodeMapper.class);
+        return mapper.getBoardListCnt(search);
 	}
 
 	

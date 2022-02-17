@@ -33,17 +33,13 @@
         <form action="updateCode.do" id="viewForm" method="post" encType="multiplart/form-data">
             <table class="table table-bordered">
                 <tbody>
-                	<tr>
-                        <th>코드번호1</th>
-                        <td><input type="text" value="${vo.type_no}" name="type_code" class="form-control" /></td>
-                    </tr>
                     <tr>
-                        <th>코드번호2</th>
+                        <th>코드번호</th>
                         <td><input type="text" value="${vo.type_code}" name="type_code" class="form-control" /></td>
                     </tr>
                     <tr>
                         <th>내용</th>
-                        <td><textarea name="type_cont" class="form-control" >${vo.type_cont}</textarea></td>
+                        <td><input type="text" value="${vo.type_cont}" name="type_cont" class="form-control" ></td>
  
                     </tr>
                     <tr>

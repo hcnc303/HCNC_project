@@ -3,11 +3,42 @@
  
 <mapper namespace="egovframework.example.hcnc.service.CodeMapper">
 
+	<!-- 게시글 목록 조회 -->
+	<select id="selectCode" resultType="egovframework.example.hcnc.vo.CodeVo">
+		select * from code
+		<where>
+			<if test="searchType=='type_code' and keyword != null and keyword != ''">
+				and type_code like concat ('%',#{keyword},'%')
+			</if>
+			<if test="searchType=='type_cont' and keyword != null and keyword != ''">
+				and type_cont like concat ('%',#{keyword},'%')
+			</if>
+		</where>
+		order by type_no desc
+		limit #{startList}, #{listSize}
+	</select>
+	
+	<!-- 게시글 갯수 -->
+	<select id="getBoardListCnt" resultType="integer">
+		select count(*) as listCnt
+		from code
+		<where>
+			<if test="keyword != null and keyword != ''">
+				<if test="searchType=='type_code'">
+					and type_code like concat('%',#{keyword},'%')
+				</if>
+				<if test="searchType=='type_cont'">
+					and type_cont like concat('%',#{keyword},'%')
+				</if>
+			</if>
+		</where>
+	</select>
+
 	<!-- 코드 목록 조회 -->
-    <select id="selectCode" resultType="egovframework.example.hcnc.vo.CodeVo">
+    <!-- <select id="selectCode" resultType="egovframework.example.hcnc.vo.CodeVo">
         SELECT * FROM code
         ORDER BY type_code DESC
-    </select>
+    </select> -->
     
     <!-- 코드 상세보기 -->
     <select id="selectDetail" parameterType="Integer" resultType="egovframework.example.hcnc.vo.CodeVo">
