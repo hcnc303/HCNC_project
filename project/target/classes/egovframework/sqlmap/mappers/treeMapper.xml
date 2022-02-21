@@ -42,7 +42,7 @@
 	</select>
 	
 	<!-- 게시글 상세보기 -->
-	<select id="selectDetail" parameterType="Integer" resultType="egovframework.example.hcnc.vo.TreeVO">
+	<select id="selectDetail" resultType="egovframework.example.hcnc.vo.TreeVO">
 		select * FROM tree JOIN code ON tree.type = code.type_code
 		where tree.no=#{no}
 	</select>

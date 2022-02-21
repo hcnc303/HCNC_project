@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/*=================================================================================
+ * UI Style
+ =================================================================================*/
+
+/* 스타일 초기화 */
+select { -webkit-appearance: none;  -moz-appearance: none; appearance: none;}
+select::-ms-expand { display: none; } /* IE 에서 Select box 화살표 제거 */
+[type="date"]::-webkit-inner-spin-button {display: none;}
+[type="date"]::-webkit-calendar-picker-indicator {opacity: 0;}
+
+input {-moz-appearance: none;/*  appearance: none; */}/* input 기본 스타일 초기화 */
+/* -webkit-appearance: none; */
+
+input::-ms-clear { display: none; } /* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none; -moz-appearance: none; appearance: none;} /* input type number 에서 화살표 제거 */
+
+/* Input Style */
+input[type="text"] {width:100%; border:1px solid #d4d9df; padding:6px 10px 7px 10px; border-radius:2px; font-size:15px;}
+input[type="date"] {max-width:140px; border:1px solid #d4d9df; background:url(../img/common/icon-calendar2.png)#fff no-repeat 93% 50%; padding:5px 10px 6px 10px; border-radius:2px; font-size:13px; font-family: 'NanumSquare';}
+input[type="password"] {width:100%; border:1px solid #d4d9df; padding:7px 10px; border-radius:2px; font-size:15px;}
+select {font-size:13px; width:160px; margin:0; padding:5px 24px 5px 8px; background: url(../img/common/bg_select_02.png) calc(100% - 10px) 50% no-repeat #fff; border:1px solid #d4d9df; border-radius:2px; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+
+/*readonly 방식의 date */
+input[type="ReadonlyDate"] {max-width:140px; border:1px solid #d4d9df; background-color: #efefef; !important; padding:7px 5px; border-radius:2px;}
+
+textarea {border: 1px solid #d4d9df; /* max-width: 230px; */ min-width: 200px; width: 100%; min-height: 40px;}
+
+  /* Radio Style */
+  .btn-radio {
+    position: relative;
+    display: -webkit-box; display: -ms-flexbox; display: -webkit-box; display: -ms-flexbox; display: flex;
+}
+
+input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    color: #333333;
+}
+
+ input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 2px;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #cacece;
+    border-radius: 100%;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
+
+ input[type="radio"] + label:active:before,
+input[type="radio"]:checked + label:active:before {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+ input[type="radio"]:checked + label:before {
+    background: #fafafa;
+    border-color: #adb8c0;
+}
+
+input[type="radio"]:checked + label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #00a2b2;
+}
+
+/* Checkbox Style */
+tr th{
+    position: relative;
+}
+
+ input[type="checkbox"]:before {
+    가짜 체크박스
+    /* content: ' '; */
+    display: inline-block;
+    width: 13px;
+    체크박스의 너비를 지정
+    height: 13px;
+    체크박스의 높이를 지정
+    line-height: 14px;
+    세로정렬을 위해 높이값과 일치
+    text-align: center;
+    background: #fafafa;
+    border: 1px solid #adb8c0;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
+
+input[type="checkbox"]:active:before,
+input[type="checkbox"]:checked:active:before {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked:before {
+    /* 체크박스를 체크했을때 */
+    /* content: '\2714'; */
+    /* 체크표시 유니코드 사용 */
+    color: #00a2b2;
+    text-shadow: 1px 1px #fff;
+    background: #fff;
+    border-color: #adb8c0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+
+.custom{
+	border:1px solid #eee;
+	padding: 5px 10px;
+	background-color: transparent;
+	min-width: 50px;
+	margin-right: 5px;
+}
+.custom:last-child {
+	margin-right:0;
+}
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="egovframework.example.hcnc.service.TestGridService">
+	<!-- 코드 체크 -->
+    <select id="CodeCheck" parameterType = "string" resultType="string">
+       SELECT CASE WHEN COUNT(CODE) = 0 THEN 'nocode'
+       			   WHEN COUNT(CODE) > 0 THEN 'code' END
+	   FROM ASSET_FG_CODE
+	   WHERE CODE = #{CODE}
+    </select>
+
+    <!-- 구분 체크 -->
+    <select id="GubunCheck" parameterType = "string" resultType="string">
+      SELECT CASE WHEN COUNT(FG) = 0 THEN 'nofg'
+       			 WHEN COUNT(FG) > 0 THEN 'fg' END
+	   FROM ASSET_FG_CODE
+	   WHERE FG = #{FG}
+    </select>
+
+	<!-- 메인페이지 접속시 구분명 불러오기 -->
+    <select id="fgDescCode1" resultType="map">
+       SELECT '전체' AS FG_NM
+       UNION
+       SELECT DISTINCT FG_NM
+       FROM ASSET_FG_CODE
+       GROUP BY FG_NM
+    </select>
+
+	<!-- 코드 및 통합검색 조회 부분 -->
+    <select id="getCodeReaderSearch" parameterType="map" resultType="map">
+		    SELECT  FG, CODE, `[DES]`, FG_NM
+  			FROM ASSET_FG_CODE
+  			WHERE 	FG_NM = if(#{fgDescCode1}='전체',FG_NM, #{fgDescCode1})
+  				AND
+  			 		(FG LIKE CONCAT('%',#{fgDescSearch},'%')
+  			 	OR
+  			 		CODE LIKE CONCAT('%',#{fgDescSearch},'%'))
+    </select>
+
+	<!-- 코드만 검색하는 부분 -->
+    <select id="getCodeReaderSearch2" parameterType="map" resultType="map">
+		  <![CDATA[
+			SELECT *, `[DES]`
+			FROM ASSET_FG_CODE
+			WHERE CODE=#{Codenumber}
+		]]>
+    </select>
+
+	<!-- 코드 등록하는 부분 -->
+    <select id="getCodeAdd" parameterType="map" resultType="string">
+		<![CDATA[
+
+		INSERT INTO ASSET_FG_CODE(FG, FG_NM, CODE, `[DES]`, FRT_INPUT_EMPL_NO, LST_INPUT_EMPL_NO)
+		VALUES ( #{FG}, #{FGNM}, #{CODE}, #{DES},#{seEmplNo},#{seEmplNo})
+
+		]]>
+    </select>
+
+	<!-- 코드 수정하는 부분 -->
+    <select id="getCodeModify" parameterType="map" resultType="string">
+		<![CDATA[
+		UPDATE ASSET_FG_CODE
+	    SET
+	   		 CODE = #{CODE},
+	   	     FG = #{FG},
+	        `[DES]` = #{DES},
+	       	 FG_NM = #{FGNM}
+		WHERE CODE = #{CODE1} AND FG = #{FG1}
+         ]]>
+    </select>
+
+	<!-- 코드 삭제하는 부분 -->
+    <select id="getCodeRemove" parameterType="map" resultType="string">
+		<![CDATA[
+			DELETE FROM ASSET_FG_CODE
+			WHERE CODE= #{CODE}
+		]]>
+    </select>
+</mapper>

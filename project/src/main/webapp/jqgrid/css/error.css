@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+a { text-decoration:none }
+
+.error_btn_main{
+         padding: 10px 7px;
+          display: inline-block;
+          background-color: #32bac9;
+          color: #fff;
+          font-weight: 500;
+          font-size: 12px;
+          border-radius: 50px 50px 50px 50px;
+          margin: 0 auto;
+         text-align:center;
+}
+
+.error_header .logo {
+    display: inline-block;
+    left: 28px;
+    top: 6px;
+    z-index: 0;
+    width: 222px;
+    height: 89px;
+    background: url(/images/logo2.png) no-repeat 0 0, url(/images/innogov_logo.png) no-repeat 100% 50%;
+}
+.error_page{
+   margin-top:100px;
+   width:100%;
+}
+
+.error_wrap{
+   width: 560px;
+   min-height:618px;
+   margin: 0 auto;
+   text-align:left;
+}
+
+.error_content{width:100%; margin:20px 0 39px 0;;}
+
+.btn_area{margin:38px auto 0; max-width:100px;}
+
+.error_footer{width:100%;}
+
+.copyright{text-align:center; font-size:11px;}
+
+.fs12{font-size:12px;}
+.fs14{font-size:14px;}
+.fs15{font-size:15px;}
+
+
+.fw700{font-weight:700;}
+
+.mbt0{margin-bottom:0;}
+.mt5{margin-top:5px;}

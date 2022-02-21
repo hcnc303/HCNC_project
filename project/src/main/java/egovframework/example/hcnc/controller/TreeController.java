@@ -38,13 +38,24 @@ public class TreeController {
 	public String treeListDo(Model model
             ,@RequestParam(required=false,defaultValue="1")int page
             ,@RequestParam(required=false,defaultValue="1")int range
+            ,@RequestParam(required=false,defaultValue="1")int no
             ,@RequestParam(required=false,defaultValue="title")String searchType
             ,@RequestParam(required=false)String keyword
-            ,@ModelAttribute("search")Search search) throws Exception {
+            ,@ModelAttribute("search")Search search
+            ,HttpServletRequest request) throws Exception {
         //검색
         model.addAttribute("search", search);
         search.setSearchType(searchType);
         search.setKeyword(keyword);
+        
+		ObjectMapper objm = new ObjectMapper();
+		List list = codeService.selectCode(search);
+		String cateList = objm.writeValueAsString(list);
+		model.addAttribute("cateList", cateList);
+
+		
+		TreeVO treeVO = treeService.selectDetail(no);
+		model.addAttribute("vo", treeVO);
         
         //전체 개시글 개수
         int listCnt = treeService.getBoardListCnt(search);
@@ -56,40 +67,40 @@ public class TreeController {
         //게시글 화면 출력
         model.addAttribute("list", treeService.selectTree(search));
         
-//        model.addAttribute("list", testService.selectTest(testVo));
+//      model.addAttribute("list", testService.selectTest(testVo));
 		
 		return "tree/treeList";	
 	}
 	
 	//글 상세페이지
-	@RequestMapping(value="treeDetail.do")
-	public String viewForm(Model model, Search search, HttpServletRequest request) throws Exception {
-		
-		
-		ObjectMapper objm = new ObjectMapper();
-		List list = codeService.selectCode(search);
-		String cateList = objm.writeValueAsString(list);
-		model.addAttribute("cateList", cateList);
-		
-		int no = Integer.parseInt(request.getParameter("no"));
-		
-		TreeVO treeVO = treeService.selectDetail(no);
-		model.addAttribute("vo", treeVO);
-		
-		return "tree/treeDetail";
-	}
+//	@RequestMapping(value="treeDetail.do")
+//	public String viewForm(Model model, Search search, HttpServletRequest request) throws Exception {
+//		
+//		
+//		ObjectMapper objm = new ObjectMapper();
+//		List list = codeService.selectCode(search);
+//		String cateList = objm.writeValueAsString(list);
+//		model.addAttribute("cateList", cateList);
+//		
+//		int no = Integer.parseInt(request.getParameter("no"));
+//		
+//		TreeVO treeVO = treeService.selectDetail(no);
+//		model.addAttribute("vo", treeVO);
+//		
+//		return "tree/treeDetail";
+//	}
 	
 	//글 작성페이지
-	@RequestMapping(value="/treeRegister.do")
-	public String treeRegister(Search search, Model model) throws Exception {
-		
-		ObjectMapper objm = new ObjectMapper();
-		List list = codeService.selectCode(search);
-		String cateList = objm.writeValueAsString(list);
-		model.addAttribute("cateList", cateList);	
-		
-		return "tree/treeRegister";
-	}
+//	@RequestMapping(value="/treeRegister.do")
+//	public String treeRegister(Search search, Model model) throws Exception {
+//		
+//		ObjectMapper objm = new ObjectMapper();
+//		List list = codeService.selectCode(search);
+//		String cateList = objm.writeValueAsString(list);
+//		model.addAttribute("cateList", cateList);	
+//		
+//		return "tree/treeRegister";
+//	}
 		
 	//글쓰기
 	@RequestMapping(value="/insertTree.do")
@@ -129,11 +140,11 @@ public class TreeController {
             treeVO.setFileName(fileName);
         }else{
             treeService.updateTree(treeVO);
-            return "redirect:treeDetail.do?no=" + treeVO.getNo();
+            return "redirect:treeList.do?no=" + treeVO.getNo();
         }
         
         treeService.updateTree(treeVO);
-        return "redirect:treeDetail.do?no=" + treeVO.getNo();
+        return "redirect:treeList.do?no=" + treeVO.getNo();
     }
 
 	

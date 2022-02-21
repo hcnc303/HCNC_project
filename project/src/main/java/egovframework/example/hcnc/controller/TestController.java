@@ -23,6 +23,11 @@ public class TestController {
     @Autowired
     private TestService testService;
     
+
+    
+    
+    
+    
     //글목록페이지,페이징,검색
     @RequestMapping(value="/testList.do")
     public String testListDo(Model model
